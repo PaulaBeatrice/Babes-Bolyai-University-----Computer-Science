@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="563.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.login2.PersoaneController">
+   <children>
+      <TabPane layoutX="33.0" layoutY="24.0" prefHeight="528.0" prefWidth="547.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="doresc_sa_ajut" text="Doresc sa ajut">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="446.0" prefWidth="547.0">
+                     <children>
+                        <TableView fx:id="table" layoutX="14.0" layoutY="52.0" onMouseClicked="#alegeNevoie" prefHeight="200.0" prefWidth="470.0">
+                          <columns>
+                            <TableColumn fx:id="id" prefWidth="36.666656494140625" text="id" />
+                            <TableColumn fx:id="titlu" prefWidth="53.33331298828125" text="titlu" />
+                              <TableColumn fx:id="descriere" prefWidth="65.99996948242188" text="descriere" />
+                              <TableColumn fx:id="deadline" prefWidth="80.00006103515625" text="deadline" />
+                              <TableColumn fx:id="om_in_nevoie" prefWidth="85.33331298828125" text="om_in_nevoie" />
+                              <TableColumn fx:id="om_salvator" prefWidth="82.00006103515625" text="om_salvator" />
+                              <TableColumn fx:id="status" prefWidth="63.33331298828125" text="status" />
+                          </columns>
+                        </TableView>
+                        <Label fx:id="mesaj" layoutX="14.0" layoutY="278.0" text="Label" />
+                        <TableView fx:id="nevoiTabel" layoutX="12.0" layoutY="302.0" prefHeight="182.0" prefWidth="474.0">
+                          <columns>
+                            <TableColumn fx:id="idYou" prefWidth="53.5999755859375" text="id" />
+                            <TableColumn fx:id="titluYou" prefWidth="52.79998779296875" text="titlu" />
+                              <TableColumn fx:id="descrYou" prefWidth="72.0" text="descriere" />
+                              <TableColumn fx:id="deadlineYou" prefWidth="75.199951171875" text="deadline" />
+                              <TableColumn fx:id="om_nevYou" prefWidth="71.199951171875" text="om_in_nevoie" />
+                              <TableColumn fx:id="om_salvYou" text="om_salvator" />
+                              <TableColumn fx:id="statusYou" prefWidth="75.0" text="status" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="doresc_sa_fiu_ajutat" text="Doresc sa fiu ajutat">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="66.0" layoutY="63.0" text="id" />
+                        <Label layoutX="57.0" layoutY="102.0" text="titlu" />
+                        <Label layoutX="53.0" layoutY="144.0" text="descriere" />
+                        <Label layoutX="52.0" layoutY="188.0" text="deadline" />
+                        <Button fx:id="trimiteCerere" layoutX="43.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#inregistreazaNevoia" text="Trimite cererea" />
+                        <TextField fx:id="idCerere" layoutX="132.0" layoutY="59.0" />
+                        <TextField fx:id="titluCerere" layoutX="132.0" layoutY="98.0" />
+                        <TextField fx:id="descriereCerere" layoutX="133.0" layoutY="140.0" />
+                        <DatePicker fx:id="deadlinePicker" layoutX="121.0" layoutY="184.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

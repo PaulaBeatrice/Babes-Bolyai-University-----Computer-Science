@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zboruri.controller.MainController">
+   <children>
+      <Label fx:id="label" layoutX="68.0" layoutY="26.0" text="Label" />
+      <Label layoutX="54.0" layoutY="69.0" text="Dep_time" />
+      <Label layoutX="54.0" layoutY="104.0" text="plecare" />
+      <Label layoutX="63.0" layoutY="139.0" text="sosire" />
+      <DatePicker fx:id="pickerData" layoutX="124.0" layoutY="65.0" />
+      <ComboBox fx:id="comboPlecare" layoutX="124.0" layoutY="100.0" prefHeight="26.0" prefWidth="175.0" />
+      <ComboBox fx:id="comboSosire" layoutX="124.0" layoutY="135.0" prefHeight="26.0" prefWidth="175.0" />
+      <TableView fx:id="tabelZbor" layoutX="41.0" layoutY="173.0" prefHeight="200.0" prefWidth="438.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="124.0" text="id" />
+          <TableColumn fx:id="land_time" prefWidth="164.79998779296875" text="land_time" />
+            <TableColumn fx:id="seats" prefWidth="106.4000244140625" text="seats" />
+        </columns>
+      </TableView>
+      <Button fx:id="butonFiltrare" layoutX="337.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#filtreaza" prefHeight="26.0" prefWidth="138.0" text="Arata zboruri" />
+      <Button layoutX="337.0" layoutY="91.0" mnemonicParsing="false" onMouseClicked="#rezervaBilet" prefHeight="26.0" prefWidth="138.0" text="Cumpara Bilet" />
+   </children>
+</AnchorPane>

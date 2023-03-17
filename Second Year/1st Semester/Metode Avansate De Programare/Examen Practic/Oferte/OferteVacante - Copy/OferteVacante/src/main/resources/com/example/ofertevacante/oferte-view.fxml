@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ofertevacante.OferteController">
+   <children>
+      <DatePicker fx:id="picker_start" layoutX="53.0" layoutY="72.0" />
+      <DatePicker fx:id="picker_end" layoutX="53.0" layoutY="128.0" />
+      <TableView fx:id="table_oferte" layoutX="236.0" layoutY="53.0" prefHeight="200.0" prefWidth="365.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="43.33329772949219" text="id" />
+          <TableColumn fx:id="id_hotel" prefWidth="83.33331298828125" text="id_hotel" />
+            <TableColumn fx:id="start_date" prefWidth="71.3333740234375" text="start_date" />
+            <TableColumn fx:id="end_date" prefWidth="100.00003051757812" text="end_date" />
+            <TableColumn fx:id="percent" text="percent" />
+        </columns>
+      </TableView>
+      <Button fx:id="buton_oferte" layoutX="53.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#afisare_oferte" prefHeight="55.0" prefWidth="106.0" text="Button" />
+   </children>
+</AnchorPane>

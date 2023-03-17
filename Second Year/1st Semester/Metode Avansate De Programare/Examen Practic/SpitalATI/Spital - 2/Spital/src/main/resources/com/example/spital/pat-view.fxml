@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="290.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.spital.controller.PatController">
+   <children>
+      <Label layoutX="71.0" layoutY="93.0" prefHeight="18.0" prefWidth="105.0" text="Paturi ocupate:" />
+      <Label layoutX="71.0" layoutY="129.0" text="TIC" />
+      <Label layoutX="71.0" layoutY="162.0" text="TIM" />
+      <Label layoutX="71.0" layoutY="192.0" text="TIIP" />
+      <Label fx:id="nrOcupate" layoutX="170.0" layoutY="94.0" />
+      <Label fx:id="nrTIC" layoutX="170.0" layoutY="121.0" />
+      <Label fx:id="nrTIM" layoutX="170.0" layoutY="162.0" />
+      <Label fx:id="nrTIIP" layoutX="170.0" layoutY="191.0" />
+   </children>
+</AnchorPane>

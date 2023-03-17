@@ -1,0 +1,4 @@
+1;San Antonio Spurs
+2;Detroit Pistons
+3;Denver Nuggets
+4;Chicago Bulls

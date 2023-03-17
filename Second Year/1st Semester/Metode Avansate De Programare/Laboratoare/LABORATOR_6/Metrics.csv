@@ -1,0 +1,191 @@
+Complexity metrics (2),Fri, 16 Dec 2022 00:19:47 EET
+Method,CogC,v(G)
+"com.example.l6.socialnetwork.Domain.Account.Account(String, String, Long)",0,1
+com.example.l6.socialnetwork.Domain.Account.getPassword(),0,1
+com.example.l6.socialnetwork.Domain.Account.getUserID(),0,1
+com.example.l6.socialnetwork.Domain.Account.getUsername(),0,1
+com.example.l6.socialnetwork.Domain.Account.setPassword(String),0,1
+com.example.l6.socialnetwork.Domain.Account.setUserID(Long),0,1
+com.example.l6.socialnetwork.Domain.Account.setUsername(String),0,1
+com.example.l6.socialnetwork.Domain.Entity.getId(),0,1
+com.example.l6.socialnetwork.Domain.Entity.setId(ID),0,1
+"com.example.l6.socialnetwork.Domain.FriendRequest.FriendRequest(Long, Long)",0,1
+com.example.l6.socialnetwork.Domain.FriendRequest.getDate(),0,1
+com.example.l6.socialnetwork.Domain.FriendRequest.getFrom(),0,1
+com.example.l6.socialnetwork.Domain.FriendRequest.getStatus(),0,1
+com.example.l6.socialnetwork.Domain.FriendRequest.getTo(),0,1
+com.example.l6.socialnetwork.Domain.FriendRequest.setDate(LocalDateTime),0,1
+com.example.l6.socialnetwork.Domain.FriendRequest.setFrom(Long),0,1
+com.example.l6.socialnetwork.Domain.FriendRequest.setStatus(Status),0,1
+com.example.l6.socialnetwork.Domain.FriendRequest.setTo(Long),0,1
+com.example.l6.socialnetwork.Domain.Friendship.Friendship(),0,1
+com.example.l6.socialnetwork.Domain.Friendship.getDate(),0,1
+com.example.l6.socialnetwork.Domain.Friendship.setDate(LocalDateTime),0,1
+"com.example.l6.socialnetwork.Domain.Tuple.Tuple(E1, E2)",0,1
+com.example.l6.socialnetwork.Domain.Tuple.equals(Object),3,4
+com.example.l6.socialnetwork.Domain.Tuple.getLeft(),0,1
+com.example.l6.socialnetwork.Domain.Tuple.getRight(),0,1
+com.example.l6.socialnetwork.Domain.Tuple.hashCode(),2,2
+com.example.l6.socialnetwork.Domain.Tuple.setLeft(E1),0,1
+com.example.l6.socialnetwork.Domain.Tuple.setRight(E2),0,1
+com.example.l6.socialnetwork.Domain.Tuple.toString(),0,1
+"com.example.l6.socialnetwork.Domain.User.User(String, String, String)",0,1
+com.example.l6.socialnetwork.Domain.User.addFriend(User),0,1
+com.example.l6.socialnetwork.Domain.User.equals(Object),3,6
+com.example.l6.socialnetwork.Domain.User.getEmail(),0,1
+com.example.l6.socialnetwork.Domain.User.getFirstName(),0,1
+com.example.l6.socialnetwork.Domain.User.getFriendList(),2,3
+com.example.l6.socialnetwork.Domain.User.getFriends(),0,1
+com.example.l6.socialnetwork.Domain.User.getLastName(),0,1
+com.example.l6.socialnetwork.Domain.User.hashCode(),0,1
+com.example.l6.socialnetwork.Domain.User.removeFriend(User),0,1
+com.example.l6.socialnetwork.Domain.User.setEmail(String),0,1
+com.example.l6.socialnetwork.Domain.User.setFirstName(String),0,1
+com.example.l6.socialnetwork.Domain.User.setLastName(String),0,1
+com.example.l6.socialnetwork.Domain.User.toString(),0,1
+com.example.l6.socialnetwork.Domain.validators.AccountValidator.validate(Account),2,3
+com.example.l6.socialnetwork.Domain.validators.FriendRequestValidator.validate(FriendRequest),1,2
+com.example.l6.socialnetwork.Domain.validators.FriendshipValidator.validate(Friendship),1,2
+com.example.l6.socialnetwork.Domain.validators.UserValidator.validate(User),9,8
+com.example.l6.socialnetwork.Domain.validators.ValidationException.ValidationException(),0,1
+com.example.l6.socialnetwork.Domain.validators.ValidationException.ValidationException(String),0,1
+"com.example.l6.socialnetwork.Domain.validators.ValidationException.ValidationException(String, Throwable)",0,1
+"com.example.l6.socialnetwork.Domain.validators.ValidationException.ValidationException(String, Throwable, boolean, boolean)",0,1
+com.example.l6.socialnetwork.Domain.validators.ValidationException.ValidationException(Throwable),0,1
+com.example.l6.socialnetwork.Main.main(String[]),0,1
+com.example.l6.socialnetwork.MyException.MyException(String),0,1
+com.example.l6.socialnetwork.MyException.getMessage(),0,1
+com.example.l6.socialnetwork.config.ApplicationContext.getPROPERTIES(),0,1
+com.example.l6.socialnetwork.config.Config.getProperties(),1,2
+com.example.l6.socialnetwork.controller.FriendRequestController.handleAcceptFriendRequest(ActionEvent),6,4
+com.example.l6.socialnetwork.controller.FriendRequestController.handleRejectFriendRequest(ActionEvent),4,3
+com.example.l6.socialnetwork.controller.FriendRequestController.handleRemove(ActionEvent),4,3
+com.example.l6.socialnetwork.controller.FriendRequestController.initReceived(),0,1
+com.example.l6.socialnetwork.controller.FriendRequestController.initSent(),0,1
+com.example.l6.socialnetwork.controller.FriendRequestController.initialize(),0,1
+com.example.l6.socialnetwork.controller.FriendRequestController.update(FriendRequestEvent),0,1
+com.example.l6.socialnetwork.controller.HomeController.handleRefresh(ActionEvent),0,1
+com.example.l6.socialnetwork.controller.HomeController.handleRemoveFriend(ActionEvent),4,3
+com.example.l6.socialnetwork.controller.HomeController.handleRequests(ActionEvent),1,2
+com.example.l6.socialnetwork.controller.HomeController.handleSendFriendRequest(ActionEvent),6,4
+com.example.l6.socialnetwork.controller.HomeController.initFriends(),1,2
+com.example.l6.socialnetwork.controller.HomeController.initUsers(),0,1
+com.example.l6.socialnetwork.controller.HomeController.initialize(),0,1
+com.example.l6.socialnetwork.controller.HomeController.setActiveUser(User),0,1
+com.example.l6.socialnetwork.controller.HomeController.unknownUser(User),7,8
+com.example.l6.socialnetwork.controller.HomeController.update(UserEvent),0,1
+com.example.l6.socialnetwork.controller.LoginController.handleSignUpAction(ActionEvent),1,2
+com.example.l6.socialnetwork.controller.LoginController.handleSubmitButtonAction(ActionEvent),3,4
+com.example.l6.socialnetwork.controller.LoginController.initialize(),0,1
+com.example.l6.socialnetwork.controller.SignUpController.handleSubmitButtonAction(ActionEvent),3,4
+com.example.l6.socialnetwork.controller.SignUpController.initialize(),0,1
+"com.example.l6.socialnetwork.event.FriendRequestEvent.FriendRequestEvent(ChangeEventType, FriendRequest)",0,1
+"com.example.l6.socialnetwork.event.FriendRequestEvent.FriendRequestEvent(ChangeEventType, FriendRequest, FriendRequest)",0,1
+com.example.l6.socialnetwork.event.FriendRequestEvent.getFriendRequest(),0,1
+com.example.l6.socialnetwork.event.FriendRequestEvent.getOldFriendRequest(),0,1
+com.example.l6.socialnetwork.event.FriendRequestEvent.getType(),0,1
+"com.example.l6.socialnetwork.event.FriendshipEvent.FriendshipEvent(ChangeEventType, Friendship)",0,1
+"com.example.l6.socialnetwork.event.FriendshipEvent.FriendshipEvent(ChangeEventType, Friendship, Friendship)",0,1
+com.example.l6.socialnetwork.event.FriendshipEvent.getFriendship(),0,1
+com.example.l6.socialnetwork.event.FriendshipEvent.getOldFriendship(),0,1
+com.example.l6.socialnetwork.event.FriendshipEvent.getType(),0,1
+"com.example.l6.socialnetwork.event.UserEvent.UserEvent(ChangeEventType, User)",0,1
+"com.example.l6.socialnetwork.event.UserEvent.UserEvent(ChangeEventType, User, User)",0,1
+com.example.l6.socialnetwork.event.UserEvent.getOldUser(),0,1
+com.example.l6.socialnetwork.event.UserEvent.getType(),0,1
+com.example.l6.socialnetwork.event.UserEvent.getUser(),0,1
+com.example.l6.socialnetwork.repository.RepositoryException.RepositoryException(String),0,1
+"com.example.l6.socialnetwork.repository.database.AccountDatabaseRepository.AccountDatabaseRepository(String, String, String)",1,2
+com.example.l6.socialnetwork.repository.database.AccountDatabaseRepository.delete(String),2,3
+com.example.l6.socialnetwork.repository.database.AccountDatabaseRepository.findAll(),2,3
+com.example.l6.socialnetwork.repository.database.AccountDatabaseRepository.findOne(String),2,3
+com.example.l6.socialnetwork.repository.database.AccountDatabaseRepository.save(Account),2,3
+com.example.l6.socialnetwork.repository.database.AccountDatabaseRepository.update(Account),2,3
+"com.example.l6.socialnetwork.repository.database.FriendRequestDatabaseRepository.FriendRequestDatabaseRepository(String, String, String)",1,2
+"com.example.l6.socialnetwork.repository.database.FriendRequestDatabaseRepository.delete(Tuple<Long, Long>)",1,2
+com.example.l6.socialnetwork.repository.database.FriendRequestDatabaseRepository.findAll(),4,6
+"com.example.l6.socialnetwork.repository.database.FriendRequestDatabaseRepository.findOne(Tuple<Long, Long>)",3,6
+com.example.l6.socialnetwork.repository.database.FriendRequestDatabaseRepository.save(FriendRequest),1,2
+com.example.l6.socialnetwork.repository.database.FriendRequestDatabaseRepository.update(FriendRequest),0,1
+"com.example.l6.socialnetwork.repository.database.FriendshipDatabaseRepository.FriendshipDatabaseRepository(String, String, String)",1,2
+"com.example.l6.socialnetwork.repository.database.FriendshipDatabaseRepository.delete(Tuple<Long, Long>)",1,2
+com.example.l6.socialnetwork.repository.database.FriendshipDatabaseRepository.findAll(),2,3
+"com.example.l6.socialnetwork.repository.database.FriendshipDatabaseRepository.findOne(Tuple<Long, Long>)",2,3
+com.example.l6.socialnetwork.repository.database.FriendshipDatabaseRepository.save(Friendship),1,2
+com.example.l6.socialnetwork.repository.database.FriendshipDatabaseRepository.update(Friendship),3,4
+"com.example.l6.socialnetwork.repository.database.UserDatabaseRepository.UserDatabaseRepository(String, String, String)",1,2
+com.example.l6.socialnetwork.repository.database.UserDatabaseRepository.delete(Long),2,3
+com.example.l6.socialnetwork.repository.database.UserDatabaseRepository.findAll(),2,3
+com.example.l6.socialnetwork.repository.database.UserDatabaseRepository.findOne(Long),2,3
+com.example.l6.socialnetwork.repository.database.UserDatabaseRepository.save(User),1,2
+com.example.l6.socialnetwork.repository.database.UserDatabaseRepository.update(User),2,3
+com.example.l6.socialnetwork.service.FriendshipRequestService.FriendshipRequestService(),0,1
+"com.example.l6.socialnetwork.service.FriendshipRequestService.FriendshipRequestService(Repository<Tuple<Long, Long>, FriendRequest>, Repository<Tuple<Long, Long>, Friendship>, Repository<Long, User>, Validator<FriendRequest>)",0,1
+"com.example.l6.socialnetwork.service.FriendshipRequestService.accept(long, long)",2,3
+com.example.l6.socialnetwork.service.FriendshipRequestService.addFriendRequest(FriendRequest),8,9
+com.example.l6.socialnetwork.service.FriendshipRequestService.addObserver(Observer<FriendRequestEvent>),0,1
+"com.example.l6.socialnetwork.service.FriendshipRequestService.findRequest(long, long)",0,1
+com.example.l6.socialnetwork.service.FriendshipRequestService.getAll(),0,1
+com.example.l6.socialnetwork.service.FriendshipRequestService.getAll(long),3,2
+com.example.l6.socialnetwork.service.FriendshipRequestService.notifyObservers(FriendRequestEvent),0,1
+"com.example.l6.socialnetwork.service.FriendshipRequestService.reject(long, long)",2,3
+"com.example.l6.socialnetwork.service.FriendshipRequestService.remove(long, long)",1,2
+com.example.l6.socialnetwork.service.FriendshipRequestService.removeObserver(Observer<FriendRequestEvent>),0,1
+"com.example.l6.socialnetwork.service.FriendshipService.FriendshipService(Repository<Long, User>, Repository<Tuple<Long, Long>, FriendRequest>, Repository<Tuple<Long, Long>, Friendship>, Validator<Friendship>)",0,1
+com.example.l6.socialnetwork.service.FriendshipService.addObserver(Observer<FriendshipEvent>),0,1
+"com.example.l6.socialnetwork.service.FriendshipService.findFriendship(long, long)",0,1
+com.example.l6.socialnetwork.service.FriendshipService.notifyObservers(FriendshipEvent),0,1
+com.example.l6.socialnetwork.service.FriendshipService.removeFriendship(Friendship),4,5
+com.example.l6.socialnetwork.service.FriendshipService.removeObserver(Observer<FriendshipEvent>),0,1
+com.example.l6.socialnetwork.service.ServiceException.ServiceException(String),0,1
+"com.example.l6.socialnetwork.service.UserService.UserService(Repository<Long, User>, Repository<Tuple<Long, Long>, Friendship>, Repository<String, Account>, Validator<User>, Validator<Account>)",0,1
+com.example.l6.socialnetwork.service.UserService.addObserver(Observer<UserEvent>),0,1
+"com.example.l6.socialnetwork.service.UserService.addUser(User, Account)",1,2
+com.example.l6.socialnetwork.service.UserService.deleteUser(long),1,2
+com.example.l6.socialnetwork.service.UserService.findAccount(String),1,2
+com.example.l6.socialnetwork.service.UserService.findUser(long),0,1
+com.example.l6.socialnetwork.service.UserService.findUserByName(String),2,2
+com.example.l6.socialnetwork.service.UserService.generateUserID(),1,2
+com.example.l6.socialnetwork.service.UserService.getAll(),3,3
+com.example.l6.socialnetwork.service.UserService.getFriends(long),4,3
+com.example.l6.socialnetwork.service.UserService.notifyObservers(UserEvent),0,1
+com.example.l6.socialnetwork.service.UserService.removeObserver(Observer<UserEvent>),0,1
+com.example.l6.socialnetwork.ui.MainFX.main(String[]),0,1
+com.example.l6.socialnetwork.ui.MainFX.start(Stage),0,1
+
+Class,WMC
+com.example.l6.socialnetwork.Domain.Account,7
+com.example.l6.socialnetwork.Domain.Entity,2
+com.example.l6.socialnetwork.Domain.FriendRequest,9
+com.example.l6.socialnetwork.Domain.Friendship,3
+com.example.l6.socialnetwork.Domain.Status,0
+com.example.l6.socialnetwork.Domain.Tuple,9
+com.example.l6.socialnetwork.Domain.User,18
+com.example.l6.socialnetwork.Domain.validators.AccountValidator,2
+com.example.l6.socialnetwork.Domain.validators.FriendRequestValidator,2
+com.example.l6.socialnetwork.Domain.validators.FriendshipValidator,2
+com.example.l6.socialnetwork.Domain.validators.UserValidator,8
+com.example.l6.socialnetwork.Domain.validators.ValidationException,5
+com.example.l6.socialnetwork.Main,1
+com.example.l6.socialnetwork.MyException,2
+com.example.l6.socialnetwork.config.ApplicationContext,1
+com.example.l6.socialnetwork.config.Config,1
+com.example.l6.socialnetwork.controller.FriendRequestController,10
+com.example.l6.socialnetwork.controller.HomeController,16
+com.example.l6.socialnetwork.controller.LoginController,4
+com.example.l6.socialnetwork.controller.SignUpController,3
+com.example.l6.socialnetwork.event.ChangeEventType,0
+com.example.l6.socialnetwork.event.FriendRequestEvent,5
+com.example.l6.socialnetwork.event.FriendshipEvent,5
+com.example.l6.socialnetwork.event.UserEvent,5
+com.example.l6.socialnetwork.repository.RepositoryException,1
+com.example.l6.socialnetwork.repository.database.AccountDatabaseRepository,11
+com.example.l6.socialnetwork.repository.database.FriendRequestDatabaseRepository,14
+com.example.l6.socialnetwork.repository.database.FriendshipDatabaseRepository,10
+com.example.l6.socialnetwork.repository.database.UserDatabaseRepository,10
+com.example.l6.socialnetwork.service.FriendshipRequestService,23
+com.example.l6.socialnetwork.service.FriendshipService,10
+com.example.l6.socialnetwork.service.ServiceException,1
+com.example.l6.socialnetwork.service.UserService,20
+com.example.l6.socialnetwork.ui.MainFX,2
+
