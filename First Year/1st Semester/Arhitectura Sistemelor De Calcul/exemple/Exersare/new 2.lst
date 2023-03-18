@@ -1,0 +1,112 @@
+     1                                  ;Se da un sir de caractere S. Sa se construiasca sirul D care sa contina toate caracterele cifre din sirul S.
+     2                                  ;Exemplu:
+     3                                  ;S: '+', '4', '2', 'a', '8', '4', 'X', '5'
+     4                                  ;D: '4', '2', '8', '4', '5'
+     5                                  bits 32 ; assembling for the 32 bits architecture
+     6                                  
+     7                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     8                                  global start        
+     9                                  
+    10                                  ; declare external functions needed by our program
+    11                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+    12                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    13                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    14                                  
+    15                                  ; our data is declared here (the variables needed by our program)
+    16                                  segment data use32 class=data
+    17 00000000 2B34326138345835            s db '+', '4', '2', 'a', '8', '4', 'X', '5'; declararea sirului initial s
+    18                                      lung equ $-s; stabilirea lungimea sirului initial l ; l = 8
+    19 00000008 00<rept>                    d times lung db 0 ; rezervarea unui spatiu de dimensiune l pentru sirul destinatie d si initializarea acestuia
+    20                                  
+    21                                  ; our code starts here
+    22                                    
+    23                                  segment code use32 class=code
+    24                                      start:
+    25 00000000 B908000000                      mov ECX, lung; punem lungimea sirului s in ECX pentru a putea realiza bucla loop de ecx ori
+    26 00000005 BE00000000                      mov ESI, 0
+    27 0000000A BF00000000                      mov EDI, 0
+    28                                  
+    29 0000000F E38D                            jecxz Sfarsit ; verificam daca ECX != 0
+    29          ******************       warning: byte data exceeds bounds [-w+number-overflow]
+    30                                          
+    31                                          Repeta:
+    32 00000011 8A86[00000000]                      mov AL, [s+ESI]
+    33 00000017 3C30                                cmp AL, '0'
+    34 00000019 7402                                jz eticheta_0_1
+    35 0000001B EB07                                jmp eticheta_0_2
+    36                                              eticheta_0_1:
+    37 0000001D 8887[08000000]                              mov [d + EDI], AL 
+    38 00000023 47                                          inc EDI
+    39                                              eticheta_0_2:
+    40 00000024 3C31                                         cmp AL, '1'
+    41 00000026 7402                                         jz eticheta_1_1
+    42 00000028 EB07                                         jmp eticheta_1_2
+    43                                                       eticheta_1_1:
+    44 0000002A 8887[08000000]                                          mov [d + EDI], AL 
+    45 00000030 47                                                      inc EDI  
+    46                                                       eticheta_1_2:
+    47 00000031 3C32                                                    cmp AL, '2'
+    48 00000033 7402                                                    jz eticheta_2_1
+    49 00000035 EB07                                                    jmp eticheta_2_2
+    50                                                                  eticheta_2_1:
+    51 00000037 8887[08000000]                                                      mov [d + EDI], AL 
+    52 0000003D 47                                                                  inc EDI
+    53                                                                  eticheta_2_2:
+    54 0000003E 3C33                                                                cmp AL, '3'
+    55 00000040 7402                                                                jz eticheta_3_1
+    56 00000042 EB07                                                                jmp eticheta_3_2
+    57                                                                              eticheta_3_1:
+    58 00000044 8887[08000000]                                                                  mov [d + EDI], AL 
+    59 0000004A 47                                                                              inc EDI
+    60                                                                              eticheta_3_2:
+    61 0000004B 3C34                                                                            cmp AL, '4'
+    62 0000004D 7402                                                                            jz eticheta_4_1
+    63 0000004F EB07                                                                            jmp eticheta_4_2
+    64                                                                                          eticheta_4_1:
+    65 00000051 8887[08000000]                                                                              mov [d + EDI], AL 
+    66 00000057 47                                                                                          inc EDI
+    67                                                                                          eticheta_4_2:
+    68 00000058 3C35                                                                                        cmp AL, '5'
+    69 0000005A 7402                                                                                        jz eticheta_5_1
+    70 0000005C EB07                                                                                        jmp eticheta_5_2
+    71                                                                                                      eticheta_5_1:
+    72 0000005E 8887[08000000]                                                                                          mov [d + EDI], AL 
+    73 00000064 47                                                                                                      inc EDI
+    74                                                                                                      eticheta_5_2:
+    75 00000065 3C36                                                                                                    cmp AL, '6'
+    76 00000067 7402                                                                                                    jz eticheta_6_1
+    77 00000069 EB07                                                                                                    jmp eticheta_6_2
+    78                                                                                                                  eticheta_6_1:
+    79 0000006B 8887[08000000]                                                                                                      mov [d + EDI], AL 
+    80 00000071 47                                                                                                                  inc EDI
+    81                                                                                                                  eticheta_6_2:
+    82 00000072 3C37                                                                                                                cmp AL, '7'
+    83 00000074 7402                                                                                                                jz eticheta_7_1
+    84 00000076 EB07                                                                                                                jmp eticheta_7_2
+    85                                                                                                                              eticheta_7_1:
+    86 00000078 8887[08000000]                                                                                                                  mov [d + EDI], AL 
+    87 0000007E 47                                                                                                                              inc EDI
+    88                                                                                                                              eticheta_7_2:
+    89 0000007F 3C38                                                                                                                            cmp AL, '8'
+    90 00000081 7402                                                                                                                            jz eticheta_8_1
+    91 00000083 EB07                                                                                                                            jmp eticheta_8_2
+    92                                                                                                                                          eticheta_8_1:
+    93 00000085 8887[08000000]                                                                                                                              mov [d + EDI], AL 
+    94 0000008B 47                                                                                                                                          inc EDI
+    95                                                                                                                                          eticheta_8_2:
+    96 0000008C 3C39                                                                                                                                        cmp AL,'9'
+    97 0000008E 7402                                                                                                                                        jz eticheta_9_1
+    98 00000090 EB07                                                                                                                                        jmp eticheta_9_2
+    99                                                                                                                                                      eticheta_9_1:
+   100 00000092 8887[08000000]                                                                                                                                          mov [d + EDI], AL 
+   101 00000098 47                                                                                                                                                      inc EDI
+   102                                                                                                                                                      eticheta_9_2:
+   103 00000099 B202                                                                                                                                                    mov DL, 2
+   104 0000009B 46                                  inc ESI
+   105                                              
+   106 0000009C E273                            loop Repeta; 
+   106          ******************       warning: byte data exceeds bounds [-w+number-overflow]
+   107                                          
+   108                                          Sfarsit:;terminarea programului
+   109 0000009E 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+   110 000000A0 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

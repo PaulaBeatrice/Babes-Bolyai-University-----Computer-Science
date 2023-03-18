@@ -1,0 +1,121 @@
+     1                                  ;Sa se citeasca de la tastatura un nume de fisier si un numar. Sa se citeasca din fisierul dat cuvintele separate prin spatii si sa se afiseze in
+     2                                  ; consola numai cuvintele a caror numar de vocale este egal cu numarul citit de la tastatura.
+     3                                      ; input.txt
+     4                                      ; 3
+     5                                      ; input.txt: ana
+     6                                      ; avea mere si nu
+     7                                      ; pere
+     8                                      ; =>avea
+     9                                  bits 32 ; assembling for the 32 bits architecture
+    10                                  
+    11                                  global start        
+    12                                  
+    13                                  extern exit, scanf, fopen, fscanf, fprintf, fclose, printf               
+    14                                  import exit msvcrt.dll    
+    15                                  import scanf msvcrt.dll    
+    16                                  import fopen msvcrt.dll    
+    17                                  import fscanf msvcrt.dll    
+    18                                  import fprintf msvcrt.dll    
+    19                                  import fclose msvcrt.dll    
+    20                                  import printf msvcrt.dll
+    21                                  
+    22                                  segment data use32 class=data
+    23 00000000 00                         nume_fisier db 0
+    24 00000001 2573000000000000           format_fisier dd "%s", 0
+    25                                     
+    26 00000009 00000000                   numar dd 0
+    27 0000000D 256400                     format_numar db "%d", 0
+    28                                     
+    29 00000010 7200                       mod_acces db "r", 0
+    30 00000012 FFFFFFFF                   descriptor dd -1
+    31                                     
+    32 00000016 00<rept>                   cuvant times 32 db 0
+    33 00000036 257300                     format_cuvant db "%s", 0
+    34 00000039 25730A00                   format_af db "%s", 10, 0
+    35                                  
+    36                                  segment code use32 class=code
+    37                                      start:
+    38                                          ;citire nume fisier si deschidere fisier
+    39 00000000 68[00000000]                    push dword nume_fisier
+    40 00000005 68[01000000]                    push dword format_fisier
+    41 0000000A FF15[00000000]                  call[scanf]
+    42 00000010 83C408                          add esp, 4 * 2
+    43                                          
+    44 00000013 68[10000000]                    push mod_acces
+    45 00000018 68[00000000]                    push nume_fisier
+    46 0000001D FF15[00000000]                  call[fopen]
+    47 00000023 83C408                          add esp, 4 * 2
+    48                                          
+    49 00000026 A3[12000000]                    mov [descriptor], eax
+    50                                          
+    51 0000002B 83F800                          cmp eax, 0
+    52 0000002E 0F8484000000                    je final
+    53                                          
+    54                                          ;citire numar
+    55 00000034 68[09000000]                    push numar
+    56 00000039 68[0D000000]                    push format_numar
+    57 0000003E FF15[00000000]                  call[scanf]
+    58 00000044 83C408                          add esp, 4 * 2
+    59                                          
+    60                                          
+    61                                          ;citim cuvintele din fisier si numaram vocalele
+    62                                      
+    63                                          citire:
+    64 00000047 68[16000000]                        push dword cuvant
+    65 0000004C 68[36000000]                        push dword format_cuvant
+    66 00000051 FF35[12000000]                      push dword [descriptor]
+    67 00000057 FF15[00000000]                      call [fscanf]
+    68 0000005D 83C40C                              add esp, 4 * 3
+    69                                              
+    70 00000060 85C0                                test eax, eax
+    71 00000062 7845                                js final_citire
+    72                                              
+    73 00000064 BE[16000000]                        mov ESI, dword cuvant
+    74 00000069 BB00000000                          mov EBX,  0
+    75                                              
+    76                                              cauta_vocala:
+    77 0000006E AC                                      lodsb 
+    78 0000006F 3C00                                    cmp AL, 0
+    79 00000071 7419                                    je aici_2
+    80                                                  
+    81 00000073 3C61                                    cmp AL, 'a'
+    82 00000075 7412                                    je aduna
+    83                                                  
+    84 00000077 3C65                                    cmp AL, 'e'
+    85 00000079 740E                                    je aduna
+    86                                                  
+    87 0000007B 3C69                                    cmp AL, 'i'
+    88 0000007D 740A                                    je aduna
+    89                                                  
+    90 0000007F 3C6F                                    cmp AL, 'o'
+    91 00000081 7406                                    je aduna
+    92                                                  
+    93 00000083 3C75                                    cmp AL, 'u'
+    94 00000085 7402                                    je aduna
+    95                                                  
+    96 00000087 EBE5                                    jmp cauta_vocala
+    97                                                  
+    98 00000089 43                                      aduna: inc ebx
+    99 0000008A EBE2                                    jmp cauta_vocala
+   100                                                  
+   101                                              aici_2:
+   102 0000008C 3B1D[09000000]                      cmp ebx, [numar]
+   103 00000092 7513                                jne aici
+   104 00000094 68[16000000]                        push cuvant
+   105 00000099 68[39000000]                        push format_af
+   106 0000009E FF15[00000000]                      call[printf]
+   107 000000A4 83C408                              add esp, 4 * 2
+   108                                              aici:
+   109                                                  
+   110 000000A7 EB9E                                jmp citire
+   111                                              
+   112                                          final_citire:
+   113                                         
+   114                                          ;inchidem fisierul 
+   115 000000A9 FF35[12000000]                  push dword [descriptor]
+   116 000000AF FF15[00000000]                  call [fclose]
+   117 000000B5 83C404                          add esp, 4
+   118                                          
+   119                                          final:
+   120 000000B8 6A00                            push    dword 0      
+   121 000000BA FF15[00000000]                  call    [exit]       

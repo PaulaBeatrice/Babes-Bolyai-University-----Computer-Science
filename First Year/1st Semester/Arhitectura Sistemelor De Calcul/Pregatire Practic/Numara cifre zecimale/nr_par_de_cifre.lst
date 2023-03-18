@@ -1,0 +1,119 @@
+     1                                  ;Se citesc de la tastatură 2 numere m si n, apoi se citesc m numere fără semn. Se cere să se scrie într-un fișier output.txt numerele care au cel 
+     2                                  ;puțin n cifre zecimale pare    
+     3                                  bits 32 ; assembling for the 32 bits architecture
+     4                                  
+     5                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     6                                  global start        
+     7                                  
+     8                                  ; declare external functions needed by our program
+     9                                  extern exit, fopen, fclose, scanf, printf, fprintf           ; tell nasm that exit exists even if we won't be defining it
+    10                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    11                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    12                                  import fopen msvcrt.dll
+    13                                  import fclose msvcrt.dll
+    14                                  import scanf msvcrt.dll
+    15                                  import printf msvcrt.dll
+    16                                  import fprintf msvcrt.dll
+    17                                  ; our data is declared here (the variables needed by our program)
+    18                                  segment data use32 class=data
+    19 00000000 616E612E74787400            nume_fisier db "ana.txt", 0
+    20 00000008 FFFFFFFF                    descriptor_fis dd -1
+    21 0000000C 7700                        mod_acces db "w", 0
+    22 0000000E 257500                      format db "%u", 0
+    23 00000011 25750A00                    format_af db "%u", 10, 0
+    24 00000015 00000000                    m dd 0
+    25 00000019 00000000                    n dd 0
+    26 0000001D 00000000                    numar dd 0
+    27 00000021 02                          doi db 2
+    28                                      
+    29                                  ; our code starts here
+    30                                  segment code use32 class=code
+    31                                      start:
+    32 00000000 68[0C000000]                    push dword mod_acces
+    33 00000005 68[00000000]                    push dword nume_fisier
+    34 0000000A FF15[00000000]                  call [fopen]
+    35 00000010 83C408                          add ESP, 4 * 2
+    36                                          
+    37 00000013 A3[08000000]                    mov [descriptor_fis], EAX
+    38 00000018 83F800                          cmp EAX, 0
+    39 0000001B 0F849C000000                    je final
+    40                                      
+    41 00000021 68[19000000]                    push dword n
+    42 00000026 68[15000000]                    push dword m
+    43 0000002B 68[0E000000]                    push dword format
+    44 00000030 FF15[00000000]                  call [scanf]
+    45 00000036 83C40C                          add ESP, 4 * 3
+    46                                          
+    47 00000039 68[19000000]                    push dword n
+    48 0000003E 68[0E000000]                    push dword format
+    49 00000043 FF15[00000000]                  call [scanf]
+    50 00000049 83C408                          add ESP, 4 * 2
+    51                                          
+    52 0000004C 8B0D[15000000]                  mov ECX, dword[m]
+    53                                   
+    54                                          citeste:
+    55                                             ; push dword ECX
+    56                                            ;  push format 
+    57                                             ; call [scanf]
+    58                                            ;  add ESP, 4 * 2
+    59 00000052 51                                  push ECX
+    60                                          
+    61 00000053 68[1D000000]                        push dword numar
+    62 00000058 68[0E000000]                        push dword format
+    63 0000005D FF15[00000000]                      call [scanf]
+    64 00000063 83C408                              add ESP, 4 * 2
+    65                                              
+    66 00000066 A1[1D000000]                        mov EAX, [numar]
+    67 0000006B BA00000000                          mov EDX, 0
+    68 00000070 B900000000                          mov ECX, 0
+    69                                              
+    70                                              descompunere:
+    71 00000075 BB0A000000                              mov EBX, 10
+    72 0000007A F7F3                                    div EBX
+    73                                                  
+    74 0000007C 50                                      push EAX
+    75                                                  
+    76 0000007D 89D0                                    mov EAX, EDX
+    77 0000007F F635[21000000]                          div byte[doi]
+    78 00000085 80FC00                                  cmp AH, 0
+    79 00000088 7501                                    jne aici
+    80 0000008A 41                                      inc ECX
+    81                                                  aici:
+    82                                                  
+    83                                                 ; test EDX, 01h
+    84                                                ;  jb cifra_impara
+    85                                                 ; inc ECX
+    86                                                 ; cifra_impara:
+    87                                                  
+    88 0000008B BA00000000                              mov EDX, 0
+    89 00000090 58                                      pop EAX
+    90 00000091 83F800                                  cmp EAX, 0
+    91 00000094 7402                                    je gata
+    92 00000096 EBDD                                    jmp descompunere
+    93                                              
+    94                                              gata:
+    95                                              
+    96 00000098 3B0D[19000000]                      cmp ECX, [n]
+    97 0000009E 721A                                jb nu_afisa
+    98                                              
+    99 000000A0 FF35[1D000000]                      push dword [numar]
+   100 000000A6 68[11000000]                        push format_af
+   101 000000AB FF35[08000000]                      push dword[descriptor_fis]
+   102 000000B1 FF15[00000000]                      call [fprintf]
+   103 000000B7 83C40C                              add ESP, 4 * 3
+   104                                              
+   105                                              nu_afisa:     
+   106 000000BA 59                                  pop ECX
+   107 000000BB E295                            loop citeste
+   108                                      
+   109                                          
+   110                                         
+   111                                          final:
+   112                                          
+   113                                          ;fclose(descriptor_fis)
+   114 000000BD FF35[08000000]                  push dword [descriptor_fis]
+   115 000000C3 FF15[00000000]                  call [fclose]
+   116 000000C9 83C404                          add ESP, 4
+   117                                          ; exit(0)
+   118 000000CC 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+   119 000000CE FF15[00000000]                  call    [exit]       ; call exit to terminate the program

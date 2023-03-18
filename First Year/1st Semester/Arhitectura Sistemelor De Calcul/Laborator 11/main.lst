@@ -1,0 +1,74 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; extern reversed
+     7                                  
+     8                                  ; declare external functions needed by our program
+     9                                  extern exit, scanf, printf   ; tell nasm that exit exists even if we won't be defining it
+    10                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    11                                  import scanf msvcrt.dll   ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    12                                  import printf msvcrt.dll
+    13                                  ; our data is declared here (the variables needed by our program)
+    14                                  
+    15                                  ;Read a sentence from the keyboard. For each word, obtain a new one by taking the letters in reverse order and print each new word.
+    16                                  
+    17                                  
+    18                                  segment data use32 class=data
+    19                                      ; ...
+    20                                      ; sir db "Ana are mere", 0 
+    21 00000000 00000000<rept>              array times 100 dd 0
+    22 00000190 <res 00000190>              reverse_word resd 100
+    23 00000320 255B5E0A5D257300            format db "%[^",10,"]%s", 0
+    24 00000328 257300                      format2 db "%s", 0
+    25                                      
+    26                                      
+    27                                  
+    28                                  ; our code starts here
+    29                                  segment code use32 class=code
+    30                                      start:
+    31                                          ; ...
+    32 00000000 68[00000000]                    push dword array
+    33 00000005 68[20030000]                    push dword format
+    34 0000000A FF15[00000000]                  call [scanf]
+    35 00000010 83C408                          add esp, 4 * 2
+    36                                          
+    37 00000013 68[00000000]                    push dword array
+    38 00000018 68[28030000]                    push dword format2
+    39 0000001D FF15[00000000]                  call [printf]
+    40 00000023 83C408                          add esp, 4 * 2
+    41                                          
+    42                                          ; mov esi, array
+    43                                          ; mov ebx, array
+    44                                          ; mov edi, 0
+    45                                          ; loop_:
+    46                                                  ; lodsb
+    47                                                  ; cmp al, 0
+    48                                                  ; je exit_
+    49                                                  
+    50                                                  ; cmp al, 32
+    51                                                  ; je print
+    52                                                  ; jmp continue
+    53                                                  
+    54                                                  ; print:
+    55                                                  ; push esi
+    56                                                  ; sub esi, ebx
+    57                                                  ; mov edi, esi
+    58                                                  ; pop esi
+    59                                                  ; cmp ebx, esi
+    60                                                  ; je continue
+    61                                                  ; mov edx, [array + ebx]
+    62                                                  ; mov [reverse_word + edi], edx
+    63                                                  ; inc ebx
+    64                                                  ; dec edi
+    65                                                  ; continue:
+    66                                          ; loop loop_
+    67                                           
+    68                                          
+    69                                          ; exit_:
+    70                                         
+    71                                                             
+    72                                          ; exit(0)
+    73 00000026 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    74 00000028 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

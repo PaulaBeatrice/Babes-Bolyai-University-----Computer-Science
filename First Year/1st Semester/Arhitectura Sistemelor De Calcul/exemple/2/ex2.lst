@@ -1,0 +1,45 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  
+    11                                  ; our data is declared here (the variables needed by our program)
+    12                                  segment data use32 class=data
+    13                                      ; ...
+    14 00000000 A2                      a DB 0A2h ;se declara variabila a de tip BYTE si se initializeaza cu valoarea 0A2h
+    15 00000001 6162                    b DW 'ab' ;se declara variabila a de tip WORD si se initializeaza cu valoarea 'ab'
+    16 00000003 78563412                c DD 12345678h ;se declara variabila a de tip DOUBLE WORD si se initializeaza cu valoarea 12345678h
+    17 00000007 8877665544332211        d DQ 1122334455667788h ;se declara variabila a de tip QUAD WORD si se initializeaza cu valoarea 1122334455667788h
+    18                                  
+    19 0000000F <res 00000001>          e RESB 1 ;se rezerva 1 octet
+    20 00000010 <res 00000040>          f RESB 64 ;se rezerva 64 octeti
+    21 00000050 <res 00000002>          g RESW 1 ;se rezerva 1 word
+    22                                  
+    23 00000052 FF                      h db -1
+    24                                  
+    25                                  zece EQU 10 ;se defineste constanta zece care are valoarea 10
+    26                                  
+    27                                  ; our code starts here
+    28                                  segment code use32 class=code
+    29                                      start:
+    30 00000000 BB78563412                  mov EBX, 12345678h
+    31 00000005 BA01010101                  mov EDX, 01010101h
+    32 0000000A 01DA                        add EDX,EBX;aduna la EDX pe ENX -> EDX = EDX + EBX
+    33 0000000C FE05[03000000]              inc byte [c];aduna 1 la variabila c -> byte, word, dword
+    34 00000012 F61D[52000000]              neg byte [h]
+    35 00000018 B007                        mov AL, 7
+    36 0000001A B00C                        mov AL, 12
+    37 0000001C 66B80001                    mov AX, 256
+    38 00000020 66B8FFFF                    mov AX, -1
+    39 00000024 B8409C0000                  mov EAX, 40000
+    40 00000029 B8FEFFFFFF              mov EAX, -2
+    41                                          ; ...
+    42                                      
+    43                                          ; exit(0)
+    44 0000002E 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    45 00000030 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

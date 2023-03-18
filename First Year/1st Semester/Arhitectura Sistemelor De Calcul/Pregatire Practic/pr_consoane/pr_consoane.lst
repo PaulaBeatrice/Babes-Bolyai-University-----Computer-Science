@@ -1,0 +1,109 @@
+     1                                  ; Se citesc n si m de la tastatura, apoi m cuvinte si afisati in fisier cuvintele cu n consoane
+     2                                  bits 32
+     3                                  global start        
+     4                                  
+     5                                  
+     6                                  extern exit,scanf,fopen,fclose,fprintf             
+     7                                  import exit msvcrt.dll   
+     8                                  import scanf msvcrt.dll
+     9                                  import fopen msvcrt.dll
+    10                                  import fclose msvcrt.dll
+    11                                  import fprintf msvcrt.dll        
+    12                                                
+    13                                                           
+    14                                  segment data use32 class=data
+    15 00000000 707265672E74787400           nume_fisier db "preg.txt",0
+    16 00000009 7700                         mod_acces db "w",0
+    17 0000000B FFFFFFFF                     descriptor dd -1
+    18 0000000F 256420256400                 format_citire db "%d %d",0
+    19 00000015 257300                       format_cit_cuv db "%s",0
+    20 00000018 25732000                     format_afis db "%s ",0
+    21 0000001C 00<rept>                     cuvant times 32 db 0
+    22 0000003C 00000000                     consoane dd 0
+    23 00000040 00000000                     n dd 0
+    24 00000044 00000000                     m dd 0
+    25                                  segment code use32 class=code
+    26                                      start:
+    27                                          ;deschid fisier pt afisare
+    28 00000000 68[09000000]                    push mod_acces
+    29 00000005 68[00000000]                    push nume_fisier
+    30 0000000A FF15[00000000]                  call[fopen]
+    31 00000010 83C408                          add esp,4*2
+    32                                          
+    33 00000013 A3[0B000000]                    mov [descriptor],eax
+    34                                          
+    35                                          ;citirea
+    36                                          ;scanf(format,n,m)
+    37 00000018 68[44000000]                    push dword m
+    38 0000001D 68[40000000]                    push dword n
+    39 00000022 68[0F000000]                    push format_citire
+    40 00000027 FF15[00000000]                  call [scanf]
+    41 0000002D 83C40C                          add esp,4*3
+    42                                          
+    43 00000030 8B0D[44000000]                  mov ecx, dword[m]
+    44                                          
+    45                                          repeta:
+    46 00000036 51                                  push ecx
+    47 00000037 68[1C000000]                        push dword cuvant
+    48 0000003C 68[15000000]                        push format_cit_cuv
+    49 00000041 FF15[00000000]                      call [scanf]
+    50 00000047 83C408                              add esp,4 * 2
+    51                                              
+    52 0000004A BE[1C000000]                        mov esi,dword cuvant
+    53 0000004F C705[3C000000]0000-                 mov dword[consoane],0
+    53 00000057 0000               
+    54                                              verif_litere:
+    55 00000059 AC                                      lodsb  
+    56 0000005A 3C00                                    cmp al,0
+    57 0000005C 7425                                    je afara
+    58                                                  
+    59 0000005E 3C61                                    cmp al,"a"
+    60 00000060 74F7                                    je verif_litere
+    61 00000062 7500                                    jne ver_e
+    62                                                  ver_e:
+    63 00000064 3C65                                        cmp al,"e"
+    64 00000066 74F1                                        je verif_litere
+    65                                                      ;jne ver_i
+    66                                                  ver_i:
+    67 00000068 3C69                                        cmp al,"i"
+    68 0000006A 74ED                                        je verif_litere
+    69                                                      ;jne ver_o
+    70                                                  ver_o:
+    71 0000006C 3C6F                                        cmp al,"o"
+    72 0000006E 74E9                                        je verif_litere
+    73                                                      ;jne ver_u
+    74                                                  ver_u:
+    75 00000070 3C75                                        cmp al,"u"
+    76 00000072 74E5                                        je verif_litere
+    77                                                      ;jne nr_cons
+    78                                                  nr_cons:
+    79 00000074 8B1D[3C000000]                              mov ebx,dword [consoane]
+    80 0000007A 43                                          inc ebx
+    81 0000007B 891D[3C000000]                              mov dword [consoane],ebx
+    82                                                 
+    83 00000081 EBD6                                    jmp verif_litere
+    84                                              afara:
+    85 00000083 A1[40000000]                             mov eax,dword[n]
+    86 00000088 3905[3C000000]                           cmp dword[consoane], eax
+    87 0000008E 7602                                     jbe afisare
+    88 00000090 7719                                     ja aici
+    89                                              afisare:
+    90 00000092 68[1C000000]                            push dword cuvant
+    91 00000097 68[18000000]                            push format_afis
+    92 0000009C FF35[0B000000]                          push dword [descriptor]
+    93 000000A2 FF15[00000000]                          call [fprintf]
+    94 000000A8 83C40C                                  add esp, 4 * 3
+    95                                              aici:
+    96 000000AB 59                                  pop ecx
+    97 000000AC 49                                  dec ecx
+    98 000000AD 7587                                jnz repeta
+    99                                  
+   100                                              
+   101                                        
+   102                                          
+   103                                          final:
+   104 000000AF FF35[0B000000]                  push dword [descriptor]
+   105 000000B5 FF15[00000000]                  call [fclose]
+   106 000000BB 83C404                          add esp,4
+   107 000000BE 6A00                            push    dword 0     
+   108 000000C0 FF15[00000000]                  call    [exit]

@@ -1,0 +1,49 @@
+     1                                  ;Se da un sir de caractere S. Sa se construiasca sirul D care sa contina toate caracterele cifre din sirul S.
+     2                                  ;Exemplu:
+     3                                  ;S: '+', '4', '2', 'a', '8', '4', 'X', '5'
+     4                                  ;D: '4', '2', '8', '4', '5'
+     5                                  bits 32 ; assembling for the 32 bits architecture
+     6                                  
+     7                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     8                                  global start        
+     9                                  
+    10                                  ; declare external functions needed by our program
+    11                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+    12                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    13                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    14                                  
+    15                                  ; our data is declared here (the variables needed by our program)
+    16                                  segment data use32 class=data
+    17 00000000 2B34326138345835            s db '+', '4', '2', 'a', '8', '4', 'X', '5'; declararea sirului initial s
+    18                                      lung equ $-s; stabilirea lungimea sirului initial l ; l = 8
+    19 00000008 00<rept>                    d times lung db 0 ; rezervarea unui spatiu de dimensiune l pentru sirul destinatie d si initializarea acestuia
+    20 00000010 30                          unu db 30h
+    21 00000011 39                          noua db 39h
+    22                                  ; our code starts here
+    23                                    
+    24                                  segment code use32 class=code
+    25                                      start:
+    26 00000000 B908000000                      mov ECX, lung; punem lungimea sirului s in ECX pentru a putea realiza bucla loop de ecx ori
+    27 00000005 BE00000000                      mov ESI, 0
+    28 0000000A BF00000000                      mov EDI, 0
+    29                                          
+    30 0000000F E324                            jecxz Sfarsit ; verificam daca ECX != 0
+    31                                         
+    32                                          Repeta:
+    33 00000011 8A86[00000000]                      mov AL, [s+ESI]
+    34 00000017 3A05[10000000]                      cmp AL, [unu]
+    35 0000001D 7302                                jae eticheta
+    36 0000001F EB11                                jmp urmatorul
+    37                                              eticheta: ; dacă caracterul meu e mai mare decât ‘1’ atunci verificam dacă e mai mic ca ‘9’
+    38 00000021 3A05[11000000]                          cmp AL,[noua]
+    39 00000027 7602                                    jbe eticheta_
+    40 00000029 EB07                                    jmp urmatorul
+    41                                                  eticheta_:
+    42 0000002B 8887[08000000]                             mov [d+EDI],al
+    43 00000031 47                                         inc EDI
+    44                                              urmatorul:
+    45 00000032 46                                  inc ESI
+    46 00000033 E2DC                           loop Repeta; 
+    47                                          Sfarsit:;terminarea programului
+    48 00000035 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    49 00000037 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

@@ -1,0 +1,60 @@
+     1                                  ; Codul de mai jos va deschide un fisier numit "ana.txt" in directorul curent si va adauga un text la finalul acelui fisier.
+     2                                  ; Programul va folosi functia fopen pentru deschiderea/crearea fisierului, functia fprintf pentru scrierea in fisier si functia fclose pentru inchiderea fisierului creat.
+     3                                  ; Deoarece in apelul functiei fopen programul foloseste modul de acces "a", daca un fisier cu numele exista deja in directorul curent, la continutul acelui fisier se va adauga un text. Daca fisierul cu numele dat nu
+     4                                  
+     5                                  bits 32 
+     6                                  
+     7                                  global start        
+     8                                  
+     9                                  ; declare external functions needed by our program
+    10                                  extern exit, fopen, fprintf, fclose
+    11                                  import exit msvcrt.dll  
+    12                                  import fopen msvcrt.dll  
+    13                                  import fprintf msvcrt.dll
+    14                                  import fclose msvcrt.dll
+    15                                  
+    16                                  ; our data is declared here (the variables needed by our program)
+    17                                  segment data use32 class=data
+    18 00000000 616E612E74787400            nume_fisier db "ana.txt", 0  ; numele fisierului care va fi creat
+    19 00000008 6100                        mod_acces db "a", 0          ; modul de deschidere a fisierului - 
+    20                                                                   ; a - pentru adaugare. daca fiserul nu exista, se va crea      
+    21 0000000A 416E61206172652073-         text db "Ana are si pere.", 0 ; textul care va fi adaugat in fisier
+    21 00000013 6920706572652E00   
+    22                                                                      
+    23 0000001B FFFFFFFF                    descriptor_fis dd -1         ; variabila in care vom salva descriptorul fisierului - necesar pentru a putea face referire la fisier
+    24                                                                      
+    25                                  ; our code starts here
+    26                                  segment code use32 class=code
+    27                                      start:
+    28                                          ; apelam fopen pentru a crea fisierul
+    29                                          ; functia va returna in EAX descriptorul fisierului sau 0 in caz de eroare
+    30                                          ; eax = fopen(nume_fisier, mod_acces)
+    31 00000000 68[08000000]                    push dword mod_acces     
+    32 00000005 68[00000000]                    push dword nume_fisier
+    33 0000000A FF15[00000000]                  call [fopen]
+    34 00000010 83C408                          add esp, 4*2                ; eliberam parametrii de pe stiva
+    35                                  
+    36 00000013 A3[1B000000]                    mov [descriptor_fis], eax   ; salvam valoarea returnata de fopen in variabila descriptor_fis
+    37                                          
+    38                                          ; verificam daca functia fopen a creat cu succes fisierul (daca EAX != 0)
+    39 00000018 83F800                          cmp eax, 0
+    40 0000001B 7423                            je final
+    41                                          
+    42                                          ; adaugam/scriem textul in fisierul deschis folosind functia fprintf
+    43                                          ; fprintf(descriptor_fis, text)
+    44 0000001D 68[0A000000]                    push dword text
+    45 00000022 FF35[1B000000]                  push dword [descriptor_fis]
+    46 00000028 FF15[00000000]                  call [fprintf]
+    47 0000002E 83C408                          add esp, 4*2
+    48                                          
+    49                                          ; apelam functia fclose pentru a inchide fisierul
+    50                                          ; fclose(descriptor_fis)
+    51 00000031 FF35[1B000000]                  push dword [descriptor_fis]
+    52 00000037 FF15[00000000]                  call [fclose]
+    53 0000003D 83C404                          add esp, 4
+    54                                          
+    55                                        final:
+    56                                          
+    57                                          ; exit(0)
+    58 00000040 6A00                            push    dword 0      
+    59 00000042 FF15[00000000]                  call    [exit]       

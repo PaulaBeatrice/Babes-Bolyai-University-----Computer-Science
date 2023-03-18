@@ -1,0 +1,114 @@
+     1                                  ;Se citesc de la tastatura trei numere a, m si n (a: word, 0 <= m, n <= 15, m > n). Sa se izoleze bitii de la m-n ai lui a si sa se
+     2                                  ;afiseze numarul intreg reprezentat de acesti bitii in baza 10.
+     3                                  ;Exemplu: a = 1001 1111 0101 1110 = 9F5Eh = 40798, m = 8, n = 4
+     4                                  ; Se izoleaza bitii 8-4 => a devine 0000 0001 0101 0000 => Numarul intreg reprezentat de acesti biti in baza 10 este 21
+     5                                  ; Rezultat: 21
+     6                                  
+     7                                  bits 32 ; assembling for the 32 bits architecture
+     8                                  
+     9                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+    10                                  global start        
+    11                                  
+    12                                  ; declare external functions needed by our program
+    13                                  extern exit, printf, scanf               ; tell nasm that exit exists even if we won't be defining it
+    14                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    15                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    16                                  
+    17                                  import printf msvcrt.dll
+    18                                  import scanf msvcrt.dll                          
+    19                                                            
+    20                                  ; our data is declared here (the variables needed by our program)
+    21                                  segment data use32 class=data
+    22 00000000 0000                        a dw 0
+    23 00000002 0000                        spatiu db 0, 0
+    24 00000004 00000000                    m dd 0
+    25 00000008 00000000                    n dd 0
+    26 0000000C 613D00                      mesaj1 db "a=", 0
+    27 0000000F 6D3D00                      mesaj2 db "m=", 0
+    28 00000012 6E3D00                      mesaj3 db "n=", 0
+    29 00000015 256400                      format db "%d", 0
+    30 00000018 256400                      format_afisare db "%d",0
+    31                                  
+    32                                  ; our code starts here
+    33                                  segment code use32 class=code
+    34                                      start:
+    35                                          ; ...
+    36                                          ;printf("a=")
+    37                                          ;punem parametrii pe stiva de la dreapta la stanga
+    38 00000000 68[0C000000]                    push dword mesaj1
+    39 00000005 FF15[00000000]                  call[printf]; apelam functia printf pentru afisare
+    40 0000000B 83C404                          add ESP, 4 * 1; eliberam parametrii de pe stiva; 4 = dimensiunea unui dword; 1 = nr de parametrii
+    41                                          
+    42 0000000E B800000000                      mov EAX, 0
+    43 00000013 66A1[00000000]                  mov AX, [a]
+    44                                          
+    45                                          ;scanf("%d",a)
+    46 00000019 68[00000000]                    push dword a
+    47 0000001E 68[15000000]                    push dword format
+    48 00000023 FF15[00000000]                  call[scanf]
+    49 00000029 83C408                          add ESP, 4 * 2
+    50                                          
+    51                                          ;print("m=")
+    52                                          ;punem parametrii pe stiva de la dreapta la stanga
+    53 0000002C 68[0F000000]                    push dword mesaj2
+    54 00000031 FF15[00000000]                  call[printf]; apelam functia printf pentru afisare
+    55 00000037 83C404                          add ESP, 4 * 1; eliberam parametrii de pe stiva; 4 = dimensiunea unui dword; 1 = nr de parametrii
+    56                                          
+    57                                          ;scanf("%d",m)
+    58                                          ;punem parametrii pe stiva de la dreapta la stanga
+    59 0000003A 68[04000000]                    push dword m
+    60 0000003F 68[15000000]                    push dword format
+    61 00000044 FF15[00000000]                  call[scanf]
+    62 0000004A 83C408                          add ESP, 4 * 2; eliberam parametrii de pe stiva; 4 = dimensiunea unui dword; 2 = nr de parametrii
+    63                                          
+    64                                          ;print("n=")
+    65                                          ;punem parametrii pe stiva de la dreapta la stanga
+    66 0000004D 68[12000000]                    push dword mesaj3
+    67 00000052 FF15[00000000]                  call[printf]; apelam functia printf pentru afisare
+    68 00000058 83C404                          add ESP, 4 * 1; eliberam parametrii de pe stiva; 4 = dimensiunea unui dword; 1 = nr de parametrii
+    69                                          
+    70                                          ;scanf("%d",n)
+    71                                          ;punem parametrii pe stiva de la dreapta la stanga
+    72 0000005B 68[08000000]                    push dword n
+    73 00000060 68[15000000]                    push dword format
+    74 00000065 FF15[00000000]                  call[scanf]
+    75 0000006B 83C408                          add ESP, 4 * 2; eliberam parametrii de pe stiva; 4 = dimensiunea unui dword; 2 = nr de parametrii
+    76                                          
+    77                                        ;  mov AL, [m]; AL = m
+    78                                       ;   sub AL, [n] ; AL = m - n
+    79                                         ; mov BX, 1111111111111111b
+    80                                         ; mov CL, 16
+    81                                        ;  sub CL, [m]; CL = 16-(m-n) (Numarul de shiftari necesare pentru a ajunge la primii m-n biti)
+    82                                        ;  sub CL, 1
+    83                                       ;   shl AX, CL
+    84                                        ;;  mov CL, 16
+    85                                         ; sub CL, [m]
+    86                                         ; add CL, [n]
+    87                                         ; add CL, 1
+    88                                       ;   shr AX, CL
+    89                                        ;  mov EAX, 0; EAX = 0
+    90                                        ;  mov AX, BX; AX = BX
+    91 0000006E B800000000                      mov EAX,0
+    92 00000073 66A1[00000000]                  mov AX,[a]
+    93 00000079 8A0D[08000000]                  mov CL,[n]
+    94 0000007F 66D3E8                          shr AX,CL
+    95                                          
+    96 00000082 B900000000                      mov ECX,0
+    97 00000087 8A0D[04000000]                  mov CL,[m]
+    98 0000008D 2A0D[08000000]                  sub CL,[n]
+    99 00000093 BB01000000                      mov EBX,1
+   100                                          strt:
+   101 00000098 D1E3                                shl EBX,1
+   102 0000009A 83C301                              add EBX,1
+   103 0000009D E2F9                            loop strt
+   104 0000009F 21D8                             and EAX,EBX
+   105                                          
+   106                                          ;printf("%d", EAX)
+   107 000000A1 50                              push EAX
+   108 000000A2 68[18000000]                    push format_afisare
+   109 000000A7 FF15[00000000]                  call [printf]; apelam functia printf
+   110 000000AD 83C408                          add ESP, 4 * 2; eliberam parametrii de pe stiva; 4 = dimensiunea unui dword; 2 = nr de parametrii
+   111                                          
+   112                                          ; exit(0)
+   113 000000B0 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+   114 000000B2 FF15[00000000]                  call    [exit]       ; call exit to terminate the program
