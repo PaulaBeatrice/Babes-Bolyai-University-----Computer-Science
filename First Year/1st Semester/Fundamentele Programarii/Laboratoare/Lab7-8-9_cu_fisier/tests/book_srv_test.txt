@@ -1,0 +1,7 @@
+1;A;asdc;Amy;True
+2;C;adsdc;Amy;True
+3;e;adsdc;Amy;True
+4;t;adsdc;Amy;True
+5;y;adsdc;Amy;True
+6;w;adsdc;Amy;True
+7;u;adsdc;Amy;True

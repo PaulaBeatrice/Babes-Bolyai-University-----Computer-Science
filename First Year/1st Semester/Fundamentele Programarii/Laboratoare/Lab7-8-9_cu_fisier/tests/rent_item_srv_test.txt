@@ -1,0 +1,8 @@
+1;A;asdc;Amy;1;Raul;9632888412580
+1;A;asdc;Amy;2;Beatrice;9632587412580
+2;C;adsdc;Amy;2;Beatrice;9632587412580
+3;e;adsdc;Amy;3;Patric;9999500412580
+4;t;adsdc;Amy;4;Darius;9999587666680
+5;y;adsdc;Amy;5;Mariana;9339587412580
+6;w;adsdc;Amy;2;Beatrice;9632587412580
+7;u;adsdc;Amy;4;Darius;9999587666680
