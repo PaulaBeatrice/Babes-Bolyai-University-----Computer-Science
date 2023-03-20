@@ -1,0 +1,18 @@
+[2022-03-01 21:02:38] [info] Start Program:
+Path:"C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_1\problema_13\x64\Debug\problema_13.exe"
+Arguments:
+Working directory: "C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_1\problema_13\problema_13\"
+Modules: Selected: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_1\problema_13\x64\Debug\problema_13.exe Excluded: 
+Sources: Selected: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_1\problema_13\problema_13 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Paula\AppData\Local\Temp\mobpwxwo.qhb 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2022-03-01 21:02:38] [info] Module: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_1\problema_13\x64\Debug\problema_13.exe is selected because it matches selected pattern: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_1\problema_13\x64\Debug\problema_13.exe
