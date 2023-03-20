@@ -1,0 +1,22 @@
+[2022-03-20 16:52:08] [info] Start Program:
+Path:"C:\Users\Victor\Desktop\faculta\lab_2_4_oop\x64\Debug\lab_2_4_oop.exe"
+Arguments:
+Working directory: "C:\Users\Victor\Desktop\faculta\lab_2_4_oop\lab_2_4_oop\"
+Modules: Selected: C:\Users\Victor\Desktop\faculta\lab_2_4_oop\x64\Debug\lab_2_4_oop.exe Excluded: 
+Sources: Selected: C:\Users\Victor\Desktop\faculta\lab_2_4_oop\lab_2_4_oop Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Victor\AppData\Local\Temp\mk5wralf.3nx 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2022-03-20 16:52:08] [info] Module: C:\Users\Victor\Desktop\faculta\lab_2_4_oop\x64\Debug\lab_2_4_oop.exe is selected because it matches selected pattern: C:\Users\Victor\Desktop\faculta\lab_2_4_oop\x64\Debug\lab_2_4_oop.exe
+[2022-03-20 16:52:24] [info] ----------------------------------------------------
+[2022-03-20 16:52:24] [info] Coverage binary generated in file: C:\Users\Victor\AppData\Local\Temp\mk5wralf.3nx
+[2022-03-20 16:52:24] [info] ----------------------------------------------------
+[2022-03-20 16:52:24] [error] Your program stop with error code: 1

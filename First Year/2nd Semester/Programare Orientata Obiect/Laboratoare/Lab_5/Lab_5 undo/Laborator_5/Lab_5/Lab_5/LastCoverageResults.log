@@ -1,0 +1,21 @@
+[2022-03-31 13:21:14] [info] Start Program:
+Path:"C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\Lab_5 undo\Laborator_5\Lab_5\x64\Debug\Lab_5.exe"
+Arguments:
+Working directory: "C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\Lab_5 undo\Laborator_5\Lab_5\Lab_5\"
+Modules: Selected: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\Lab_5 undo\Laborator_5\Lab_5\x64\Debug\Lab_5.exe Excluded: 
+Sources: Selected: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\Lab_5 undo\Laborator_5\Lab_5\Lab_5 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Paula\AppData\Local\Temp\nnmp4dyh.bbx 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2022-03-31 13:21:14] [info] Module: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\Lab_5 undo\Laborator_5\Lab_5\x64\Debug\Lab_5.exe is selected because it matches selected pattern: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\Lab_5 undo\Laborator_5\Lab_5\x64\Debug\Lab_5.exe
+[2022-03-31 13:21:15] [info] ----------------------------------------------------
+[2022-03-31 13:21:15] [info] Coverage binary generated in file: C:\Users\Paula\AppData\Local\Temp\nnmp4dyh.bbx
+[2022-03-31 13:21:15] [info] ----------------------------------------------------

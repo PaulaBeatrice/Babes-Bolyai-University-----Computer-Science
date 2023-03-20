@@ -1,0 +1,5 @@
+﻿  main.c
+  ui.c
+  Generating Code...
+x64\Debug\ui.obj : warning LNK4042: object specified more than once; extras ignored
+  Lab_5.vcxproj -> C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\Lab_5 undo\Laborator_5\Lab_5\x64\Debug\Lab_5.exe

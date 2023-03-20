@@ -1,0 +1,21 @@
+[2022-03-21 21:15:08] [info] Start Program:
+Path:"C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\x64\Debug\lab_2_4_oop.exe"
+Arguments:
+Working directory: "C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\x64\Debug"
+Modules: Selected: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\x64\Debug\lab_2_4_oop.exe Excluded: 
+Sources: Selected: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Paula\AppData\Local\Temp\cysev03n.1fg 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2022-03-21 21:15:08] [info] Module: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\x64\Debug\lab_2_4_oop.exe is selected because it matches selected pattern: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\x64\Debug\lab_2_4_oop.exe
+[2022-03-21 21:15:09] [info] ----------------------------------------------------
+[2022-03-21 21:15:09] [info] Coverage binary generated in file: C:\Users\Paula\AppData\Local\Temp\cysev03n.1fg
+[2022-03-21 21:15:09] [info] ----------------------------------------------------

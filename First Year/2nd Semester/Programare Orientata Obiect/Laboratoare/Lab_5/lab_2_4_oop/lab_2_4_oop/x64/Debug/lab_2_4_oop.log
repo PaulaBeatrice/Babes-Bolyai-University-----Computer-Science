@@ -1,0 +1,20 @@
+﻿  ui.c
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(70,25): warning C4133: 'function': incompatible types - from 'ProductStore *' to 'memorie *'
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(73,17): warning C4133: 'function': incompatible types - from 'ProductStore *' to 'memorie *'
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(76,23): warning C4133: 'function': incompatible types - from 'ProductStore *' to 'memorie *'
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(79,20): warning C4133: 'function': incompatible types - from 'ProductStore *' to 'memorie *'
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(82,20): warning C4133: 'function': incompatible types - from 'ProductStore *' to 'memorie *'
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(112,30): warning C4028: formal parameter 1 different from declaration
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(149,30): warning C4028: formal parameter 1 different from declaration
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(169,33): warning C4028: formal parameter 1 different from declaration
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(176,27): warning C4028: formal parameter 1 different from declaration
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(181,19): warning C4133: 'function': incompatible types - from 'ProductStore *' to 'memorie *'
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(184,22): warning C4133: 'function': incompatible types - from 'ProductStore *' to 'memorie *'
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(188,36): warning C4028: formal parameter 1 different from declaration
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(195,15): warning C4133: 'function': incompatible types - from 'ProductStore *' to 'memorie *'
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(198,33): warning C4028: formal parameter 1 different from declaration
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(205,15): warning C4133: 'function': incompatible types - from 'ProductStore *' to 'memorie *'
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(208,35): warning C4028: formal parameter 1 different from declaration
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(230,18): warning C4047: 'function': 'produs *' differs in levels of indirection from 'produs **'
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\lab_2_4_oop\ui.c(230,16): warning C4024: 'destroyProdus': different types for formal and actual parameter 1
+  lab_2_4_oop.vcxproj -> C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_5\lab_2_4_oop\x64\Debug\lab_2_4_oop.exe
