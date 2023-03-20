@@ -1,0 +1,8 @@
+﻿  App.cpp
+  Colectie.cpp
+  IteratorColectie.cpp
+  TestExtins.cpp
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\Sisteme Dinamice\Laboratoare\Lab 1\Lab_1\Lab_1\Teste\TestExtins.cpp(2,10): fatal error C1083: Cannot open include file: '../Colectie.h': No such file or directory
+  TestScurt.cpp
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\Sisteme Dinamice\Laboratoare\Lab 1\Lab_1\Lab_1\Teste\TestScurt.cpp(3,10): fatal error C1083: Cannot open include file: 'Colectie.h': No such file or directory
+  Generating Code...
