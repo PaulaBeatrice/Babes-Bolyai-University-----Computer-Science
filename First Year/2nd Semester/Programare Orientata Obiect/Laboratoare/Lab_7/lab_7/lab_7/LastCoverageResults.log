@@ -1,0 +1,22 @@
+[2022-04-20 01:01:50] [info] Start Program:
+Path:"C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_8\lab_7\x64\Debug\lab_7.exe"
+Arguments:
+Working directory: "C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_7\lab_7\lab_7\"
+Modules: Selected: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_9\lab_7\x64\Debug\lab_7.exe Excluded: 
+Sources: Selected: C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_9\lab_7\lab_7 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\Paula\AppData\Local\Temp\2qlxeafu.q5o 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2022-04-20 01:01:52] [info] ----------------------------------------------------
+[2022-04-20 01:01:52] [info] Coverage binary generated in file: C:\Users\Paula\AppData\Local\Temp\2qlxeafu.q5o
+[2022-04-20 01:01:52] [info] ----------------------------------------------------
+[2022-04-20 01:01:52] [warning] No modules were selected. Please check the values of --modules and --excluded_modules.
+You can try to remove all --modules and --excluded_modules and use --modules=C:\Windows\System32 instead.

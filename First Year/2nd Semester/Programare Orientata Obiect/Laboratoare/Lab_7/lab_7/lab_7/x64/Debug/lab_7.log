@@ -1,0 +1,6 @@
+﻿  Teste.cpp
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/FORCE' specification
+Teste.obj : warning LNK4006: "bool __cdecl DestinatieEgala(class Oferta const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?DestinatieEgala@@YA_NAEBVOferta@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) already defined in Console.obj; second definition ignored
+Teste.obj : warning LNK4006: "bool __cdecl PreturiEgale(class Oferta const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?PreturiEgale@@YA_NAEBVOferta@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) already defined in Console.obj; second definition ignored
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_7\lab_7\x64\Debug\lab_7.exe : warning LNK4088: image being generated due to /FORCE option; image may not run
+  lab_7.vcxproj -> C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\OOP\Teme\Lab_7\lab_7\x64\Debug\lab_7.exe
