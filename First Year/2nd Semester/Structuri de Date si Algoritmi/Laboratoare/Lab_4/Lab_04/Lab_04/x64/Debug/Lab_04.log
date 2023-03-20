@@ -1,0 +1,7 @@
+﻿  MD.cpp
+  TestExtins.cpp
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\Structuri de date si algoritmi\Lab_4\Lab_04\Lab_04\TestExtins.cpp(230,3): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\Structuri de date si algoritmi\Lab_4\Lab_04\Lab_04\TestExtins.cpp(239,3): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\Structuri de date si algoritmi\Lab_4\Lab_04\Lab_04\TestExtins.cpp(240,3): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+  Generating Code...
+  Lab_04.vcxproj -> C:\Users\Paula\Desktop\FACULTATE\Anul 1\SEMESTRUL 2\Structuri de date si algoritmi\Lab_4\Lab_04\x64\Debug\Lab_04.exe
