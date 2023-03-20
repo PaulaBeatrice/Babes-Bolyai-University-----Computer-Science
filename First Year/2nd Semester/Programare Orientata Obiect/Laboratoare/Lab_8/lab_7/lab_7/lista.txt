@@ -1,0 +1,8 @@
+add A,Anglia,B,100
+add B,Paris,C,52
+add C,Londra,D,700
+print
+delete A
+print
+update B,Cairo,D,89
+print
