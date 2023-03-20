@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1649515569 source:c:\users\paula\desktop\facultate\anul 1\semestrul 2\algoritmica grafelor\lab_3\johnson\main.cpp
+	<iostream>
+	<fstream>
+	<queue>
+	<vector>
+	<stdlib.h>
+

@@ -1,0 +1,25 @@
+ 
+
+  int Matr_adiac[101][101], nr_vf, regular = 1;
+        fin22 >> nr_vf;
+        for(int i = 1; i <= nr_vf; i++)
+            for(int j = 1; j <= nr_vf; j++)
+                fin22 >> Matr_adiac[i][j];
+        int grad_anterior = 0, grad_curent = 0;
+        for(int i = 1; i <= nr_vf; i++)
+            if (Matr_adiac[1][i] == 1)
+                grad_anterior++;
+        for(int i = 2; i <= nr_vf; i++)
+        {
+            grad_curent = 0;
+            for(int j = 1; j <= nr_vf; j++)
+                if(Matr_adiac[i][j] == 1)
+                    grad_curent++;
+            if(grad_anterior != grad_curent)
+                regular = 0;
+            grad_anterior = grad_curent;
+        }
+        if(regular == 1)
+            fout22 << "Graful este regular";
+        else
+            fout22 << "Graful nu este regular";

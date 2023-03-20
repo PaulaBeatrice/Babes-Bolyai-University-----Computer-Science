@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1654203744 source:c:\users\paula\desktop\facultate\anul 1\semestrul 2\algoritmica grafelor\lab_5\alg prim\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<queue>
+

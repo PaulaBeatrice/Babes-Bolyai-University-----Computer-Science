@@ -1,0 +1,34 @@
+
+	///citire lista de muchii
+        int numar_muchii, a1, a2;
+        fin24 >> n;
+        for(int i = 1 ; i <= n ; ++i)
+        {
+            for(int j = 1 ; j <= n ; ++j)
+                A[i][j] = INFINIT;
+            A[i][i] = 0;
+        }
+        fin24 >> numar_muchii;
+        for(int i = 1; i <= numar_muchii; i++)
+        {
+            fin24 >> a1 >> a2;
+            A[a1][a2] = 1;
+            A[a2][a1] = 1;
+        }
+        for(int k = 1; k <= n; k++)
+            for(int i = 1; i <= n; i++)
+                for(int j = 1; j <= n; j++)
+                    if(A[i][k] != INFINIT && A[k][j] != INFINIT)
+                        if(A[i][j] > A[i][k] + A[k][j])
+                            A[i][j] = A[i][k] + A[k][j];
+        for(int i = 1; i <= n; i++)
+        {
+            for(int j = 1; j <= n; j++)
+            {
+                if(A[i][j] == INFINIT)
+                    fout24 << -1 << " ";
+                else
+                    fout24 << A[i][j] << " ";
+            }
+            fout24 << endl;
+        }

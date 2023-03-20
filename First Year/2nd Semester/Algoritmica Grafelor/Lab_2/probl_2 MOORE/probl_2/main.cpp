@@ -1,0 +1,79 @@
+﻿#include <iostream>
+#include <fstream>
+
+// Implementați algoritmul lui Moore pentru un graf orientat neponderat (algoritm bazat pe Breath-first search, vezi cursul 2). Datele sunt citete din 
+// fisierul graf.txt. Primul rând din graf.txt conține numărul vârfurilor, iar următoarele rânduri conțin muchiile grafului. Programul trebuie să afiseze
+// lanțul cel mai scurt dintr-un vârf (vârful sursa poate fi citit de la tastatura).
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <queue>
+#define INFINIT 1000000000
+
+using namespace std;
+ifstream fin("1.in");
+ofstream fout("1.out");
+
+vector <int> Graf[101];
+queue <int> Q;
+int P[100];
+int I[100];
+int n, n_sursa, n_destinatie;
+
+void Moore(int sursa) {
+    for (int i = 1; i <= n; i++) 
+    {
+        P[i] = -1;
+        I[i] = INFINIT;
+    }
+    I[sursa] = 0;
+    P[sursa] = 0;
+    Q.push(sursa);
+    while (!Q.empty()) {
+        int x = Q.front();
+        Q.pop();
+        for (auto y : Graf[x]) {
+            if (I[y] == INFINIT) 
+            {
+                I[y] = I[x] + 1;
+                P[y] = x;
+                Q.push(y);
+            }
+        }
+    }
+}
+
+void Parinte(int nod) {
+    if (P[nod] == 0) {
+        fout << nod << ' ';
+        return;
+    }
+    Parinte(P[nod]);
+    fout << nod << ' ';
+}
+
+void Drum(int sursa, int destinatie) {
+    int nod = destinatie;
+    if (I[nod] == INFINIT) {
+        fout << "Nu se poate ajunge la nodul dat.";
+        return;
+    }
+    Parinte(destinatie);
+}
+
+int main() {
+    cout << "Nodul sursa: ";
+    cin >> n_sursa;
+    cout << "Nodul destinatie: ";
+    cin >> n_destinatie;
+    int a, b;
+    fin >> n;
+    while (fin >> a >> b)
+    {
+        Graf[a].push_back(b);
+    }
+    Moore(n_sursa);
+    Drum(n_sursa, n_destinatie);
+    return 0;
+}

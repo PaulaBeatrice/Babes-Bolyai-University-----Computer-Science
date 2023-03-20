@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1654043151 source:c:\users\paula\desktop\facultate\anul 1\semestrul 2\algoritmica grafelor\lab_5\1)flux maxim\pb1\main.cpp
+	<iostream>
+	<fstream>
+	<limits.h>
+	<queue>
+	<string.h>
+

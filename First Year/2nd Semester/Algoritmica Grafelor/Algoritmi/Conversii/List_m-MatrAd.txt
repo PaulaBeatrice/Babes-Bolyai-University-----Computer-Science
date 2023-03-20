@@ -1,0 +1,17 @@
+        
+	
+	int nr_muchii, Matrice_Adiacenta[101][101] = {0} , a, b, nr_varfuri;
+        fin >> nr_varfuri;
+        fin >> nr_muchii;
+        for(int i = 1; i <= nr_muchii; i++)
+        {
+            fin >> a >> b;
+            Matrice_Adiacenta[a][b] = 1;
+            Matrice_Adiacenta[b][a] = 1;
+        }
+        for(int i = 1; i <= nr_varfuri; i++)
+        {
+            for(int j = 1; j <= nr_varfuri; j++)
+                fout << Matrice_Adiacenta[i][j] << " ";
+            fout << endl;
+        }

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1654197249 source:c:\users\paula\desktop\facultate\anul 1\semestrul 2\algoritmica grafelor\lab_5\2) pompare flux\main.cpp
+	<fstream>
+	<queue>
+	<vector>
+

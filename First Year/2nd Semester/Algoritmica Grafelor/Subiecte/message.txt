@@ -1,0 +1,93 @@
+Un graf cu cel puţin două vârfuri este bipartit dacă şi numai dacă nu conţine cicluri de lungime impară.
+Demonstraţie
+.”⇒: ”
+G=(V,E) un graf bipartit între mulţimile X şi Y şi fie (v1,...,vk,v1)un ciclu în G.
+Putem presupune că v1 ∈ X. Atunci vi∈X şi vj∈Ydacă i este par şi j este impar. Deoarece(vk,v1)∈ E, k trebuie să fie par⇒nu putem avea în G un ciclu de lungime k impară.
+”⇐: ”Putem presupune, fără a reduce din generalitate, că G este conex (în caz contrar, putem trata separat componentele conexe ale lui G).
+Pentru v∈V se defineşteX={x∈V|cel mai scurt lanţ de laxlavare lungime pară},Y=V\X. 
+Se verifică uşor că G este graf bipartit întreXşiY.
+G este bipartit=⇒orice ciclu în G are lungime para.
+
+Teorema 6.2(de caracterizare a grafurilor euleriene).
+pentru un graf conex G= (V,E), următoarele afirmaţii sunt echivalente:
+1.G este eulerian;
+2. fiecare vârf al lui G are grad par;
+3. muchiile lui G pot fi partiţionate în cicluri care nu au muchii în comun.
+Demonstraţie.
+1→2
+se presupune că G este eulerian ⇔ există un ciclu care conţine toate muchiile lui G o singură data
+unde gradul vârfurilor din graf este: 
+      d(v1) = 4, d(v2) =d(v3) =d(v4) =d(v5) = 2.
+•Ori de câte ori ciclul eulerian intră într-un varf v pe o muchie, trebuie să plece din acel vârfpe altă muchie;
+•nici o muchie nu apare de două ori în ciclu, numărul muchiilor incidente vârfuluiveste par⇒d(v)este par;
+•exemplu: fie ciclul(v1,v3,v4,v1,v2,v5,v1)
+2→3
+Se presupune că fiecare vârf al lui G are grad par. Ne gândim inductiv după numărul decicluri disjuncte ale lui G.
+G nu are vârfuri de grad1 =⇒Gnu e arbore=⇒Gare cel puţin uncicluCn1.
+Fie G′ graful produs din G prin eliminarea muchiilor luiCn1 = ⇒toate vârfurile din G′ au grad par=⇒se deduce recursiv ca G′ poate fi partiţionat în cicluri disjuncte Cn2,...,Cnk.
+Rezultă căCn1,Cn2,...,Cnkeste o partiţie a lui G în cicluri (cu muchii) disjuncte.
+3→1
+Se presupune că muchiile lui G pot fi partiţionate în k cicluri disjuncte Cn1,Cn2,...,Cnk.
+G este conex ⇒ fiecare ciclu este un ciclu simplu ce are un vârf comun cu un alt ciclu ⇒ ciclurile pot fi înlănţuite până se obţine un ciclu eulerian
+Teorema 6.4(Dirac).
+FieGun graf de ordinal n≥ 3. 
+Dacă δ(G)≥n2 atunci G este hamiltonian.
+Sau fie G un graf de ordinuln≥3. 
+Dacă∀u∈V,d(u)≥n2 atunci G este hamiltonian.
+Demonstraţie 
+Presupunem că G satisface condiţiile date, însă G nu e hamiltonian. Fie H=v1,...,vn un lanţ simplu în G de lungime maximă (toţi vecinii lui v1 ş ivn sunt în H).v1 şi vn au cel puţin n2 vecini din lanţ deoarece δ(G)≥n2. 
+Arătăm că exista i∈{1,...,n−1}astfel încât vi−1∈N (vn) şi vi∈N(v1) (N(vi)reprezintă vecinătatea vârfuluivi).
+
+
+Dacă într-un graf cu cel mult 2k vârfurid(x)≥k,∀ x∈V atunci graful este conex.
+Demonstraţie 
+Presupunem că G are cel mult 2k vârfuri, fiecare vârf are gradul d(x)≥k dar G nu este conex. În acest caz, graful are cel puţin două componente şi există o componentă cu cel mult k vârfuri. În această componentă gradul maxim este cel mult k−1 ceea ce contrazice presupunerea că fiecare vârf are gradul cel puţin k.
+Nu este adevarata pentru multigrafuri
+
+
+
+
+
+
+
+Formula lui Euler
+Dacă G= (V,E) este un graf planar conex cu n vârfuri,m muchii şi r regiuni atunci:n−m+r= 2.
+Demonstraţie 
+Inducţie după m: 
+1.m= 0  ⇒ G=K1; n= 1,m= 0,r= 1 =⇒n−m+r= 2;
+2.G este un arbore, atunci m=n−1 şir= 1 ⇒n−m+r=n−(n−1) + 1 = 2
+3. G este un arbore conex cu cel puţin un ciclu. 
+    Fie o muchie din ciclul respectiv şi G′=G−e.
+    G′ este conex cu n vârfuri,m−1muchii r−1regiuni 
+    ⇒n−(m−1)−(r−1)  =  2,n−m+r= 2 are loc şi în acest caz. 
+K3,3 nu este un graf planar
+Demonstraţie.
+K3,3 are n= 6 şi m= 9, dacă ar fi planar ar avear=m−n+ 2 = 5 regiuni Ri(1≤i≤5), fie C=∑5i=1b(Ri).Orice muchie mărgineşte două regiuni ⇒C≤2m= 18. K3,3este bipartit, nu contine K3 ca subgraf (cel mai scurt ciclu în K3,3 are lungimea4), deci b(Ri)≥4 pentru orice valoare a lui i şi prin urmare C≥4·5 = 20 ⇒contradicţie, deci K3,3nu poate fi graf planar.
+
+Daca G este un graf planar cu n≥3vârfuri ș im muchii atunci m≤3n−6.  Mai mult, daca m= 3n−6atuncib(R) = 3pentru orice regiune din graf
+Demonstraţie
+Fie R1,...,Rn regiunile lui G ş iC=∑ni=1b(Ri)
+ Ştim că C≤2m şi căC≥3r, b(Ri)≥3 pentru toate regiunile. 
+Atunci 3r≤2m=⇒3(2 +m−n)≤2m ⇒m≤3n−6.
+Dacă egalitatea are loc, atunci 3r= 2m ⇒C=r∑i=1b(Ri) = 3 =⇒b(Ri) = 3 
+pentru toate regiunile (graf format din triunghiuri)
+
+ K5 nu este graf planar
+Demonstraţie.
+K5 are n=5 vârfuri şi m=10 muchii deci 3n−6= 9<10  =m⇒K5 nu poate fi planar
+
+
+Un cuplaj M al unui graf G este maxim dacă şi numai dacă G nu contine M−lanţuri de creştere.
+Demonstraţie.
+” =⇒”. Se presupune că M este un cuplaj maxim. Se demonstrează prin contradicţie că G nu are M−lanţuri de creştere. Dacă L= (x1,x2,...,xk) ar fi un M−lanţ de creştere atunci, conform definiţiei, k ar trebui să fie par astfel încât(x2,x3),(x4,x5),...,(xk−2,xk−1)sunt muchii din cuplaj iar muchiile (x1,x2),(x3,x4),...,(xk−1,xk) nu fac parte din cuplaj. 
+Pentru acest lanţ se poate define un cuplaj M1={M\{(x2,x3),(x4,x5),...,(xk−2,xk−1)}}∪{(x1,x2),(x3,x4),...,(xk−1,xk)}.  Dar M1 conţine cu o muchie mai mult decat M, ceea ce contrazice ipoteza că M este maxim.
+”⇐= ”.Dacă M nu este maxim, există un cuplaj M′ al lui G cu |M′|>|M| Fie H subgraful lui G definit astfel: V(H) =V(G) şi E(H) este mulţimea muchiilor ce apar exact o dată în M şi M′.
+Deoarece |M′|>|M|=⇒H are mai multe muchii în M′ decât în M.  Orice varf al lui H aparţine la cel mult o muchie din M şi la cel mult o muchie din M′ ⇒dH(x)≤2 pentrutoţi x∈V(H), deci componentele conexe ale lui H cu mai multe M′ -muchii decat M−muchii sunt lanţuri sau cicluri. Dacă este ciclu, trebuie să fie ciclu de lungime pară deoarece muchiile alternează între M−muchii şi M′−muchii ⇒singurele componente conexe ale lui H care pot conţine mai multe M′−muchii decat M−muchii sunt lanţurile. |M′|>|M| ⇒există un lanţ P în H care începe şi se termină cu o muchie din M′⇒L este un M−lanţ de creştere ceea ce contrazice ipoteza
+
+
+
+Pentru G n>=5, graful sau complementarul lui contine un ciclu
+Ca sa nu aiba cicluri => maxim n-1 muchii
+Deci complementarul are n(n-1)/2-(n-1) =>(n-1)(n-2)/2
+Si ca nici complementarul sa nu aiba cicluri asta trebuie sa fie mai mic sau egal cu n-1
+Deci (n-2)/2 mai mic sau egal cu 1  =>n e maxim 4

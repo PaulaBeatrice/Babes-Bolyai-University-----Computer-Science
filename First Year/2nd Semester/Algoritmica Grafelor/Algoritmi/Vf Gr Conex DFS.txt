@@ -1,0 +1,25 @@
+
+
+void DFS(int x)
+{
+    viz[x] = 1;
+    for(int i = 1; i <= n_varfuri ; i++)
+        if(M[x][i] == 1 && viz[i] == 0)
+            DFS(i);
+}
+
+int main(){
+	int conex = 1;
+        fin23 >> n_varfuri;
+        for(int i = 1; i <= n_varfuri; i++)
+            for(int j = 1; j <= n_varfuri; j++)
+                fin23 >> M[i][j];
+        DFS(1);
+        for(int i = 1; i <= n_varfuri; i++)
+            if(viz[i] == 0)
+                conex = 0;
+        if(conex == 0)
+            fout23 << "Graful nu este conex";
+        else
+            fout23 << "Graful este conex";
+}

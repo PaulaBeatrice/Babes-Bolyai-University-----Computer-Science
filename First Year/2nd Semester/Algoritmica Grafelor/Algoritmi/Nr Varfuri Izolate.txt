@@ -1,0 +1,18 @@
+ 
+
+
+  int matr_adiac[101][101], nr_vf, nr_vf_izolate = 0;
+        fin21 >> nr_vf;
+        for(int i = 1; i <= nr_vf; i++)
+            for(int j = 1; j <= nr_vf; j++)
+                fin21 >> matr_adiac[i][j];
+        for(int i = 1; i <= nr_vf; i++)
+        {
+            int izolat = 1;
+            for(int j = 1; j <= nr_vf; j++)
+                if(matr_adiac[i][j] == 1)
+                    izolat = 0;
+            if(izolat == 1)
+                nr_vf_izolate++;
+        }
+        fout21 << "Nr de varfuri izolate: " << nr_vf_izolate;

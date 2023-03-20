@@ -1,0 +1,95 @@
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <queue>
+using namespace std;
+
+const int maxv=20000000;//infinit
+const int maxn=50002;//numarul de varfuri
+
+ifstream fin("date.in");
+ofstream fout("date.out");
+
+struct vecin{
+    int j;//succesorul
+    int c;//costul
+};
+
+int d[maxn];//distantele minime
+vector <vecin> V[maxn];//listele vecinilor
+int p[maxn];//time minte de cate ori s-a folosit fiecare nod
+int t[maxn];//tata
+int n,m;
+queue <int> q;//coada pt parcurgerea nodurilor (asemanantor BF)
+
+void citire()
+{
+    fin>>n>>m;
+    for(int i=1;i<=m;i++)
+    {
+        vecin y;
+        int x;
+        fin>>x>>y.j>>y.c;
+        V[x].push_back(y);
+    }
+}
+
+void drum(int i)
+{ if(t[i]) drum(t[i]);
+  fout<<i<<" ";
+}
+
+int belmanFord (int s)
+{
+    for(int i=1; i<=n; i++) d[i]=maxv;//initializez cu infinit distantele
+    d[s]=0;//distanta la nodl de start
+    t[s]=0;//tata de start
+    q.push(s);//pun in coada
+    int k;
+    while(!q.empty())// sau q.size()!=0  - cat timp coada nu e vida
+    {
+        k=q.front();//primul din coada
+        q.pop();//scot primul din coada
+        p[k]++;//l-am folosit inca o data
+        if(p[k]==n) return 1;//ciclu negativ
+        for(int i=0;i<V[k].size();i++)//parcurg vecinii
+        {
+            if (d[V[k][i].j]>d[k]+V[k][i].c)//drum mai scurt prin k
+            {
+                d[V[k][i].j]=d[k]+V[k][i].c;//imbunatatesc distanta
+                q.push(V[k][i].j);//adaug in coada vecinul
+                t[V[k][i].j]=k;//k e tata celui spre care am imbunatatit
+            }
+        }
+    }
+    return 0;
+}
+
+void afis()
+{
+    for(int i=1;i<=n;i++)
+        if(d[i]!=maxv) fout<<d[i]<<" ";
+        else fout<<"- ";
+    fout<<"\n";
+}
+
+int main()
+{
+    int s;
+    citire();
+    fin>>s;
+    if(belmanFord(s)==0)
+    {
+        afis();
+        for(int i=1;i<=n;i++)
+        {   fout<<s<<"->"<<i<<":";
+            if(t[i]) drum(i);
+            else fout<<"-";
+            fout<<endl;
+        }
+    }
+    else fout<<"Ciclu negativ!\n";
+    fin.close();
+    fout.close();
+    return 0;
+}

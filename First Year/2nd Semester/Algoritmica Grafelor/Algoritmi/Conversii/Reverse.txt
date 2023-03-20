@@ -1,0 +1,28 @@
+
+
+
+int matr_adiacenta[101][101], matr_incidenta[101][101] = {0}, nrmuchii = 0, nr_varfuri;
+        fin11 >> nr_varfuri;
+        for(int i = 1; i <= nr_varfuri; i++)
+            for(int j = 1; j <= nr_varfuri; j++)
+                {
+                    fin11 >> matr_adiacenta[i][j];
+                    if(matr_adiacenta[i][j] == 1)
+                        nrmuchii++;
+                }
+        nrmuchii = nrmuchii / 2;
+        int contor = 0;
+        for(int i = 1; i <= nr_varfuri; i++)
+            for(int j = 1;j <= nr_varfuri; j++)
+                if(matr_adiacenta[i][j] == 1)
+                {
+                    contor++;
+                    matr_incidenta[i][contor] = 1;
+                    matr_incidenta[j][contor] = 1;
+                }
+        for(int i = 1; i <= nr_varfuri; i++)
+        {
+            for(int j = 1; j <= nrmuchii; j++)
+                fout11 << matr_incidenta[i][j] << " ";
+            fout11 << endl;
+        }

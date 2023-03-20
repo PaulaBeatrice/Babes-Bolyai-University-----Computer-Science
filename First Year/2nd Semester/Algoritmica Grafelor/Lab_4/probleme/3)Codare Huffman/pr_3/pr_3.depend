@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1652736733 source:c:\users\paula\desktop\facultate\anul 1\semestrul 2\algoritmica grafelor\lab_4\probleme\3)codare huffman\pr_3\main.cpp
+	<iostream>
+	<queue>
+	<map>
+	<fstream>
+

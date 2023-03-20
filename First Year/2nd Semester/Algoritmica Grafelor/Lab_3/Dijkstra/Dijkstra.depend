@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1648811843 source:c:\users\paula\desktop\facultate\anul 1\semestrul 2\algoritmica grafelor\lab_3\dijkstra\main.cpp
+	<iostream>
+	<fstream>
+	<vector>
+	<queue>
+
