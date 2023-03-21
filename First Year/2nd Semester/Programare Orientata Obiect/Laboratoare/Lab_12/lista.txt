@@ -1,0 +1,32 @@
+add A,Anglia,B,100
+add B,Paris,C,52
+add C,Londra,D,700
+print
+delete A
+print
+update B,Cairo,D,89
+print
+
+
+
+
+void test_undo() {
+	OfertaRepo repo;
+	Validator validator;
+	OfertaStore service{ repo, validator };
+	service.addOferta("a", "b", "csc", 100);
+	service.addOferta("sa", "a", "c", 50);
+	service.addOferta("t", "a", "c", 63);
+	service.addOferta("o", "A", "m", 100);
+	service.undo();
+	assert(service.getAllOferte().size() == 3);
+	service.undo();
+	service.undo();
+	service.undo();
+	try {
+		service.undo();
+	}
+	catch (Exception ex) {
+		assert(ex.getMessage() == "Nu mai exista operatii");
+	}
+}
