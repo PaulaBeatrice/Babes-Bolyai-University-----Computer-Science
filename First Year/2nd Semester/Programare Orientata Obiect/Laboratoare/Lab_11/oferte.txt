@@ -1,0 +1,8 @@
+B,Moscova,AllInclusive,300
+C,Londra,AllInclusive,630
+D,Dublin,AllInclusive,23
+E,Madrid,AllInclusive,2000
+F,Berlin,Altele,550
+I,Paris,AllInclusive,800
+J,California,Croaziere,450
+H,Cairo,MultiCountry,630
