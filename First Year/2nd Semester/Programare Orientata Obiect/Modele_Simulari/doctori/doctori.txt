@@ -1,0 +1,10 @@
+1234,Pop,Mihai,chirurgie,0
+2422,Jucan,Anca,ortopedie,1
+1332,Pop,Ion,pediatrie,0
+1344,Rus,Vlad,chirurgie,1
+2332,Rus,Rebeca,pediatrie,0
+1112,Bota,Alin,ginecologie,0
+2421,Rus,Alexandra,oncologie,0
+2911,Popescu,Maria,oncologie,1
+2523,Marinescu,Ioana,ginecologie,0
+1754,Jucan,George,ortopedie,0
