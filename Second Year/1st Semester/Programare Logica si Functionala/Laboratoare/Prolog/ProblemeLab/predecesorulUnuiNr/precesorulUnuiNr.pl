@@ -1,0 +1,29 @@
+% Model matematic:
+% predecesor(l1...ln, v)=
+% {
+%    [], daca n = 0
+%    [9], daca v = 1, n = 1, l1 = 0
+%    [l1-1], daca v = 0, n = 1
+%    9 U predecesor(l2...ln, 1), daca v = 1, l1 = 0
+%    (l1-v) U predecesor(l2...ln, v), daca v = 0
+% }
+%
+% Specificatii:
+% predecesor(L-lista, V-intreg, R-lista)
+% Model de flux: (i,i,o), (i,i,i)
+% L - lista data
+% V - valoarea imprumutata la scadere
+% R - lista rezultata, ce va reprezenta predecesorul nr format din
+% elementele listei L
+
+predecesor([],_,[]) :- !.
+predecesor([0],1,[9]) :- !.
+predecesor([H], 0, [HR]):- HR is H - 1, !.
+predecesor([0|T], 1, [9|R]):-
+    predecesor(T, 1, R), !.
+predecesor([H|T], 0, [HR|R]):-
+    predecesor(T, V, R),
+    HR is H - V.
+
+predecesorL(L,R):-
+    predecesor(L,0,R).

@@ -1,0 +1,58 @@
+% 3.  Se  da  sirul a1,...,an. Se  cere  sa  se  determine  toate  subsirurile  strict crescatoare ale sirului a.
+% subsiruriCresc([1,2,1,3,4,5,2],R).
+% => R = [[1, 2, 3, 4, 5], [1, 2, 3, 4], [1, 2, 3, 5], [1, 2, 3], [1, 2, 4, 5], [1, 2, 4], [1, 2|...], [1|...], [...|...]|...].
+%
+% Model matematic:
+% subsir(l1...ln)={
+%    [], daca n = 0
+%    {l1} U subsir(l2...ln), daca n >= 1
+%    subsir(l2...ln), daca n >= 1
+% }
+% subsir(l - lista, r - lista)
+% l: lista initiala
+% r: subsir al listei l
+% Model de flux: (i,o), (i,i) - nedeterminist
+%
+% isCrescator(l1...ln)={
+%   true, daca n = 1
+%   false, daca l2 < l1
+%   isCrescator(l1...ln), altfel
+% }
+% isCrescator(l - lista, r - boolean)
+% l: lista initiala
+% r: true, daca l este strict crescator, false altfel
+% Model de flux: (i) - determinist
+%
+% subsirCresc(l1...ln)={
+%   [], daca n = 0
+%   isCrescator(subsir(l1...ln)), altfel
+% }
+% subsirCresc(l - lista, r - lista)
+% l: lista initiala
+% r: subsirurile crescatoare ale listei l
+% Model de flux: (i,o), (i,i) - nedeterminist
+%
+% subsiruriCrescatoare(l1...ln) = findall(Rp, subsirCresc(l1..ln),R)
+% subsiruriCresc(l - lista, r - lista)
+% l: lista initiala
+% r: lista ce cuprinde subsirurile crescatoare ale listei l
+% Model de flux: (i,o),(i,i) - determinist
+
+subsir([],[]).
+subsir([H|T],[H|R]):-
+    subsir(T,R).
+subsir([_|T],R):-
+    subsir(T,R).
+
+isCrescator([_]):-!.
+isCrescator([H1,H2|T]):-
+    H1 < H2,
+    isCrescator([H2|T]).
+
+subsirCresc([],[]).
+subsirCresc(L,R):-
+    subsir(L,R),
+    isCrescator(R).
+
+subsiruriCrescatoare(L,R):-
+    findall(Rp,subsirCresc(L,Rp),R).

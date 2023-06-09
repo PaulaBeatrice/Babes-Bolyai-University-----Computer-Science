@@ -1,0 +1,28 @@
+% Model matematic:
+% isVale(l1...ln, flag) = {
+%    Adevarat, daca n = 1, flag = 1
+%    Fals, daca n = 0
+%    isVale(l2...ln,0), daca l1 > l2 si flag = 0
+%    isVale(l2...ln,1), daca l1 < l2
+%    False, altfel
+% }
+%
+% Specificatii:
+% isVale(l - lista, flag - int)
+% l: lista initiala
+% flag: flagul care poate fi 0, daca lista e descrescatoare, 1, daca
+% lista e crescatoare
+%
+% Modele de flux: (i,i)
+
+isVale([_],1):-!.
+isVale([L1,L2|T],0):-
+    L1>L2,!,
+    isVale([L2|T],0).
+isVale([L1,L2|T],_):-
+    L1<L2,!,
+    isVale([L2|T],1).
+
+Vale([L1,L2,L3|T]):-
+    L1>L2,!,
+    isVale([L1,L2,L3|T],0).

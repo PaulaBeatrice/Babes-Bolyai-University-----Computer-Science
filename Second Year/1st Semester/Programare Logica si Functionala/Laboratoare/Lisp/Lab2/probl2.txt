@@ -1,0 +1,62 @@
+; 2. Sa se tipareasca lista nodurilor de pe nivelul kdintr-un arbore de tipul (1).
+; (A 2 B 0 C 2 D 0 E 0)
+;    A
+;   / \
+;  B   C
+;     / \
+;    D   E
+
+; Model matematic
+; parcurg_st(l1l2..ln, nv, nm) = 
+;   { [], daca n = 0
+;   { [], daca nv = nm + 1 
+;   { l1 U l2 U parcurg_st(l3...ln, nv+1, nm+l2), altfel
+; parcurg_st(l - lista, nv - int, nm - int, r - lista)
+; l - lista ce contine arborele
+; nv - nr de varfuri ale arborelui
+; nm - nr de muchii ale arborelui
+; r - subarborele stang
+(defun parcurg_st(L nv nm)
+	(cond
+		((NULL L) NIL)
+		((equal nv (+ nm 1)) NIL)
+		(T (APPEND (LIST(CAR L)(CADR L)) (parcurg_st(CDDR L)(+ nv 1)(+ nm (CADR L)))))
+	)
+)
+
+
+; Model matematic
+; parcurg_dr(l1l2..ln, nv, nm) = 
+;   { [], daca n = 0
+;   { l1l2...ln, daca nv = nm + 1 
+;   { parcurg_dr(l3...ln, nv+1, nm+l2), altfel
+; parcurg_dr(l - lista, nv - int, nm - int, r - lista)
+; l - lista ce contine arborele
+; nv - nr de varfuri ale arborelui
+; nm - nr de muchii ale arborelui
+; r - subarborele drept
+(defun parcurg_dr(L nv nm)
+	(cond
+		((NULL L) NIL)
+		((equal nv (+ nm 1))  L)
+		(T (parcurg_dr(CDDR L)(+ nv 1)(+ nm (CADR L)) ))
+	)
+)
+
+; Model matematic
+; noduriNivel(l1l2...ln, k) = 
+; { [], daca n = 0
+; { {l1}, daca k = 1
+; { noduriNivel(parcurg_st(l3...ln,0,0),k-1)) U noduriNivel(parcurg_dr(l3...ln,0,0),k-1)), altfel
+(defun noduriNivel(L k)
+	(cond
+		((NULL L) NIL)
+		((equal k 1) (LIST (CAR L))) 
+		(T 
+			(APPEND (noduriNivel(parcurg_st(CDDR L) 0 0)(- k 1)) 
+				(noduriNivel(parcurg_dr(CDDR L) 0 0)(- k 1))
+			)
+		)
+		
+	)
+)

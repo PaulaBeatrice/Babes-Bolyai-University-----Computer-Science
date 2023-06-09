@@ -1,0 +1,36 @@
+; d)  Sa se construiasca o functie care intoarce maximul atomilor numerici dintr-o lista, 
+; de la nivelul superficial.
+
+
+; maxim(a,b) = {
+; 		 a , daca b nu e numar
+;		 b , daca a nu e numar
+;		 a , daca a > b
+; 		 b, altfel
+;              }
+; maxim (a - int, b - int, r - int)
+; a - primul nr
+; b - al doilea nr
+; r - maximul dintre a si b
+(defun maxim (a b)
+  (cond
+    ((not (numberp a)) b)
+    ((not (numberp b)) a)
+    ((> a b) a)
+    (t b)
+  )
+)
+
+; maxLista (l1l2...ln) = {
+;			   [] , daca n = 0
+; 			   maxim(l1, maxLista (l2...ln)) , altfel
+; 			 }
+; maxLista(l - lista, r -int)
+; l - lista initiala
+; r - maximul listei
+(defun maxLista (l)
+  (cond
+    ((null l) nil)
+    (t (maxim(car l) (maxLista (cdr l))))
+  )
+)

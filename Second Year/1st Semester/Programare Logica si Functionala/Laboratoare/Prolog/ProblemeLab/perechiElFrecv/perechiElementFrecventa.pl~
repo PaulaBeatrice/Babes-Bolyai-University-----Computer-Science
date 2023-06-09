@@ -1,0 +1,54 @@
+% Model matematic:
+% nr_aparitii(l1...ln, el) = {
+%                            0, daca n = 0
+%                            nr_aparitii(l2...ln, el), daca el != l1
+%                            1 + nr_aparitii(l2...ln, el), daca el = l1
+%                            }
+% perechi(l1..ln, m) = {
+%                     [], daca n = 0
+%                     [l1, nr_aparitii(l1)] U perechi(l2...ln), altfel
+%                   }
+% Specificatii:
+% nr_aparitii(l - lista, el - int, r - int)
+% l: lista initiala
+% el: un element
+% r: nr de aparitii ale lui el in lista l
+%
+% perechi(l - lista, m - lista, r - lista)
+% l: lista initiala
+% m: lista initiala
+% r: lista cu perechi de forma (nr, frecv)
+%
+% Modele de flux: (i,i,o), (i,i,i);  (i,o), (i,i).
+%
+% % sterge(l1...ln,el)={
+%                      [], daca n = 0
+%                      l1 U sterge(l2...ln), daca el != l1
+%                      sterge(l2...ln), daca el = l1
+%                    }
+% Specificatii:
+% sterge(l - lista, el - int, r - lista)
+% l - lista initiala
+% el - atomul care se va sterge
+% r - lista rezultata in urma stergerii elementului el
+% Modele de flux: (i,i,o), (i,i,i)
+
+sterge([],_,[]).
+sterge([H|T],E,[H|R]):-
+    H =\= E,!,
+    sterge(T,E,R).
+sterge([H|T],H,R):- sterge(T,H,R).
+
+nr_aparitii([],_,0).
+nr_aparitii([H|T],E,R):- H=\=E,!,
+    nr_aparitii(T,E,R).
+nr_aparitii([H|T],H,R):- nr_aparitii(T,H,R1),
+    R is R1+1.
+
+perechi([],_,[]).
+perechi([H|T], M, [[H,Nr]|R]):-
+    nr_aparitii(M,H,Nr),
+    sterge(T,H,L),
+    perechi(L,M,R).
+
+perechiL(L,R):-perechi(L,L,R).

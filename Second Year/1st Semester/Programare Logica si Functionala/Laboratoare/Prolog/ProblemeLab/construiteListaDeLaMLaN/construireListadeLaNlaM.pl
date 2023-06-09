@@ -1,0 +1,19 @@
+% Model matematic:
+% interval(m, n) = {
+%   [], daca m > n
+%   [n], daca m = n
+%   m U intersal(m+1,n), daca m < n
+%
+% Specificatii:
+% interval(m - int, n - int, r - lista)
+% m: primul nr
+% n: al doilea nr
+% r: lista cu elementele dintre m si n
+%
+% Modele de flux: (i,i,o), (i,i,i)
+
+interval(M,N,[]):-M>N,!.
+interval(M,M,[M]):-!.
+interval(M,N,[M|R]):-
+    M1 is M+1,
+    interval(M1,N,R).

@@ -1,0 +1,5 @@
+
+removeFirstKE([],_,_,[]):-!.
+removeFirstKE(L,_,0,L):-!.
+removeFirstKE([E|T],E,K,R):-!,K1 is K-1, removeFirstKE(T,E,K1,R).
+removeFirstKE([H|T],E,K,[H|R]):-removeFirstKE(T,E,K,R).

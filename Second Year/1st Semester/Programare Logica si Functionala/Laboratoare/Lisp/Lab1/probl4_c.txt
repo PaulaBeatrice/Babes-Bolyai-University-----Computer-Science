@@ -1,0 +1,39 @@
+; c) Sa se scrie o functie care plecand de la o lista data ca argument, 
+; inverseaza numai secventele continue de atomi. Exemplu:
+; (a b c (d (e f) g h i)) ==> (c b a (d (f e) i h g))
+
+(defun appendList(l1 l2)
+  (cond
+    ((null l1) l2)
+    (t (cons (car l1) (appendList(cdr l1) l2)))
+  )
+)
+
+; invertCont (l1l2...ln, aux) = {
+; 				  aux , daca n = 0
+;				  appendList(aux, appendList(list(invertCont(l1, NIL)), invertCont(l2...ln, NIL))) , daca l1 e lista
+; 				  invertCont(l2...ln, appendList(list(l1), aux)) , altfel
+;                               }
+; invertCont(l - lista, aux - lista, r - lista)
+; l - lista initiala
+; aux - lista ce colecteaza elementele listei l
+; r - lista ce va contine secventele de atomi inversate
+(defun invertCont (l aux)
+  (cond
+    ((null l) aux)
+    ((listp (car l)) (appendList aux (appendList (list (invertCont (car l) nil)) (invertCont (cdr l) nil))))
+    (t (invertCont (cdr l) (appendList (list (car l)) aux)))
+  )
+)
+
+;inversare(l1...ln) = {
+;                       invertCont(l1...ln, ())
+;                     }
+; inversare(l - lista, r- lista)
+; l - lista initiala
+; r - lista ce contine secventele de atomi inversate
+(defun inversare (l)
+  (invertCont l ())
+)
+
+

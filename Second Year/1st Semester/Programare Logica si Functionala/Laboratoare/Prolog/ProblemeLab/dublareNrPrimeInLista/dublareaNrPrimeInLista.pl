@@ -1,0 +1,55 @@
+% Model matematic:
+% nrDiv(n, nr) = {
+%   0, daca nr>n
+%   1+nrDiv(n,nr+1), daca n%nr=0
+%   nrDiv(n,nr+1), daca n%nr != 0
+% }
+%
+% isPrim(n) = {
+%    True, daca nrDiv(n,1) = 2
+%    False, altfel
+%  }
+%
+%  duplicaPrime(l1...ln)={
+%    [], daca n = 0
+%    l1 U l1 U duplicaPrime(l2...ln), daca l1 este prim
+%    l1 U duplicaPrime(l2...ln), daca l1 nu este prim
+%  }
+%
+%  Specificatii:
+%  nrDiv(n - int, nr - int, contor - int)
+%  n: nr initial
+%  nr: nr care ia valori de la 1 la n
+%  contor: nr de divizori a lui n
+%
+%  isPrim(n - int)
+%  n: nr, returneaza True daca are 2 divizori, False altfel
+%
+%  duplicaPrima(l - lista, r - lista)
+%  l: lista initiala
+%  r: lista rezultata in urma duplicarii elementelor prime
+%
+%  Modele de flux: (i,i,o), (i,i,i)
+%                  (i,o)
+%                  (i,o),(i,i)
+
+nrDiv(N,Nr,0):-Nr>N,!.
+nrDiv(N,Nr,C):-
+    N mod Nr =:= 0,!,
+    Nr1 is Nr+1,
+    nrDiv(N,Nr1,C1),
+    C is C1+1.
+nrDiv(N,Nr,C):-
+    Nr1 is Nr+1,
+    nrDiv(N,Nr1,C).
+
+isPrim(N):-
+    nrDiv(N,1,C),
+    C =:= 2,!.
+
+duplicaPrime([],[]).
+duplicaPrime([H|T],[H,H|R]):-
+    isPrim(H),!,
+    duplicaPrime(T,R).
+duplicaPrime([H|T],[H|R]):-
+    duplicaPrime(T,R).

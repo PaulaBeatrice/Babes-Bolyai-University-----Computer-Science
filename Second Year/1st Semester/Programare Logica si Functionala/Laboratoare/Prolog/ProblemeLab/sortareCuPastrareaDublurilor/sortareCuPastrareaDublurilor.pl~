@@ -1,0 +1,57 @@
+% Model matematic:
+%
+% split_aux(l1..ln, p1...pm)={
+%    [l1...ln,p1..pm], daca m-n = 0 sau m-n = 1
+%    split_aux(l2...ln,p1..pm U l1), altfel
+% }
+%
+% Specificatii:
+% split_aux(l - lista, p - list, s - lista, d - lista)
+% l: lista initiala
+% p: lista auxiliara
+% s: lista cu el din prima jumatate
+% d: lista cu el din a doua jumatate
+%
+% Model de flux: (i,i,o,o)
+
+len([], 0).
+len([_|T], NewR):-
+    len(T, R),
+    NewR is R + 1.
+
+split_aux(L, AUX, AUX, L):-
+	len(L, LEN_L),
+	len(AUX, LEN_R),
+	DIFF is LEN_R - LEN_L,
+	abs(DIFF, ABS),
+	ABS =< 1,!.
+split_aux([H|T], AUX, L, R):-
+	append(AUX, [H], RA),
+	split_aux(T, RA, L, R).
+
+split([], [], []).
+split(LIST, LEFT, RIGHT):-
+	split_aux(LIST, [], LEFT, RIGHT).
+
+myMerge(Left, [], Left):- !.
+myMerge([], Right, Right):- !.
+myMerge([HLeft|TLeft], [HRight|TRight], [HLeft|R]):-
+    HLeft < HRight, !,
+    myMerge(TLeft, [HRight|TRight], R).
+myMerge([HLeft|TLeft], [HRight|TRight], [HRight|R]):-
+    myMerge([HLeft|TLeft], TRight, R).
+
+
+
+%merge_sort(+L:list, -R:list)
+merge_sort([], []).
+merge_sort([H], [H]):-!.
+merge_sort(L, R):-
+	split(L, LEFT, RIGHT),
+	merge_sort(LEFT, RL),
+	merge_sort(RIGHT, RR),
+	myMerge(RL, RR, R).
+
+
+
+

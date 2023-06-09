@@ -1,0 +1,29 @@
+; b) Definiti o functie care obtine dintr-o lista data lista tuturor atomilor care apar, pe orice nivel,
+; dar in aceeasi ordine. De exemplu: (((A B) C) (D E)) --> (A B C D E)
+
+; getAtomi(l1l2...ln) = {
+;			  [] , daca n = 0
+; 			  getAtomi(l1)U getAtomi(l2...ln) , daca l1 e lista
+; 			  [l1] U getAtomi(l2...ln) , altfel
+;                       }
+; getAtomi(l - lista initiala, r - rezultatul)
+; l - lista initiala
+; r - lista atomilor din lista l
+
+(defun appendList(l1 l2)
+  (cond
+    ((null l1) l2)
+    (t (cons (car l1) (appendList(cdr l1) l2)))
+  )
+)
+
+(defun getAtomi(l)
+  (cond
+    ((null l) nil)
+    ((listp (car l)) (appendList (getAtomi(car l)) (getAtomi(cdr l))))
+    (t (appendList (list (car l)) (getAtomi(cdr l))))
+  )
+)
+
+
+

@@ -1,0 +1,35 @@
+% Model matematic:
+% false, daca n <= 1 si f = 0
+% true, daca n <= 1, f = 1
+% munte(l2..ln,0), daca l1 < l2 si f = 0
+% munte(l2...ln,1), daca l1 > l2, f= 0
+% munte(l2...ln,1), daca l1 > l2, f = 1
+% false, altfel
+%
+% main ={
+% false, n <=2
+% false, l1 >= l2
+% munte(l1...ln,0), altfel
+
+% munte(L:list, F:integer)
+% model de flux: (i,i)
+% L - lista pentru care verificam daca are aspect de munte
+% F - variabila care indica daca suntem pe partea de crestere sau
+% descrestere
+munte([],1).
+munte([_], 1).
+munte([H1,H2|T], 0):-
+H1 < H2,
+munte([H2|T], 0).
+munte([H1,H2|T], 0):-
+H1 >= H2,
+munte([H2|T], 1).
+munte([H1,H2|T], 1):-
+H1 > H2,
+munte([H2|T], 1).
+% munteMain(L:list)
+% model de flux: (i)
+% L - lista pe care o verificam daca are aspect de munte
+munteMain([H1,H2|T]):-
+H1 < H2,
+munte([H1,H2|T], 0).

@@ -1,0 +1,5 @@
+
+adaug(E,[],[E]).
+adaug(E,[H|T],Rez):-
+    adaug(E,T,L),
+    Rez = [H|L].

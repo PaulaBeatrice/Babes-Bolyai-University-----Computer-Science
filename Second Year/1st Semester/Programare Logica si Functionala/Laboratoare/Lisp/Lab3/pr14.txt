@@ -1,0 +1,17 @@
+; 14. Definiti o functie care da adancimea unui arbore n-ar reprezentat sub forma (radacina 
+; lista_noduri_subarb1...lista_noduri_subarbn) 
+; Ex: adancimea arborelui este (a (b (c)) (d) (e (f))) este 3
+
+; Model matematic:
+; adancime(l) = {
+;		   0, daca l e atom
+;		   
+
+(defun adancime (l)
+  (cond
+    ((atom l) 0)
+    (t (+ 1 (apply #'max (mapcar #'adancime l))))
+  )
+)   
+
+; (adancime (a (b (c)) (d) (e (f))))

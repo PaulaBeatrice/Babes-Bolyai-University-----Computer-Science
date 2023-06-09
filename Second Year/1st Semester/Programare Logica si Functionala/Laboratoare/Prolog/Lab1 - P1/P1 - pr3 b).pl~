@@ -1,0 +1,42 @@
+% b. Sa se scrie o functie care descompune o lista de numere intr-o lista de forma
+% [ lista-de-numere-pare lista-de-numere-impare] (deci lista cu doua elemente care
+% sunt liste de intregi), si va intoarce si numarul elementelor pare si impare.
+
+% Modelul matematic
+% descompunerePareImpare(l1l2..ln) =
+%  {
+%     [[[],[]],0,0], daca n = 0
+%
+%     [listaPare,l1 U listaImpare, nrPare,1+nr_impare],
+%     unde
+%     [listaPare,listaImpare,nrPare,nr_impare]=descompunerePareImpare(l2...ln),
+%     daca l1%2=1
+%
+%    [l1 U listaPare, listaImpare,1+nrPare, nrImpare],
+%    unde
+%    [listaPare, listaImpare,nrPare, nrImpare] = descompunePareImpare(l2..ln),
+%    daca l1%2=0
+%  }
+%
+%   model de flux: (i,o,o,o,o)
+%
+%   Exemple de testare;
+%      descompunerePareImpare([1,2,3,4,5], R). => R = [[[2,4],[1,3,5]], [2|3]
+%      descompunerePareImpare([2,4,6], R). => R = [[[2,4,6],[]], [3|0]
+%      descompunerePareImpare([1,3], R). => R = [[[],[1,3]], [0|2]]
+%      descompunerePareImpare([], R). => R = [[[],[]], [0|0]]
+
+descompunereLista([], [], [], 0, 0).
+descompunereLista([H|T], [H|ListaPare], ListaImpare, NrPare, NrImpare):-
+    Rez is H mod 2,
+    Rez =:= 0,
+    !,
+    descompunereLista(T, ListaPare, ListaImpare, NumerePare, NrImpare),
+    NrPare is 1+NumerePare.
+descompunereLista([H|T], ListaPare, [H|ListaImpare], NrPare, NrImpare):-
+    descompunereLista(T, ListaPare, ListaImpare, NrPare, NumereImpare),
+    NrImpare is 1+NumereImpare.
+
+descompunerePareImpare(L, [[ListaPare|[ListaImpare]], NrPare,NrImpare]):-
+    descompunereLista(L, ListaPare, ListaImpare, NrPare, NrImpare).
+

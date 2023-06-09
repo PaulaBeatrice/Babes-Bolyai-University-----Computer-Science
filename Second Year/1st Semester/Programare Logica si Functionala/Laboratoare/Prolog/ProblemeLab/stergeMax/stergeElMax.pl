@@ -1,0 +1,36 @@
+% Model matematic:
+% max(l1...ln) = {
+%                  l1, daca n = 1
+%                  l1, daca l1 > max(l2...ln)
+%                  max(l2...ln), altfel
+% elMax(l1...ln,m) = {
+%                    [], daca n = 0
+%                    l1 U elMax(l2..ln), daca l1 != max(m)
+%                    elMax(l2...ln), daca l1 = max(m)
+%                    }
+% Specificatii:
+% max(l-lista, m-int)
+% l: lista
+% m: el max
+%
+% elMax(l-lista, m-lista, r-lista)
+% l: lista initiala
+% m: lista initiala
+% r: lista rezultata in urma stergerii elementului maxim
+%
+% Model de flux: (i,o), (i,i), (i,i,o), (i,i,i)
+max([H],H).
+max([H|T],M):-max(T,M),
+    H<M,!.
+max([H|_],H).
+
+elMax([],_,[]).
+elMax([H|T],M,[H|R]):-
+    max(M, Rez),
+    H =\= Rez,!,
+    elMax(T,M,R).
+elMax([_|T],M,R):-elMax(T,M,R).
+
+elMaxMain(L,R):- elMax(L,L,R).
+
+

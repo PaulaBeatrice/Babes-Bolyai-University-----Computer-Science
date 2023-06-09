@@ -1,0 +1,3 @@
+concLists([], K, K).
+concLists([H|T], K, [H|R]) :-
+    concLists(T, K, R).

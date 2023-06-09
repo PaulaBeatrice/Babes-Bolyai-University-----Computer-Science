@@ -1,0 +1,42 @@
+% Model matematic:
+%
+% multiplu(l1...ln, nr, rest)={
+%  0, daca nr = 0
+%  l1*nr, daca n = 1
+%  (l1*nr+rest)%10 U multiplu(l2...ln,nr,(l1*nr+rest)/10), altfel
+% }
+%
+% Specificatii:
+% multiplu(l - lista, nr - int, rest - int, r - lista)
+% l: lista initiala
+% nr: nr cu care se va inmulti lista
+% rest: retul inmultirii
+% r: lista finala
+%
+% Modele de flux: (i,i,i,o), (i,i,i,i)
+
+%multiplu(_,0,_,0).
+%multiplu([H|T],Nr,Rest,[HR|R]):-
+%    multiplu(T,Nr,NewR,R),
+%    HR is (H*Nr+NewR) mod 10.
+
+adaug(E,[],[E]):-!.
+adaug(E,[H|T],[H|L]):-adaug(E,T,L).
+
+invers([],[]).
+invers([H|T],LRez):-invers(T,L), adaug(H,L,LRez).
+
+prod(_,0,_,[0]):-!.
+prod([],_,0,[]):- !.
+   % TR is 0.
+prod([],_,TR,[TR]):-!.
+   % TR>0,!.
+prod([H|T],C,TR,[H1|RR]):-
+    H1 is (((H*C+TR) mod 10)),
+    T1 is (H*C+TR) div 10,
+    prod(T,C,T1,RR).
+
+produs(N,C,R):-
+    invers(N,NR),
+    prod(NR,C,0,RR),
+    invers(RR,R).

@@ -1,0 +1,49 @@
+; a) Definiti o functie care intoarce suma a doi vectori.
+
+; Model matematic:
+; appendList(l1...ln,p1...pm) = {
+;                                  p1...pm, daca lista n = 0
+;                                  {l1} U appendList(l2...ln, p1...pm), altfel
+;                               }
+; appendList(l-lista,p-lista,r-lista)
+; l - lista initiala
+; p - a doua lista
+; r - lista obtinuta prin concatenarea lui l si p
+
+(defun appendList(l1 l2)
+  (cond
+    ((null l1) l2)
+    (t (cons (car l1) (appendList(cdr l1) l2)))
+  )
+)
+
+; invers(l1...ln) = {
+;                      [] , daca n = 0
+; 		       appendList(invers(l2...ln), invers(l1)) , daca l1 este lista
+; 		       appendList(invers(l2...ln), list(l1)) , altfel
+;	 	    }
+; invers(l - lista, r - lista)
+; l - lista initiala
+; r - lista obtinuta prin inversarea listei l
+(defun invers(l)
+  (cond
+    ((null l) nil)
+    ((listp (car l)) (appendList (invers (cdr l)) (list(invers (car l)))))
+    (t (appendList (invers (cdr l)) (list (car l))))
+  )
+)
+
+; sumaVectori (l1...ln, p1...pm) = {
+; 				      p1p2...pm , daca n = 0 
+; 				      {l1 + p1} U sumaVectori(l2...ln, p2...pm), altfel
+;                                  }
+; sumaVectori( l - lista, p - lista, r - lista)
+; l - primul vector
+; p - al doilea vector
+; r - suma vectorului l si p
+(defun sumaVectori (v1 v2)
+  (cond
+    ((null v1) v2)
+    (t (cons (+ (car v1) (car v2)) (sumaVectori (cdr v1) (cdr v2))))
+  )
+)

@@ -1,0 +1,69 @@
+% Model matematic:
+%
+% exista(l1...ln, e) =
+% {
+%     False, daca n = 0
+%     True, daca l1 = e
+%     exista(l2...ln, e), altfel
+% }
+%
+% egale(l1..ln,p1..pm)=
+% {
+%    True, daca n = 0, m = 0
+%    False, daca exista(l1,p1..pm) = False
+%    egale(l2...ln, elimina(p1...pm,l1))
+% }
+%
+% elimina(l1..ln, poz) = {
+%                          [], daca n = 0
+%                          l1 U elimina(l2..ln, el), daca l1 != el
+%                          elimina(l2...ln, poz-1), daca l1 = el
+%                        }
+%
+% Specificatii:
+% exista(L: lista, e: element, R: boolean)
+% L: lista in care verificam daca exista elementul e
+% e: elementul pe care il cautam in lista L
+% R: rezultatul, adica False daca e nu exista in lista L, True altfel
+%
+% egale(l - lista, m - lista)
+% l: prima multime
+% m: a doua multime
+%
+% elimina(l - lista, el - int, r - lista)
+% l: lista initiala
+% el: elementul pe care il vom sterge
+% r: lista rezultata in urma stergerii
+
+exista([H|_], E):-
+    H =:= E, !.
+exista([_|T], E):-
+    exista(T,E).
+
+elimina([],_,[]).
+elimina([H|T],E,[H|R]):-
+    H =\= E,!,
+    elimina(T,E,R).
+elimina([_|T],E,R):-
+    elimina(T,E,R).
+
+egale([],[]).
+egale([H|T],M):-
+    exista(M,H),
+    elimina(M,H,M1),
+    egale(T,M1).
+
+
+
+eqsets([],[]).
+eqsets([H|T],S):-exista(H,S),elimina(S,H,S2),eqsets(T,S2).
+
+
+
+
+
+
+
+
+
+

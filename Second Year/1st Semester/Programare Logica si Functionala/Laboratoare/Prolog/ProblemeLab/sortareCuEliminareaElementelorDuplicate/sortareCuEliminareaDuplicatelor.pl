@@ -1,0 +1,89 @@
+% Model matematic:
+%
+% split_aux(l1..ln, p1...pm)={
+%    [l1...ln,p1..pm], daca m-n = 0 sau m-n = 1
+%    split_aux(l2...ln,p1..pm U l1), altfel
+% }
+%
+% myMerge(l1...ln, r1...rm)={
+%    l1...ln, daca m = 0
+%    r1...rm, daca n = 0
+%    l1 U myMerge(l2...ln, r1...rm), daca l1 < r1
+%    r1 U myMerge(l1...ln, r2...rm), daca l1 >= r1
+% }
+%
+% mergeSort(l1...ln,left,right)={
+%    [], daca n = 0
+%    [l1], daca n = 1
+%    mergeSort(mergeSort(l1...l(n/2)), mergeSort(l(n/2+1)...ln)), altfel
+%
+% stergeDuplicare(l1l2...ln) = {
+%  [], daca n = 0
+%  [l1], daca n = 1
+%  stergeDuplicate(l2..ln) , daca l1 = l2
+%  l1 U stergeDuplicate(l2..ln), daca l1 != l2
+%  }
+%
+% Specificatii:
+% split_aux(l - lista, p - list, s - lista, d - lista)
+% l: lista initiala
+% p: lista auxiliara
+% s: lista cu el din prima jumatate
+% d: lista cu el din a doua jumatate
+%
+% myMerge(l - lista, r - lista, t - lista)
+% l:
+% r:
+% t: lista compusa din cele 2
+%
+% mergeSort
+%
+% stergeDuplicate
+%
+% Model de flux: (i,i,o,o)
+
+len([], 0).
+len([_|T], NewR):-
+    len(T, R),
+    NewR is R + 1.
+
+split_aux(L, AUX, AUX, L):-
+	len(L, LEN_L),
+	len(AUX, LEN_R),
+	DIFF is LEN_R - LEN_L,
+	abs(DIFF, ABS),
+	ABS =< 1,!.
+split_aux([H|T], AUX, L, R):-
+	append(AUX, [H], RA),
+	split_aux(T, RA, L, R).
+
+split([], [], []).
+split(LIST, LEFT, RIGHT):-
+	split_aux(LIST, [], LEFT, RIGHT).
+
+myMerge(Left, [], Left):- !.
+myMerge([], Right, Right):- !.
+myMerge([HLeft|TLeft], [HRight|TRight], [HLeft|R]):-
+    HLeft < HRight, !,
+    myMerge(TLeft, [HRight|TRight], R).
+myMerge([HLeft|TLeft], [HRight|TRight], [HRight|R]):-
+    myMerge([HLeft|TLeft], TRight, R).
+
+mergeSort([], []).
+mergeSort([H], [H]):-!.
+mergeSort(L, R):-
+	split(L, LEFT, RIGHT),
+	mergeSort(LEFT, SortedLeft),
+	mergeSort(RIGHT, SortedRight),
+	myMerge(SortedLeft, SortedRight, R).
+
+stergeDuplicate([], []):-!.
+stergeDuplicate([E], [E]):-!.
+stergeDuplicate([H,H|T], R):-!,
+    stergeDuplicate([H|T], R).
+stergeDuplicate([H1,H2|T], [H1|R]):-
+    stergeDuplicate([H2|T], R).
+
+mergeSortNoDuplicates(L,R):-
+    mergeSort(L,Sorted),
+    stergeDuplicate(Sorted,R).

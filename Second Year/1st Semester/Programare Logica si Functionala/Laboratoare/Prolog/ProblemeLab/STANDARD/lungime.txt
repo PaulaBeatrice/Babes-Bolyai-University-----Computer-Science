@@ -1,0 +1,15 @@
+% Model matematic:
+%
+% len(l1l2..ln) = {
+%    0, daca n=0
+%    1 + len(l2...ln) , altfel
+% Specificatii:
+% len(l - lista, r - int)
+% l: lista initiala
+% r: lungimea listei
+
+
+len([], 0).
+len([_|T], NewR):-
+    len(T, R),
+    NewR is R + 1.

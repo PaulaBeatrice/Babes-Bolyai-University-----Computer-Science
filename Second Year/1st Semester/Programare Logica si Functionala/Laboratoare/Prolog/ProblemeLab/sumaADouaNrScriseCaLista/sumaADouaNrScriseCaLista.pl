@@ -1,0 +1,84 @@
+% Model matematic:
+%
+% len(l1l2..ln) = {
+%    0, daca n=0
+%    1 + len(l2...ln) , altfel
+%
+% adaugaZero(l1l2...ln, nr) ={
+%   l1..ln, daca nr = 0
+%   0 U adaugaZero(l2..ln, nr - 1), daca nr != 0
+%   }
+%
+% lungimeEgala(l1l2..ln, p1p2...pm) = {
+%  [adaugaZero(l1..ln, m-n),p1..pm], daca n < m
+%  [l1..ln, adaugaZero(p1..pm, n-m)], daca m <= n
+%  }
+%
+% sumaNr(l1..ln,p1...pm,R)={
+%   (l1+p1)%10, daca n=m=1
+%   (l1+p1+R)%10 U sumaNr(l2...ln,p2..pn,(l1+p1+r)/10), altfel
+%
+% Specificatii:
+% len(l - lista, r - int)
+% l: lista initiala
+% r: lungimea listei
+%
+% adaugaZero(l - lista, nr - int, r - lista)
+% l: lista initiala
+% nr: nr de zerouri ce se vor adauga la inceputul listei
+% r: lista rezultata in urma adaugarii de nr zerouri in fata listei l
+%
+% lungimeEgala(l - lista, p - lista, r1 - lista, r2 - lista)
+% l; lista initiala
+% m: lista initiala
+% r1: lista initiala
+% r2: lista initiala
+%
+% sumaNr(l - lista, p - lista, r - int, R - lista)
+% l: lista initiala
+% p: lista initiala
+% r: restul
+% R: rezultatul sumei
+%
+% Modele de flux: (i,o), (i,i); (i,i,o), (i,i,i);
+%                 (i,i,o,o), (i,i,i,o), (i,i,o,i), (i,i,i,i)
+%                 (i,i,i,o)(i,i,i,i)
+
+len([], 0).
+len([_|T], NewR):-
+    len(T, R),
+    NewR is R + 1.
+
+adaugaZero(L,0,L):-!.
+adaugaZero(L,C,[0|R]):-
+    C1 is C-1,
+    adaugaZero(L,C1,R).
+
+lungimeEgala(L,M,R1,M):-
+    len(L,L1), len(M,L2),
+    L1<L2,!,
+    C is L2-L1,
+    adaugaZero(L,C,R1).
+
+lungimeEgala(L,M,L,R1):-
+    len(L,L1), len(M,L2),
+    C is L1-L2,
+    adaugaZero(M,C,R1).
+
+sumaNr([H1],[H2],R,[C]):-
+    R is (H1+H2) div 10,!,
+    C is (H1+H2) mod 10.
+sumaNr([H1|T1],[H2|T2],NewR,[NewC|R1]):-
+    sumaNr(T1,T2,Rest,R1),
+    NewR is (H1+H2+Rest) div 10,
+    NewC is (H1+H2+Rest) mod 10.
+
+sumaMain(L,P,[Rest|R]):-
+    sumaNr(L,P,Rest,R),
+    Rest =:= 1,!.
+sumaMain(L,P,R):-
+    sumaNr(L,P,_,R).
+
+suma(L,M,S):-
+    lungimeEgala(L,M,L1,M1),
+    sumaMain(L1,M1,S).

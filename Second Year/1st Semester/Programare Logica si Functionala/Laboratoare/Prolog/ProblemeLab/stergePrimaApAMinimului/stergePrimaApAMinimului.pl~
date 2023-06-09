@@ -1,0 +1,42 @@
+% Model matematic:
+%
+% min(l1..ln)=
+% {
+%   l1, daca n = 1
+%   l1, daca l1 < min(l2...ln)
+%   min(l2..ln), altfel
+% }
+%
+% stergePE(l1..ln,E,S)=
+% {
+%   [], daca n = 0
+%   l1...ln, daca S = 0
+%   stergePE(l2...ln,E,0), daca l1 = E
+%   l1 U stergePE(l2...ln,el), daca l1 != E
+% }
+%
+% Specificatii:
+% min(l - lista, m - int)
+% l: lista initiala
+% m: minimul listei
+%
+% stergePE(l - lista, S - int, E - int, R - lista)
+% l: lista initiala
+% S: sters, are val 0 daca nu s a sters elementul, 1 altfel
+% E: elementul ce se va sterge
+% R: lista rezultata
+%
+% Modele de flux:(i,o),(i,i); (i,i,i,o),(i,i,i,i)
+
+min([E],E).
+min([H|T],R):-
+    min(T,R),
+    H>R,!.
+min([H|_],H).
+
+stergePE([],_,_,[]):-!.
+stergePE(L,_,0,L):-!.
+stergePE([H|T],H,1,T):-!,
+    stergePE(T,H,0,T).
+stergePE([H|T],E,1,[H|R]):-
+    stergePE(T,E,1,R).

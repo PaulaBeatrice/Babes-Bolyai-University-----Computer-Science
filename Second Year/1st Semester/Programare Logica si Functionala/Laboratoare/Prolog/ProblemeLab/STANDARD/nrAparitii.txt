@@ -1,0 +1,21 @@
+% Model
+% 0, daca n = 0
+% 1+nrAp(l2..ln), daca l1=e
+%  nrAp(l2..ln), daca l1 != e
+%
+% el = integer
+% list = el*
+%
+% nrAparitii(L:list, E:el, S:integer)
+% model de flux: (i, i, o) sau (i, i, i)
+% L - lista in care numaram aparitiile elementului E
+% E - elementul al carui aparitii le vom numara în lista L
+% S - rezultatul, numarul de aparitii ale lui E in lista L
+nrAparitii([], _, 0).
+nrAparitii([H|T], E, S):-
+H = E,
+nrAparitii(T, E, S1),
+S is S1 + 1.
+nrAparitii([H|T], E, S):-
+H \= E,
+nrAparitii(T, E, S).

@@ -1,0 +1,58 @@
+%a. Sa se scrie un predicat care transforma o lista intr-o multime, in
+% ordinea primei aparitii. Exemplu: [1,2,3,1,2] e transformat in [1,2,3].
+%
+% Modelul matematic:
+% exista(l1...ln, e) =
+% {
+%     False, daca n = 0
+%     True, daca l1 = e
+%     exista(l2...ln, e), altfel
+% }
+%
+% transformaLista(l1...ln, c) =
+% {
+%     [], daca n = 0
+%     l1 U transformaLista(l2...ln), daca exista(c, l1) este False
+%     transformaLista(l2...ln), daca exista(c,l1) este True
+% }
+%
+% model de flux: (i, i, o), (i,i,i).
+%
+% Exemple de testare:
+%    transformareLista([1,4,2,4,2], R) => R =[1,4,2]
+%    transformareLista([1,2,3], R) => R = [1,2,3]
+%    transformareLista([1,1,1], R) => R = [1]
+%    transformareLista([], R) => R = []
+%
+% Specificatii:
+% exista(L: lista, e: element, R: boolean)
+% L: lista in care verificam daca exista elementul e
+% e: elementul pe care il cautam in lista L
+% R: rezultatul, adica False daca e nu exista in lista L, True altfel
+%
+% transformaLista(L, R)
+% L: lista pe care o vom transforma in multime
+% R: multimea ce va contine elementele din L, in ordinea primei aparitii
+
+exista([H|_], E):-
+    H =:= E, !.
+exista([_|T], E):-
+    exista(T,E).
+
+adaug(E,[],[E]).
+adaug(E,[H|T],Rez):-
+    adaug(E,T,L),
+    Rez = [H|L].
+
+transformaLista([], C, C).
+transformaLista([H|T], C, R):-
+    exista(C, H),!,
+    transformaLista(T, C, R).
+transformaLista([H|T], C, R):-
+    adaug(H,C,C1),
+    transformaLista(T, C1, R).
+transforma(L,R):-transformaLista(L,[],R).
+
+
+
+

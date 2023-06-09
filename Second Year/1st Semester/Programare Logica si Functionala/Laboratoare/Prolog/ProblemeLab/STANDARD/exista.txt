@@ -1,0 +1,17 @@
+% Modelul matematic:
+% exista(l1...ln, e) =
+% {
+%     False, daca n = 0
+%     True, daca l1 = e
+%     exista(l2...ln, e), altfel
+% }
+% Specificatii:
+% exista(L: lista, e: element, R: boolean)
+% L: lista in care verificam daca exista elementul e
+% e: elementul pe care il cautam in lista L
+% R: rezultatul, adica False daca e nu exista in lista L, True altfel
+
+exista([H|_], E):-
+    H =:= E, !.
+exista([_|T], E):-
+    exista(T,E).
