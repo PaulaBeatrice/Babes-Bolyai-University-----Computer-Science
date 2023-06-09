@@ -1,0 +1,44 @@
+.root {
+    -fx-background-image: url("/images/login2.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+}
+
+#loginLabel {
+    -fx-alignment: center;
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+}
+
+#signInButton {
+    -fx-font-size: 18px;
+    -fx-text-fill: white;
+    -fx-font-family: Gabriola;
+    -fx-background-image: url("/images/goldbutton.jpg");
+}
+
+.myLink{
+    -fx-text-fill: white;
+}
+
+.labelLogin{
+    -fx-font-size: 18px;
+    -fx-text-fill: white;
+    -fx-font-family: Gabriola;
+    -fx-background-image: url("/images/download.jpg");
+    -fx-background-color: #7a6e54;
+}
+
+.signInLabel {
+    -fx-font-size: 18px;
+    -fx-text-fill: white;
+    -fx-font-family: Gabriola;
+    -fx-background-image: url("/images/download.jpg");
+    -fx-background-color: #7a6e54;
+}
+
+
+.textFields {
+    -fx-font-size: 18px;
+    -fx-font-family: Gabriola;
+}

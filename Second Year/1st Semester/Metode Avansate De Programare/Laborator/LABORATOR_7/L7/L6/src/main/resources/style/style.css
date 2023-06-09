@@ -1,0 +1,62 @@
+.root {
+    -fx-background-image: url("/images/img2.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+}
+
+#welcomeMessage{
+    -fx-text-fill: white;
+    -fx-font-size: 26px;
+    -fx-font-family: Gabriola;
+    -fx-background-image: url("/images/download.jpg");
+}
+
+#labelForTable {
+    -fx-font-size: 20px;
+    -fx-font-family: Gabriola;
+    -fx-text-fill: white;
+    -fx-text-alignment: center;
+}
+
+
+.buttons {
+    -fx-font-size: 16px;
+    -fx-font-family: Gabriola;
+    -fx-background-image: url("/images/b3.jpg");
+    -fx-text-fill: black;
+}
+
+
+
+.list-cell {
+    -fx-background-color: transparent;
+}
+.list-view {
+    -fx-background-color: transparent;
+}
+
+#messageToUserForRequest{
+    -fx-font-family: Gabriola;
+    -fx-background-image: url("/images/download.jpg");
+    -fx-font-size: 18px;
+}
+
+#messageToUser{
+    -fx-font-family: Gabriola;
+    -fx-background-image: url("/images/download.jpg");
+    -fx-font-size: 18px;
+}
+
+.labelRequest {
+    -fx-font-family: Gabriola;
+    -fx-background-image: url("/images/download.jpg");
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+}
+
+.table {
+    -fx-font-size: 16px;
+    -fx-font-family: Gabriola;
+    -fx-text-fill: white;
+    -fx-background-color: #c4baa3;
+}

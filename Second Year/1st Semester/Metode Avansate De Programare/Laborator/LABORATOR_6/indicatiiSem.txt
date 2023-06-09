@@ -1,0 +1,21 @@
+map L5
+
+parte de login - > pagina de meniu
+				{
+				zona de prieteni/mesaje,
+				zona de useri care nu sunt prieteni si sa adaugam (search by nume si in tabel sa puna userii, selectezi, apoi sa dai add, sa nu fie userii care sunt prieteni sau care au dat friend request)
+				zona de friend request(de la cine ai cerere)
+				}
+
+login{
+	casete pt user parola, egale
+	link pt register (diferenta clara dintre login si linkul de register)
+     }
+
+
+
+- cererile de prietenie pot folosi acelasi tabel cu Friendship (adaugam un camp: id userilor, friednsFrom(initial 1900 sau data de trimitere), si status(enum - sent, accepted, rejected)); obs: nu se populeaza data, cand se trimite cererea
+  echiv null la data e aprox 1970
+
+- pt login: in user username, parola(cu hash salt)
+				   
