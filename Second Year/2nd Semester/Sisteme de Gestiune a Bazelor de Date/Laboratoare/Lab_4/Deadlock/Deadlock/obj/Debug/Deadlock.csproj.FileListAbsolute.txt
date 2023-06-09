@@ -1,0 +1,11 @@
+C:\FACULTATE\Anul 2\Semestrul 2\Sisteme de gestiune a bazelor de date\Laboratoare\Laborator_4\Deadlock\Deadlock\bin\Debug\Deadlock.exe.config
+C:\FACULTATE\Anul 2\Semestrul 2\Sisteme de gestiune a bazelor de date\Laboratoare\Laborator_4\Deadlock\Deadlock\bin\Debug\Deadlock.exe
+C:\FACULTATE\Anul 2\Semestrul 2\Sisteme de gestiune a bazelor de date\Laboratoare\Laborator_4\Deadlock\Deadlock\bin\Debug\Deadlock.pdb
+C:\FACULTATE\Anul 2\Semestrul 2\Sisteme de gestiune a bazelor de date\Laboratoare\Laborator_4\Deadlock\Deadlock\obj\Debug\Deadlock.csproj.AssemblyReference.cache
+C:\FACULTATE\Anul 2\Semestrul 2\Sisteme de gestiune a bazelor de date\Laboratoare\Laborator_4\Deadlock\Deadlock\obj\Debug\Deadlock.csproj.SuggestedBindingRedirects.cache
+C:\FACULTATE\Anul 2\Semestrul 2\Sisteme de gestiune a bazelor de date\Laboratoare\Laborator_4\Deadlock\Deadlock\obj\Debug\Deadlock.csproj.CoreCompileInputs.cache
+C:\FACULTATE\Anul 2\Semestrul 2\Sisteme de gestiune a bazelor de date\Laboratoare\Laborator_4\Deadlock\Deadlock\obj\Debug\Deadlock.exe
+C:\FACULTATE\Anul 2\Semestrul 2\Sisteme de gestiune a bazelor de date\Laboratoare\Laborator_4\Deadlock\Deadlock\obj\Debug\Deadlock.pdb
+C:\FACULTATE\Anul 2\Semestrul 2\Sisteme de gestiune a bazelor de date\Laboratoare\Laborator_4\Deadlock\Deadlock\bin\Debug\System.Data.SqlClient.dll
+C:\FACULTATE\Anul 2\Semestrul 2\Sisteme de gestiune a bazelor de date\Laboratoare\Laborator_4\Deadlock\Deadlock\bin\Debug\System.Data.SqlClient.xml
+C:\FACULTATE\Anul 2\Semestrul 2\Sisteme de gestiune a bazelor de date\Laboratoare\Laborator_4\Deadlock\Deadlock\obj\Debug\Deadlock.csproj.CopyComplete
