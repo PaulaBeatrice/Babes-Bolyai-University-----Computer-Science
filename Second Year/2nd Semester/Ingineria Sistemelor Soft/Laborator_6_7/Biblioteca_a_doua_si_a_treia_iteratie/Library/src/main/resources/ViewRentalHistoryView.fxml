@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="515.0" prefWidth="926.0" style="-fx-background-color: peachpuff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewRentalHistoryController">
+   <children>
+      <TableView fx:id="tabelRentalHistory" layoutX="57.0" layoutY="58.0" prefHeight="418.0" prefWidth="849.0">
+        <columns>
+          <TableColumn fx:id="idClm" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="titleClm" prefWidth="292.0" text="Title" />
+            <TableColumn fx:id="authorClm" prefWidth="284.0" text="Author" />
+            <TableColumn fx:id="daysClm" prefWidth="86.0" text="No. Days" />
+            <TableColumn fx:id="returnedClm" prefWidth="111.0" text="Return" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

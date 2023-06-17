@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="795.0" style="-fx-background-color: peachpuff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewBooksController">
+   <children>
+      <TableView fx:id="tabelBooks" layoutX="29.0" layoutY="59.0" prefHeight="314.0" prefWidth="727.0">
+        <columns>
+          <TableColumn fx:id="clmId" prefWidth="51.0" text="id" />
+          <TableColumn fx:id="clmTitle" prefWidth="194.0" text="Title" />
+            <TableColumn fx:id="clmAutor" prefWidth="211.0" text="Author" />
+            <TableColumn fx:id="clmEditura" prefWidth="193.0" text="Publishing house" />
+            <TableColumn fx:id="clmAn" prefWidth="77.0" text="Year" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

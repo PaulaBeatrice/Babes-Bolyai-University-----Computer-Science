@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="dialect">repository.org.hibernate.dialect.SQLiteDialect</property>
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="connection.url">jdbc:sqlite:C:\\FACULTATE\\Anul 2\\Semestrul 2\\Ingineria Sistemelor Soft\\Laborator_4_5\\Biblioteca_prima_iteratie\\Library\\library.db</property>
+
+        <property name="hibernate.hbm2ddl.auto">none</property>
+        <property name="hibernate.current_session_context_class ">thread</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+
+        <mapping resource="Librarian.hbn.xml"/>
+        <mapping resource="Client.hbn.xml"/>
+        <mapping resource="Book.hbn.xml"/>
+    </session-factory>
+</hibernate-configuration>
