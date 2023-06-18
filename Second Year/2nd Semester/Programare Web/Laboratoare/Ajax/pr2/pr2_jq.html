@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Probl 2</title>
+
+    <style>
+      table, td {
+        border: 1px solid black;
+        font-family: Georgia, Serif;
+        font-size: 18px;
+        background-color: rgb(255, 204, 255);
+      }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        sendToServer(1);
+      });
+
+      function sendToServer(number) {
+        $.ajax({
+          url: "pr2.php",
+          type: "GET",
+          data: { id: number },
+          success: function (data) {
+            $("#inregistrari").html(data);
+          },
+          error: function () {
+            console.log("Error");
+          },
+        });
+      }
+
+      function next() {
+        var currentPage = parseInt($("#current-page").val());
+        var totalPages = parseInt($("#total-pages").val());
+
+        if (currentPage < totalPages) {
+          currentPage++;
+          $("#current-page").val(currentPage);
+          sendToServer(currentPage);
+        }
+      }
+
+      function prev() {
+        var currentPage = parseInt($("#current-page").val());
+
+        if (currentPage > 1) {
+          currentPage--;
+          $("#current-page").val(currentPage);
+          sendToServer(currentPage);
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="inregistrari"></div>
+  </body>
+
+</html>

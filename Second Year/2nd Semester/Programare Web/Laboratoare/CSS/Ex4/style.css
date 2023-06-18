@@ -1,0 +1,103 @@
+#meniu {
+	display:table;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: table-cell;
+	height: 65px;
+}
+
+.img {
+	left: 0px;
+	width: 70px;
+}
+
+#img1 {
+	background: url('icons.png') 0 -70px;
+}
+#img1:hover {
+	background: url('icons.png') 0 0px;
+}
+
+
+#img2 {
+	background: url('icons.png') -70px -70px;
+}
+#img2:hover {
+	background: url('icons.png') -70px 0px;
+}
+
+
+#img3 {
+	background: url('icons.png') -140px -70px;
+}
+#img3:hover {
+	background: url('icons.png') -140px 0px;
+}
+
+
+#img4 {
+	background: url('icons.png') -210px -70px;
+}
+#img4:hover {
+	background: url('icons.png') -210px 0px;
+}
+
+
+#img5 {
+	background: url('icons.png') -280px -70px;
+}
+#img5:hover {
+	background: url('icons.png') -280px 0px;
+}
+
+
+#img6 {
+	background: url('icons.png') -350px -70px;
+}
+#img6:hover {
+	background: url('icons.png') -350px 0px;
+}
+
+
+#img7 {
+	background: url('icons.png') -420px -70px;
+}
+#img7:hover {
+	background: url('icons.png') -420px 0px;
+}
+
+
+#img8 {
+	background: url('icons.png') -490px -70px;
+}
+#img8:hover {
+	background: url('icons.png') -490px 0px;
+}
+
+
+#img9 {
+	background: url('icons.png') -560px -70px;
+}
+#img9:hover {
+	background: url('icons.png') -560px 0px;
+}
+
+
+#img10 {
+	background: url('icons.png') -630px -70px;
+}
+#img10:hover {
+	background: url('icons.png') -630px 0px;
+}
+
+
+#img11 {
+	background: url('icons.png') -700px -70px;
+}
+#img11:hover {
+	background: url('icons.png') -700px 0px;
+}

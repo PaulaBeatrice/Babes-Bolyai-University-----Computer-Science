@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Probl 1</title>
+
+    <style>
+
+      #oras_plecare{
+        background-color:  rgb(255, 204, 255);
+        font-size: 18px;
+        font-family: Georgia, serif;
+      }
+
+      ol,li{
+        background-color: rgb(204, 255, 204);
+        border: 1px solid black;
+        font-size: 18px;
+        font-family: Georgia, serif;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <select id="oras_plecare"></select>
+    <div id="destinatii"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+      $(document).ready(function() {
+        $.get("pr1_2.php", function(response) {
+          var orase = JSON.parse(response);
+          var select = $("#oras_plecare");
+          var option = $("<option>", {
+            value: "",
+            text: "Alege orasul de plecare",
+            hidden: true
+          });
+          select.append(option);
+
+          $.each(orase, function(i, oras) {
+            var option = $("<option>", {
+              value: oras,
+              text: oras
+            });
+            select.append(option);
+          });
+        });
+
+        $("#oras_plecare").on("change", function() {
+          var str = $(this).val();
+          if (str == "") {
+            $("#destinatii").html("");
+            return;
+          }
+          $.post("pr1.php", {
+            q: str
+          }, function(response) {
+            $("#destinatii").html(response);
+          });
+        });
+      });
+
+    </script>
+
+  </body>
+</html>

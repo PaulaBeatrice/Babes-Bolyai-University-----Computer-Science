@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Probl3</title>
+  </head>
+
+  <body onload="load()">
+    <div id="selectat"> </div>
+    <div id="informatii"> </div>
+
+  </body>
+
+
+  <script>
+
+    function load(){
+      var xhttp;
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("selectat").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "script1.php", true);
+      xhttp.send(null);
+    }
+
+    function fillform(val){
+      var xhttp;
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("informatii").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "script2.php?id="+val, true);
+      xhttp.send(null);
+    }
+
+    function salveaza(){
+
+      if(true == confirm("Are you sure you want to update this field?")){
+              console.error()
+
+        console.log("AICI")
+
+        var theSelect = document.getElementById("select");
+        var id = theSelect.options[theSelect.selectedIndex].value;
+        var nume = document.getElementById("nume").value;
+        var prenume = document.getElementById("prenume").value;
+        var nrTel = document.getElementById("telefon").value;
+
+        var xhttp;
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange=function(){
+          if(this.readyState == 4 && this.status == 200){
+            confirm("Update completed");
+          }
+        };
+        xhttp.open("GET", "script3.php?id="+id+"&prenume="+prenume+"&nume="+nume+"&telefon="+nrTel, true);
+        xhttp.send(null);
+
+      }
+
+    }
+
+
+  // $(document).ready(function(){
+  //   $('.camp').change(function(){
+  //     $('#save').prop('disabled', false);
+  //   });
+  // });
+
+
+  // let inputs = document.querySelectorAll("input");
+  // for(let i=0; i<inputs.length; i++) {
+  //   inputs[i].addEventListener("change", function() {
+  //     document.getElementById("save").disabled = false;
+  //   });
+  // }
+    function handleChange() {
+      console.log("aici")
+       document.getElementById("save").removeAttribute("disabled");
+      // document.getElementById("save").disabled = false;
+    }
+
+
+
+  </script>
+
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Probl 2</title>
+
+    <style>
+      table, td{
+        border: 1px solid black;
+        font-family: Georgia, Serif;
+        font-size: 18px;
+        background-color: rgb(255, 204, 255);
+      }
+    </style>
+
+  </head>
+
+  <body onload = "sendToServer(1)">
+    <div id="inregistrari"> </div>
+  </body>
+
+  <script>
+
+    let nr = 0;
+
+    function next(){
+      nr++;
+      sendToServer(nr);
+    }
+
+    function prev(){
+      if(nr == 0)
+        return;
+      nr--;
+      sendToServer(nr);
+    }
+
+    function sendToServer(number){
+      var xhttp;
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("inregistrari").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "pr2.php?id="+number, true);
+      xhttp.send(null);
+    }
+
+
+  </script>
+
+</html>

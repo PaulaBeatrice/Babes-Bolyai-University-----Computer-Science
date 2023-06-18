@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Probl 1</title>
+
+    <style>
+
+      #oras_plecare{
+        background-color:  rgb(255, 204, 255);
+        font-size: 18px;
+        font-family: Georgia, serif;
+      }
+
+      ol,li{
+        background-color: rgb(204, 255, 204);
+        border: 1px solid black;
+        font-size: 18px;
+        font-family: Georgia, serif;
+      }
+    </style>
+
+  </head>
+
+  <body onload="init()">
+    <select id="oras_plecare" onchange="arataDestinatii(this.value)"> </select>
+
+    <div id="destinatii"></div>
+
+
+    <script>
+
+      function init() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var orase = JSON.parse(this.responseText);
+            var select = document.getElementById("oras_plecare");
+            var option = document.createElement("option");
+              option.value = "";
+              option.text = "Alege orasul de plecare";
+              option.hidden = true;
+              select.appendChild(option);
+
+            for (var i = 0; i < orase.length; i++) {
+              var option = document.createElement("option");
+              option.value = orase[i];
+              option.text = orase[i];
+              select.appendChild(option);
+            }
+          }
+        };
+        xhttp.open("GET", "pr1_2.php", true);
+        xhttp.send();
+      }
+
+
+
+      function arataDestinatii(str) {
+        var xhttp;
+        if (str == "") {
+          document.getElementById("destinatii").innerHTML = "";
+          return;
+        }
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("destinatii").innerHTML = this.responseText;
+          }
+        };
+        // xhttp.open("GET", "pr1.php?q="+str, true);
+        // xhttp.send(null);
+        xhttp.open("POST", "pr1.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("q=" + str);
+      }
+
+    </script>
+
+  </body>

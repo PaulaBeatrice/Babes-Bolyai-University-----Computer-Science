@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Problema 4</title>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<th>
+				Autentificare
+			</th>
+
+			<th>
+				Inregistrare
+			</th>
+		</tr>
+
+		<tr>
+			<td>
+				<form action="autentificare.php" method = "POST">
+					<label>Username</label><br>
+					<input type="text" name='username' required><br>
+					<label>Password</label><br>
+					<input type="password" name='password' required>
+					<button type="submit" >Login </button>
+				</form>
+			</td>
+
+			<td>
+				<form action="inregistrare.php" method = "POST">
+					<label>Username</label><br>
+					<input type="text" name='username' required><br>
+					<label>Email</label><br>
+					<input type="email" name='email' required><br>
+					<label>Password</label><br>
+					<input type="password" name='password' required>
+					<button type="submit" >Sign up</button>
+				</form>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

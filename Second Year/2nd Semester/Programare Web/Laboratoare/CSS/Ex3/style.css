@@ -1,0 +1,36 @@
+* {
+	margin: 0;
+	text-align: center;
+}
+
+html,body { 
+	height:100%;
+	width: 100%;
+}
+
+#header {
+	background-color: red;
+	height: 100px;
+}
+
+#meniu {
+	background-color: yellow;
+	list-style-type: :none;
+	height: 25px;
+	padding: 0;
+}
+
+#meniu li {
+	display: inline-block;
+}
+
+#divMain {
+	background-color: green;
+	width:100%;
+	min-height: calc(100% - 100px - 25px - 60px);
+}
+
+#footer {
+	background-color: pink;
+	height: 60px;
+}

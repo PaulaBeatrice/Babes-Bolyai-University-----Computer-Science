@@ -1,0 +1,33 @@
+.input{
+    background-image: url('patratica.png');
+    height: 18px;
+    background-size: 21px;
+    background-repeat: repeat-x;
+    border: 1px solid black;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+#nume, #prenume{
+	width: 415px;
+    letter-spacing: 13.5px;
+}
+
+#nume{
+    margin-left: 26px;
+}
+
+#prenume{
+    margin-left: 8px;
+}   
+
+#cnp {
+	width: 269px;
+    letter-spacing: 14.5px;
+    margin-left: 37px;
+}
+
+label{
+    width: 35px;
+    text-align: right;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <title>Problema 6</title>
+    <style>
+        label { display: block; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="list-group">
+            <h3>Producator</h3>
+            <div id="producator" onload="loadProducator()"> </div>
+        </div>
+        <div class="list-group">
+            <h3>Procesor</h3>
+            <div id="procesor" onload="loadProcesor()"></div>
+        </div>
+        <div class="list-group">
+            <h3>Memorie</h3>
+            <div id="memorie" onload="loadMemorie()"></div>
+        </div>
+        <div class="list-group">
+            <h3>Capacitate HDD</h3>
+            <div id="capacitate" onload="loadCapacitate()"></div>
+        </div>
+        <div class="list-group">
+            <h3>Placa video</h3>
+            <div id="placa" onload="loadPlaca()"></div>
+        </div>
+
+        <br><br>
+        <input type="button" name="Filtrare" value="Filtrare" onclick="filtreaza()">
+        <div id="filtrate"></div>
+    </div>
+
+</div>
+
+<script>
+    function filtreaza(){
+        var procesor = [];
+        var memoria = [];
+        var capacitate = [];
+        var placa = [];
+        var producator = [];
+        $('.procesor:checked').each(function () {
+          procesor.push($(this).val());
+        });
+        $('.memorie:checked').each(function () {
+          memoria.push($(this).val());
+        });
+        $('.capacitate:checked').each(function () {
+          capacitate.push($(this).val());
+        });
+        $('.placa:checked').each(function () {
+          placa.push($(this).val());
+        });
+        $('.producator:checked').each(function () {
+          producator.push($(this).val());
+        });
+        // console.log("procesor  " + procesor);
+        // console.log("placa  " + placa);
+        // console.log("memoria  " + memoria);
+        // console.log("capacitate  " + capacitate);
+        // console.log("producator  " + producator);
+
+        // send the checked values to the server using an AJAX request
+        $.ajax({
+          url: 'filter.php',
+          type: 'POST',
+          data: {
+            procesor: procesor,
+            memoria: memoria,
+            capacitate: capacitate,
+            placa: placa,
+            producator: producator
+          },
+          success: function (response) {
+            // display the filtered results in the #filtrate div
+            $('#filtrate').html(response);
+          },
+          error: function (xhr, status, error) {
+            console.error(xhr.responseText);
+          }
+        });
+    }
+
+</script>
+
+
+</body>
+
+</html>

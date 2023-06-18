@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fișă de adopție</title>
+</head>
+<body>
+	<h1>Fișă de adopție</h1>
+
+	<table>
+		<tr> <td>Informatii viitor proprietar</td></tr>
+		<tr><td>Informatii animalut</td></tr>
+	</table>
+
+	<img src="https://www.webkinz.com/images/webkinz-social-media-share.png" alt="logo=ul companiei" width="200" height="200" title="Webkinz Company">
+	
+	<form>
+		<fieldset>
+			<legend><strong>Formular adopție</strong></legend>
+			<h2>Informații despre viitorul proprietar</h2>
+
+			<label for="nume_p">Nume:</label>
+			<input type="text" name="nume_p" id="nume_p" value="Șerban">
+
+			<label for="prenume_p">Prenume:</label>
+			<input type="text" name="prenume_p" id="prenume_p" value="Paula-Beatrice">
+
+			<label for="cnp_p">Cnp:</label>
+			<input type="text" name="cnp_p" id="cnp_p" value="1234567890123">
+
+			<label for="data_p">Data nasterii:</label>
+			<input type="text" name="data_p" id="data_p" value="10.10.2002">
+
+			<label for="oras_p">Oras:</label>
+			<input type="text" name="oras_p" id="oras_p" value="Bistrița">
+
+			<br><br>
+
+			<label for="judet_p">Judet:</label>
+			<input type="text" name="judet_p" id="judet_p" value="Bistrița-Năsăud">
+
+
+			<label for="email_p">Email:</label>
+			<input type="text" name="email_p" id="email_p" value="serbanpaula002@gmail.com">
+
+
+			<label for="telefon_p">Telefon:</label>
+			<input type="number" name="telefon_p" id="telefon_p" value="0123456789" min="0000000000" max="9999999999" step="1">
+
+			<label>Sex:</label>
+			<input type="radio" name="sex_p" id="M" value="M">
+			<label for="M">M</label>
+			<input type="radio" name="sex_p" id="F" value="F" checked="checked">
+			<label for="F">F</label>
+
+
+
+		<p> Aveți experiență cu animalele?<span style="color:gray"> Dacă da, detaliați</span></p>
+		<textarea rows="5" cols="80">Nu am mai avut animale pănă acum</textarea>
+
+		<p>Motive adoptie:</p>
+		<ol type="1">
+			<li>Îmbunătățirea stării de spirit</li>
+			<li>Companie și socializare</li>
+			<li>Responsabilitate și disciplină</li>
+		</ol>
+
+		<h2>Informatii despre animal</h2>
+
+		<label for="nume_a">Nume:</label>
+		<input type="text" name="nume_a" id="nume_a" value="Pinky-Kitty">
+
+		<label for="specie">Specie:</label>
+		<select id="specie" name="specie">
+			<option value="caine">caine</option>
+			<option value="pisica" selected="selected">pisica</option>
+			<option value="iepure">iepure</option>
+		</select>
+
+		<label for="rasa_a">Rasă:</label>
+		<input type="text" name="rasa_a" id="rasa_a" value="Persană">
+		<label>Sex:</label>
+		<input type="radio" name="sex_a" id="M_a" value="M">
+		<label for="M">M</label>
+		<input type="radio" name="sex_a" id="F_a" value="F" checked="checked">
+		<label for="F">F</label>
+
+		<br>
+		<br>
+			
+		<label for="varsta_a">Vârstă:</label>
+		<input type="text" name="varsta_a" id="varsta_a" value="1">
+
+		<label for="culoare">Culoare:</label>
+		<select id="culoare" name="culoare" multiple size="2">
+			<option value="alb" selected="selected">alb</option>
+			<option value="negru">negru</option>
+			<option value="gri">gri</option>
+			<option value="maro">maro</option>
+			<option value="portocaliu">portocaliu</option>
+		</select>
+
+		<label for="greutate_a">Greutate:</label>
+		<input type="text" name="greutate_a" id="greutate_a" value="10">
+
+		<br><br>
+
+		<table>
+			<tr>
+				<th colspan="3">Istoric medical</th>
+			</tr>
+
+			<tr>
+				<td>1</td>
+				<td>Vaccinuri</td>
+				<td>
+					<table>
+						<tr>
+							<td>Vaccin împotriva herpesului felin</td>
+							<td>12.10.2022</td>
+						</tr>
+
+						<tr>
+							<td>Vaccin împotriva calcivirusului felin</td>
+							<td>20.06.2022</td>
+						</tr>
+
+						<tr>
+							<td>Vaccin împotriva leucemiei</td>
+							<td>03.02.2023</td>
+						</tr>
+					</table>	
+				</td>
+			</tr>
+
+			<tr>
+				<td>2</td>
+				<td>Boli suferite</td>
+				<td>
+					<table>
+						<tr>
+							<td>Gingivita</td>
+							<td>14.05.2022</td>
+							<td>Vindecat</td>
+						</tr>
+
+						<tr>
+							<td>Panleucopenia</td>
+							<td>10.08.2022</td>
+							<td>Vindecat</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+		<p>Observații:</p>
+		<ol type="a">
+			<li>realizarea obligatorie a vaccinului împotriva panleucopeniei</li>
+			<li>
+				opțional:
+				<ol type="A">
+					<li>masaj muscular</li>
+					<li>felinoterapie</li>
+				</ol>
+			</li>
+		</ol>
+
+		<input type="checkbox" id="acord" value="acord">
+		<label for="acord">Sunt de acord cu privire la regulile și politica organizației de adopție a animalelor, precum și la drepturile și respectarea acestora în calitate de viitor proprietar al animalului</label>
+
+		<br><br>
+		<input type="submit" name="submit">
+
+		</fieldset>
+	</form>
+
+	<div>
+		<h3>Informații de contact:</h3>
+	<p>Compania:<a href="https://www.webkinz.com/" target="_blank">Webkinz</a></p>
+	<p>Nr de telefon:</p>
+	<ul>
+		<li>Fost proprietar: 0758693214</li>
+		<li>
+			Companie:
+			<ul>
+				<li>CEO: 0745663258</li>
+				<li>Manager: 0758699003</li>
+			</ul>
+		</li>
+	</ul>	
+	</div>
+
+</body>
+</html>
