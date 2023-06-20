@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="521.0" prefWidth="808.0" styleClass="root" stylesheets="@style/home.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.laborator_3.controller.HomeController">
+   <children>
+      <Label layoutX="55.0" layoutY="40.0" prefHeight="21.0" prefWidth="160.0" styleClass="labels" stylesheets="@style/home.css" text="Participanti Nepunctati" />
+      <TableView fx:id="refereeNotNotedTable" layoutX="23.0" layoutY="69.0" onMouseClicked="#chosenReferee" prefHeight="215.0" prefWidth="240.0" stylesheets="@style/home.css">
+        <columns>
+          <TableColumn fx:id="idNotNotedCollumn" prefWidth="40.0" text="id" />
+          <TableColumn fx:id="first_nameCollumnNotNoted" prefWidth="92.0" text="First_name" />
+            <TableColumn fx:id="last_nameCollumnNotNoted" prefWidth="108.0" text="Last_name" />
+        </columns>
+      </TableView>
+      <Label layoutX="283.0" layoutY="40.0" prefHeight="21.0" prefWidth="49.0" styleClass="labels" stylesheets="@style/home.css" text="Score" />
+      <TextField fx:id="scoreText" layoutX="281.0" layoutY="76.0" prefHeight="31.0" prefWidth="82.0" stylesheets="@style/home.css" />
+      <Button layoutX="281.0" layoutY="115.0" mnemonicParsing="false" onMouseClicked="#addScore" prefHeight="31.0" prefWidth="82.0" styleClass="btn" stylesheets="@style/home.css" text="Adauga" />
+      <Label layoutX="426.0" layoutY="75.0" styleClass="labels" stylesheets="@style/home.css" text="Topul Participantilor" />
+      <TableView fx:id="refereeTable" layoutX="393.0" layoutY="115.0" prefHeight="387.0" prefWidth="329.0" stylesheets="@style/home.css">
+        <columns>
+          <TableColumn fx:id="idCollumn" prefWidth="51.0" text="id" />
+          <TableColumn fx:id="first_nameCollumn" prefWidth="98.0" text="First_name" />
+            <TableColumn fx:id="last_nameCollumn" prefWidth="97.0" text="Last_name" />
+            <TableColumn fx:id="pointsCollumn" prefWidth="81.0" text="Points" />
+        </columns>
+      </TableView>
+      <Button fx:id="logoutButton" layoutX="706.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#logout" styleClass="btn" stylesheets="@style/home.css" text="Logout" />
+      <Label layoutX="55.0" layoutY="288.0" text="Topul Participantilor" />
+      <TableView fx:id="tabelTopPr" layoutX="23.0" layoutY="320.0" prefHeight="180.0" prefWidth="359.0">
+        <columns>
+          <TableColumn fx:id="idTopPr" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="f_namePR" prefWidth="105.0" text="First_name" />
+            <TableColumn fx:id="l_namePr" prefWidth="100.0" text="Last_name" />
+            <TableColumn fx:id="pointsPr" prefWidth="75.0" text="Points" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

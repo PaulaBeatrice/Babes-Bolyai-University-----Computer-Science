@@ -1,0 +1,508 @@
+14 Mar 2023 23:59:30,213 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+14 Mar 2023 23:59:30,220 TRACE repository.RefereeDBRepository 113 update - Enter
+14 Mar 2023 23:59:30,220 TRACE repository.JdbcUtils 44 getConnection - Enter
+14 Mar 2023 23:59:30,220 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+14 Mar 2023 23:59:30,221 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+14 Mar 2023 23:59:30,221 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+14 Mar 2023 23:59:30,221 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+14 Mar 2023 23:59:30,429 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1b75c2e3)
+14 Mar 2023 23:59:30,447 TRACE repository.RefereeDBRepository 127 update - Exit with(Referee{username='paulaaa', password='rozRoz', first_name='Paula', last_name='Serban', activity=swimming})
+14 Mar 2023 23:59:30,448 TRACE repository.RefereeDBRepository 53 getAll - Enter
+14 Mar 2023 23:59:30,448 TRACE repository.JdbcUtils 44 getConnection - Enter
+14 Mar 2023 23:59:30,448 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1b75c2e3)
+14 Mar 2023 23:59:30,449 TRACE repository.RefereeDBRepository 74 getAll - Exit with([Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming}, Referee{username='lauraa', password='martie', first_name='Laura', last_name='Baciu', activity=cycling}, Referee{username='lovesportt', password='football', first_name='David', last_name='Popescu', activity=running}, Referee{username='paulaaa', password='rozRoz', first_name='Paula', last_name='Serban', activity=swimming}])
+15 Mar 2023 14:01:54,394 INFO  repository.ParticipantDBRepository 22 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:01:54,407 TRACE repository.ParticipantDBRepository 91 save - Enter saving taskParticipant{first_name='Nathan', last_name='Jackson', points=0} 
+15 Mar 2023 14:01:54,407 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:01:54,407 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:01:54,408 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:01:54,409 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:01:54,409 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:01:54,646 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 14:01:54,656 TRACE repository.ParticipantDBRepository 98 save - Saved 1 instances
+15 Mar 2023 14:01:54,657 TRACE repository.ParticipantDBRepository 103 save - Exit
+15 Mar 2023 14:01:54,657 TRACE repository.ParticipantDBRepository 54 getAll - Enter
+15 Mar 2023 14:01:54,657 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:01:54,657 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 14:01:54,658 TRACE repository.ParticipantDBRepository 72 getAll - Exit with([Participant{first_name='Mary', last_name='Smith', points=0}, Participant{first_name='William', last_name='Johnson', points=0}, Participant{first_name='Nathan', last_name='Jackson', points=0}])
+15 Mar 2023 14:03:33,185 INFO  repository.ParticipantDBRepository 22 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:03:33,190 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:03:33,190 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:03:33,190 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:03:33,190 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:03:33,191 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:03:33,191 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:03:33,323 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1b75c2e3)
+15 Mar 2023 14:03:33,329 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Nathan', last_name='Jackson', points=0})
+15 Mar 2023 14:03:33,329 TRACE repository.ParticipantDBRepository 130 delete - Enter
+15 Mar 2023 14:03:33,329 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:03:33,329 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1b75c2e3)
+15 Mar 2023 14:03:33,334 TRACE repository.ParticipantDBRepository 139 delete - Exit with(Participant{first_name='Nathan', last_name='Jackson', points=0})
+15 Mar 2023 14:03:33,334 TRACE repository.ParticipantDBRepository 54 getAll - Enter
+15 Mar 2023 14:03:33,334 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:03:33,335 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1b75c2e3)
+15 Mar 2023 14:03:33,335 TRACE repository.ParticipantDBRepository 72 getAll - Exit with([Participant{first_name='Mary', last_name='Smith', points=0}, Participant{first_name='William', last_name='Johnson', points=0}])
+15 Mar 2023 14:03:51,567 INFO  repository.ParticipantDBRepository 22 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:03:51,576 TRACE repository.ParticipantDBRepository 91 save - Enter saving taskParticipant{first_name='Nathan', last_name='Jackson', points=0} 
+15 Mar 2023 14:03:51,576 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:03:51,577 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:03:51,577 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:03:51,577 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:03:51,578 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:03:51,721 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 14:03:51,726 TRACE repository.ParticipantDBRepository 98 save - Saved 1 instances
+15 Mar 2023 14:03:51,726 TRACE repository.ParticipantDBRepository 103 save - Exit
+15 Mar 2023 14:03:51,727 TRACE repository.ParticipantDBRepository 54 getAll - Enter
+15 Mar 2023 14:03:51,727 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:03:51,727 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 14:03:51,727 TRACE repository.ParticipantDBRepository 72 getAll - Exit with([Participant{first_name='Mary', last_name='Smith', points=0}, Participant{first_name='William', last_name='Johnson', points=0}, Participant{first_name='Nathan', last_name='Jackson', points=0}])
+15 Mar 2023 14:05:10,729 INFO  repository.ParticipantDBRepository 22 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:05:10,733 TRACE repository.ParticipantDBRepository 109 update - Enter
+15 Mar 2023 14:05:10,733 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:05:10,733 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:05:10,734 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:05:10,734 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:05:10,734 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:05:10,865 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1b75c2e3)
+15 Mar 2023 14:05:10,873 TRACE repository.ParticipantDBRepository 121 update - Exit with(Participant{first_name='Michael', last_name='Brown', points=0})
+15 Mar 2023 14:05:10,874 TRACE repository.ParticipantDBRepository 54 getAll - Enter
+15 Mar 2023 14:05:10,874 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:05:10,874 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1b75c2e3)
+15 Mar 2023 14:05:10,875 TRACE repository.ParticipantDBRepository 72 getAll - Exit with([Participant{first_name='Mary', last_name='Smith', points=0}, Participant{first_name='William', last_name='Johnson', points=0}, Participant{first_name='Michael', last_name='Brown', points=0}])
+15 Mar 2023 14:07:42,076 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:07:42,080 INFO  repository.ParticipantDBRepository 22 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:07:42,081 INFO  repository.ResultDBRepository 25 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:07:42,083 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:07:42,083 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:07:42,083 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:07:42,083 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:07:42,083 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:07:42,084 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:07:42,218 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:07:42,224 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=0})
+15 Mar 2023 14:07:42,224 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:07:42,224 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:07:42,224 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:07:42,225 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:07:42,225 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:07:42,225 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:07:42,226 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:07:42,232 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:07:42,235 TRACE repository.ResultDBRepository 103 save - Enter saving taskdomain.Result@106cc338 
+15 Mar 2023 14:07:42,235 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:07:42,235 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:07:42,235 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:07:42,235 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:07:42,235 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:07:42,236 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7a67e3c6)
+15 Mar 2023 14:07:42,239 ERROR repository.ResultDBRepository 113 save - org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: Result)
+15 Mar 2023 14:07:42,240 TRACE repository.ResultDBRepository 116 save - Exit
+15 Mar 2023 14:07:42,240 TRACE repository.ParticipantDBRepository 109 update - Enter
+15 Mar 2023 14:07:42,240 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:07:42,240 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:07:42,243 TRACE repository.ParticipantDBRepository 121 update - Exit with(Participant{first_name='Mary', last_name='Smith', points=100})
+15 Mar 2023 14:07:42,244 TRACE repository.ResultDBRepository 63 getAll - Enter
+15 Mar 2023 14:07:42,244 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:07:42,244 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7a67e3c6)
+15 Mar 2023 14:07:42,245 TRACE repository.ResultDBRepository 84 getAll - Exit with([])
+15 Mar 2023 14:08:00,873 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:08:00,878 INFO  repository.ParticipantDBRepository 22 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:08:00,879 INFO  repository.ResultDBRepository 25 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:08:00,880 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:08:00,880 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:08:00,880 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:08:00,881 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:08:00,881 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:08:00,881 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:08:01,025 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:08:01,031 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=100})
+15 Mar 2023 14:08:01,031 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:08:01,031 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:08:01,032 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:08:01,032 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:08:01,032 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:08:01,032 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:08:01,033 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:08:01,040 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:08:01,042 TRACE repository.ResultDBRepository 103 save - Enter saving taskdomain.Result@106cc338 
+15 Mar 2023 14:08:01,042 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:08:01,042 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:08:01,042 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:08:01,043 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:08:01,043 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:08:01,043 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7a67e3c6)
+15 Mar 2023 14:08:01,047 TRACE repository.ResultDBRepository 111 save - Saved 1 instances
+15 Mar 2023 14:08:01,048 TRACE repository.ResultDBRepository 116 save - Exit
+15 Mar 2023 14:08:01,048 TRACE repository.ParticipantDBRepository 109 update - Enter
+15 Mar 2023 14:08:01,048 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:08:01,048 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:08:01,053 TRACE repository.ParticipantDBRepository 121 update - Exit with(Participant{first_name='Mary', last_name='Smith', points=200})
+15 Mar 2023 14:08:01,054 TRACE repository.ResultDBRepository 63 getAll - Enter
+15 Mar 2023 14:08:01,054 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:08:01,054 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7a67e3c6)
+15 Mar 2023 14:08:01,055 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:08:01,055 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:08:01,055 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:08:01,055 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:08:01,055 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:08:01,055 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:08:01,056 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:08:01,056 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=200})
+15 Mar 2023 14:08:01,056 TRACE repository.ResultDBRepository 84 getAll - Exit with([domain.Result@6cc558c6])
+15 Mar 2023 14:09:08,171 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:09:08,174 INFO  repository.ParticipantDBRepository 22 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:09:08,176 INFO  repository.ResultDBRepository 25 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:09:08,177 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:09:08,177 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:09:08,177 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:09:08,178 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:09:08,178 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:09:08,178 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:09:08,315 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:09:08,321 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=100})
+15 Mar 2023 14:09:08,321 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:09:08,321 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:09:08,321 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:09:08,322 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:09:08,322 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:09:08,323 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:09:08,323 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:09:08,330 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:09:08,331 TRACE repository.ResultDBRepository 103 save - Enter saving taskdomain.Result@106cc338 
+15 Mar 2023 14:09:08,332 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:09:08,332 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:09:08,332 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:09:08,332 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:09:08,333 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:09:08,333 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7a67e3c6)
+15 Mar 2023 14:09:08,336 ERROR repository.ResultDBRepository 118 save - org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: Result)
+15 Mar 2023 14:09:08,338 TRACE repository.ResultDBRepository 121 save - Exit
+15 Mar 2023 14:09:08,338 TRACE repository.ResultDBRepository 63 getAll - Enter
+15 Mar 2023 14:09:08,338 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:09:08,338 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7a67e3c6)
+15 Mar 2023 14:09:08,338 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:09:08,338 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:09:08,338 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:09:08,339 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:09:08,340 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:09:08,340 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:09:08,340 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:09:08,341 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=100})
+15 Mar 2023 14:09:08,341 TRACE repository.ResultDBRepository 84 getAll - Exit with([domain.Result@3d9c13b5])
+15 Mar 2023 14:09:23,650 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:09:23,654 INFO  repository.ParticipantDBRepository 22 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:09:23,654 INFO  repository.ResultDBRepository 25 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:09:23,656 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:09:23,656 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:09:23,656 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:09:23,656 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:09:23,657 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:09:23,657 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:09:23,791 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:09:23,799 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=100})
+15 Mar 2023 14:09:23,800 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:09:23,800 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:09:23,800 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:09:23,801 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:09:23,801 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:09:23,801 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:09:23,802 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:09:23,812 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:09:23,814 TRACE repository.ResultDBRepository 103 save - Enter saving taskdomain.Result@106cc338 
+15 Mar 2023 14:09:23,815 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:09:23,815 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:09:23,815 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:09:23,815 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:09:23,816 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:09:23,817 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7a67e3c6)
+15 Mar 2023 14:09:23,821 ERROR repository.ResultDBRepository 113 save - org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: Result)
+15 Mar 2023 14:09:23,822 TRACE repository.ResultDBRepository 116 save - Exit
+15 Mar 2023 14:09:23,823 TRACE repository.ParticipantDBRepository 109 update - Enter
+15 Mar 2023 14:09:23,823 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:09:23,824 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:09:23,828 TRACE repository.ParticipantDBRepository 121 update - Exit with(Participant{first_name='Mary', last_name='Smith', points=200})
+15 Mar 2023 14:09:23,829 TRACE repository.ResultDBRepository 63 getAll - Enter
+15 Mar 2023 14:09:23,830 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:09:23,830 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7a67e3c6)
+15 Mar 2023 14:09:23,830 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:09:23,830 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:09:23,830 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:09:23,831 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:09:23,831 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:09:23,831 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:09:23,832 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:09:23,832 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=200})
+15 Mar 2023 14:09:23,832 TRACE repository.ResultDBRepository 84 getAll - Exit with([domain.Result@3d9c13b5])
+15 Mar 2023 14:12:16,448 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:12:16,452 INFO  repository.ParticipantDBRepository 22 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:12:16,454 INFO  repository.ResultDBRepository 25 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:12:16,457 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:12:16,457 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:12:16,458 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:12:16,458 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:12:16,458 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:12:16,459 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:12:16,601 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:12:16,608 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=100})
+15 Mar 2023 14:12:16,608 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:12:16,608 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:12:16,608 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:12:16,608 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:12:16,609 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:12:16,609 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:12:16,610 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:12:16,615 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:12:16,615 TRACE repository.ResultDBRepository 33 find - Enter
+15 Mar 2023 14:12:16,615 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:12:16,615 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:12:16,615 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:12:16,615 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:12:16,616 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:12:16,616 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2c78d320)
+15 Mar 2023 14:12:16,619 ERROR repository.ResultDBRepository 54 find - org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such table: Result)
+15 Mar 2023 14:12:16,620 TRACE repository.ResultDBRepository 57 find - Exit
+15 Mar 2023 14:12:16,620 TRACE repository.ResultDBRepository 63 getAll - Enter
+15 Mar 2023 14:12:16,620 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:12:16,620 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2c78d320)
+15 Mar 2023 14:12:16,620 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:12:16,621 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:12:16,621 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:12:16,621 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:12:16,621 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:12:16,621 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:12:16,622 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:12:16,622 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=100})
+15 Mar 2023 14:12:16,622 TRACE repository.ResultDBRepository 84 getAll - Exit with([domain.Result@5c2375a9])
+15 Mar 2023 14:13:18,877 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:13:18,882 INFO  repository.ParticipantDBRepository 22 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:13:18,883 INFO  repository.ResultDBRepository 25 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:13:18,885 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:13:18,885 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:18,885 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:13:18,885 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:13:18,886 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:13:18,886 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:13:19,030 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:13:19,036 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=100})
+15 Mar 2023 14:13:19,036 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:13:19,036 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:19,036 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:13:19,037 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:13:19,037 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:13:19,037 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:13:19,038 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:13:19,043 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:13:19,044 TRACE repository.ResultDBRepository 33 find - Enter
+15 Mar 2023 14:13:19,044 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:19,044 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:13:19,044 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:13:19,044 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:13:19,044 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:13:19,045 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2c78d320)
+15 Mar 2023 14:13:19,046 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:13:19,046 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:19,046 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:13:19,047 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:13:19,047 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:13:19,047 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:19,047 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:13:19,047 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=100})
+15 Mar 2023 14:13:19,048 TRACE repository.ResultDBRepository 57 find - Exit with(domain.Result@132e0cc)
+15 Mar 2023 14:13:19,048 TRACE repository.ResultDBRepository 154 delete - Enter
+15 Mar 2023 14:13:19,048 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:19,048 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2c78d320)
+15 Mar 2023 14:13:19,052 TRACE repository.ParticipantDBRepository 109 update - Enter
+15 Mar 2023 14:13:19,052 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:19,052 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:13:19,056 TRACE repository.ParticipantDBRepository 121 update - Exit with(Participant{first_name='Mary', last_name='Smith', points=0})
+15 Mar 2023 14:13:19,056 TRACE repository.ResultDBRepository 167 delete - Exit with(domain.Result@7b205dbd)
+15 Mar 2023 14:13:19,056 TRACE repository.ResultDBRepository 63 getAll - Enter
+15 Mar 2023 14:13:19,057 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:19,057 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2c78d320)
+15 Mar 2023 14:13:19,057 TRACE repository.ResultDBRepository 84 getAll - Exit with([])
+15 Mar 2023 14:13:38,954 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:13:38,959 INFO  repository.ParticipantDBRepository 22 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:13:38,960 INFO  repository.ResultDBRepository 25 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:13:38,961 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:13:38,961 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:38,961 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:13:38,961 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:13:38,962 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:13:38,962 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:13:39,113 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:13:39,120 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=0})
+15 Mar 2023 14:13:39,120 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:13:39,120 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:39,121 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:13:39,121 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:13:39,121 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:13:39,121 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:13:39,122 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:13:39,128 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:13:39,132 TRACE repository.ResultDBRepository 103 save - Enter saving taskdomain.Result@106cc338 
+15 Mar 2023 14:13:39,132 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:39,132 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:13:39,132 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:13:39,132 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:13:39,132 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:13:39,133 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7a67e3c6)
+15 Mar 2023 14:13:39,137 TRACE repository.ResultDBRepository 111 save - Saved 1 instances
+15 Mar 2023 14:13:39,137 TRACE repository.ParticipantDBRepository 109 update - Enter
+15 Mar 2023 14:13:39,137 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:39,138 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:13:39,141 TRACE repository.ParticipantDBRepository 121 update - Exit with(Participant{first_name='Mary', last_name='Smith', points=100})
+15 Mar 2023 14:13:39,142 TRACE repository.ResultDBRepository 121 save - Exit
+15 Mar 2023 14:13:39,142 TRACE repository.ResultDBRepository 63 getAll - Enter
+15 Mar 2023 14:13:39,142 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:39,142 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7a67e3c6)
+15 Mar 2023 14:13:39,142 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:13:39,142 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:39,142 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:13:39,143 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:13:39,143 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:13:39,143 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:13:39,143 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:13:39,144 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=100})
+15 Mar 2023 14:13:39,144 TRACE repository.ResultDBRepository 84 getAll - Exit with([domain.Result@6cc558c6])
+15 Mar 2023 14:14:49,617 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:14:49,621 INFO  repository.ParticipantDBRepository 22 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:14:49,622 INFO  repository.ResultDBRepository 25 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+15 Mar 2023 14:14:49,624 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:14:49,624 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:14:49,624 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:14:49,624 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:14:49,624 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:14:49,625 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:14:49,762 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:14:49,769 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=100})
+15 Mar 2023 14:14:49,769 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:14:49,769 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:14:49,770 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:14:49,770 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:14:49,770 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:14:49,770 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:14:49,771 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:14:49,777 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:14:49,778 TRACE repository.ResultDBRepository 127 update - Enter
+15 Mar 2023 14:14:49,778 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:14:49,778 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+15 Mar 2023 14:14:49,778 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+15 Mar 2023 14:14:49,778 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+15 Mar 2023 14:14:49,778 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+15 Mar 2023 14:14:49,779 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2c78d320)
+15 Mar 2023 14:14:49,779 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:14:49,779 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:14:49,780 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:14:49,780 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=100})
+15 Mar 2023 14:14:49,784 TRACE repository.ParticipantDBRepository 109 update - Enter
+15 Mar 2023 14:14:49,784 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:14:49,784 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:14:49,788 TRACE repository.ParticipantDBRepository 121 update - Exit with(Participant{first_name='Mary', last_name='Smith', points=50})
+15 Mar 2023 14:14:49,789 TRACE repository.ResultDBRepository 145 update - Exit with(domain.Result@132e0cc)
+15 Mar 2023 14:14:49,789 TRACE repository.ResultDBRepository 63 getAll - Enter
+15 Mar 2023 14:14:49,789 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:14:49,789 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2c78d320)
+15 Mar 2023 14:14:49,789 TRACE repository.RefereeDBRepository 25 find - Enter
+15 Mar 2023 14:14:49,790 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:14:49,790 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2421cc4)
+15 Mar 2023 14:14:49,790 TRACE repository.RefereeDBRepository 47 find - Exit with(Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming})
+15 Mar 2023 14:14:49,790 TRACE repository.ParticipantDBRepository 28 find - Enter
+15 Mar 2023 14:14:49,790 TRACE repository.JdbcUtils 44 getConnection - Enter
+15 Mar 2023 14:14:49,790 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3bd323e9)
+15 Mar 2023 14:14:49,790 TRACE repository.ParticipantDBRepository 48 find - Exit with(Participant{first_name='Mary', last_name='Smith', points=50})
+15 Mar 2023 14:14:49,791 TRACE repository.ResultDBRepository 84 getAll - Exit with([domain.Result@7b205dbd])
+18 Mar 2023 20:43:17,374 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+18 Mar 2023 20:43:17,402 TRACE repository.RefereeDBRepository 93 save - Enter saving taskReferee{username='ralu08', password='mancare', first_name='Raluca', last_name='Moldovan', activity=swimming} 
+18 Mar 2023 20:43:17,403 TRACE repository.JdbcUtils 44 getConnection - Enter
+18 Mar 2023 20:43:17,403 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+18 Mar 2023 20:43:17,404 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+18 Mar 2023 20:43:17,405 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+18 Mar 2023 20:43:17,406 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+18 Mar 2023 20:43:17,868 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@68df9280)
+18 Mar 2023 20:43:17,879 TRACE repository.RefereeDBRepository 102 save - Saved 1 instances
+18 Mar 2023 20:43:17,879 TRACE repository.RefereeDBRepository 107 save - Exit
+20 Mar 2023 12:09:10,155 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+20 Mar 2023 12:09:10,183 TRACE repository.RefereeDBRepository 93 save - Enter saving taskReferee{username='ralu08', password='mancare', first_name='Raluca', last_name='Moldovan', activity=swimming} 
+20 Mar 2023 12:09:10,184 TRACE repository.JdbcUtils 44 getConnection - Enter
+20 Mar 2023 12:09:10,184 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+20 Mar 2023 12:09:10,184 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+20 Mar 2023 12:09:10,185 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+20 Mar 2023 12:09:10,185 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+20 Mar 2023 12:09:11,161 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@68df9280)
+20 Mar 2023 12:09:11,172 TRACE repository.RefereeDBRepository 102 save - Saved 1 instances
+20 Mar 2023 12:09:11,172 TRACE repository.RefereeDBRepository 107 save - Exit
+20 Mar 2023 12:09:53,192 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+20 Mar 2023 12:09:53,197 TRACE repository.RefereeDBRepository 53 getAll - Enter
+20 Mar 2023 12:09:53,197 TRACE repository.JdbcUtils 44 getConnection - Enter
+20 Mar 2023 12:09:53,197 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+20 Mar 2023 12:09:53,197 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+20 Mar 2023 12:09:53,198 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+20 Mar 2023 12:09:53,198 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+20 Mar 2023 12:09:53,362 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1f53a5dc)
+20 Mar 2023 12:09:53,371 TRACE repository.RefereeDBRepository 74 getAll - Exit with([Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming}, Referee{username='lauraa', password='martie', first_name='Laura', last_name='Baciu', activity=cycling}, Referee{username='lovesportt', password='football', first_name='David', last_name='Popescu', activity=running}, Referee{username='paulaaa', password='rozRoz', first_name='Paula', last_name='Serban', activity=swimming}, Referee{username='Anghel', password='aaaaaaa', first_name='Anghel', last_name='Ioan', activity=running}, Referee{username='ralu08', password='mancare', first_name='Raluca', last_name='Moldovan', activity=swimming}])
+20 Mar 2023 12:33:30,658 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+20 Mar 2023 12:33:30,662 TRACE repository.RefereeDBRepository 53 getAll - Enter
+20 Mar 2023 12:33:30,662 TRACE repository.JdbcUtils 44 getConnection - Enter
+20 Mar 2023 12:33:30,662 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+20 Mar 2023 12:33:30,663 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+20 Mar 2023 12:33:30,663 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+20 Mar 2023 12:33:30,663 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+20 Mar 2023 12:33:30,820 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1f53a5dc)
+20 Mar 2023 12:33:30,828 TRACE repository.RefereeDBRepository 74 getAll - Exit with([Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming}, Referee{username='lauraa', password='martie', first_name='Laura', last_name='Baciu', activity=cycling}, Referee{username='lovesportt', password='football', first_name='David', last_name='Popescu', activity=running}, Referee{username='paulaaa', password='rozRoz', first_name='Paula', last_name='Serban', activity=swimming}, Referee{username='Anghel', password='aaaaaaa', first_name='Anghel', last_name='Ioan', activity=running}, Referee{username='ralu08', password='mancare', first_name='Raluca', last_name='Moldovan', activity=swimming}])
+20 Mar 2023 12:33:57,479 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+20 Mar 2023 12:33:57,483 TRACE repository.RefereeDBRepository 53 getAll - Enter
+20 Mar 2023 12:33:57,483 TRACE repository.JdbcUtils 44 getConnection - Enter
+20 Mar 2023 12:33:57,484 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+20 Mar 2023 12:33:57,484 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+20 Mar 2023 12:33:57,484 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+20 Mar 2023 12:33:57,484 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+20 Mar 2023 12:33:57,620 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1f53a5dc)
+20 Mar 2023 12:33:57,630 TRACE repository.RefereeDBRepository 74 getAll - Exit with([Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming}, Referee{username='lauraa', password='martie', first_name='Laura', last_name='Baciu', activity=cycling}, Referee{username='lovesportt', password='football', first_name='David', last_name='Popescu', activity=running}, Referee{username='paulaaa', password='rozRoz', first_name='Paula', last_name='Serban', activity=swimming}, Referee{username='Anghel', password='aaaaaaa', first_name='Anghel', last_name='Ioan', activity=running}, Referee{username='ralu08', password='mancare', first_name='Raluca', last_name='Moldovan', activity=swimming}])
+20 Mar 2023 12:33:57,632 INFO  repository.ParticipantDBRepository 21 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+20 Mar 2023 12:33:57,636 TRACE repository.ParticipantDBRepository 90 save - Enter saving taskParticipant{first_name='ABC', last_name='Jackson', points=0} 
+20 Mar 2023 12:33:57,636 TRACE repository.JdbcUtils 44 getConnection - Enter
+20 Mar 2023 12:33:57,636 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+20 Mar 2023 12:33:57,637 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+20 Mar 2023 12:33:57,637 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+20 Mar 2023 12:33:57,637 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+20 Mar 2023 12:33:57,638 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7b205dbd)
+20 Mar 2023 12:33:57,642 TRACE repository.ParticipantDBRepository 97 save - Saved 1 instances
+20 Mar 2023 12:33:57,642 TRACE repository.ParticipantDBRepository 102 save - Exit
+21 Mar 2023 18:05:17,443 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+21 Mar 2023 18:05:17,473 TRACE repository.RefereeDBRepository 53 getAll - Enter
+21 Mar 2023 18:05:17,474 TRACE repository.JdbcUtils 44 getConnection - Enter
+21 Mar 2023 18:05:17,475 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+21 Mar 2023 18:05:17,475 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+21 Mar 2023 18:05:17,476 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+21 Mar 2023 18:05:17,477 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+21 Mar 2023 18:05:18,574 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1f53a5dc)
+21 Mar 2023 18:05:18,596 TRACE repository.RefereeDBRepository 74 getAll - Exit with([Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming}, Referee{username='lauraa', password='martie', first_name='Laura', last_name='Baciu', activity=cycling}, Referee{username='lovesportt', password='football', first_name='David', last_name='Popescu', activity=running}, Referee{username='paulaaa', password='rozRoz', first_name='Paula', last_name='Serban', activity=swimming}, Referee{username='Anghel', password='aaaaaaa', first_name='Anghel', last_name='Ioan', activity=running}, Referee{username='ralu08', password='mancare', first_name='Raluca', last_name='Moldovan', activity=swimming}])
+21 Mar 2023 18:05:18,646 INFO  repository.ParticipantDBRepository 21 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+21 Mar 2023 18:05:18,656 TRACE repository.ParticipantDBRepository 90 save - Enter saving taskParticipant{first_name='ABC', last_name='Jackson', points=0} 
+21 Mar 2023 18:05:18,657 TRACE repository.JdbcUtils 44 getConnection - Enter
+21 Mar 2023 18:05:18,658 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+21 Mar 2023 18:05:18,658 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+21 Mar 2023 18:05:18,659 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+21 Mar 2023 18:05:18,659 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+21 Mar 2023 18:05:18,660 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7b205dbd)
+21 Mar 2023 18:05:18,667 TRACE repository.ParticipantDBRepository 97 save - Saved 1 instances
+21 Mar 2023 18:05:18,667 TRACE repository.ParticipantDBRepository 102 save - Exit
+27 Mar 2023 21:36:06,531 INFO  repository.RefereeDBRepository 19 <init> - Initializing RefereeDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+27 Mar 2023 21:36:06,541 TRACE repository.RefereeDBRepository 53 getAll - Enter
+27 Mar 2023 21:36:06,541 TRACE repository.JdbcUtils 44 getConnection - Enter
+27 Mar 2023 21:36:06,541 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+27 Mar 2023 21:36:06,542 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+27 Mar 2023 21:36:06,542 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+27 Mar 2023 21:36:06,543 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+27 Mar 2023 21:36:06,862 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1f53a5dc)
+27 Mar 2023 21:36:06,879 TRACE repository.RefereeDBRepository 74 getAll - Exit with([Referee{username='anonim123', password='abcd', first_name='Andrei', last_name='Pop', activity=swimming}, Referee{username='lauraa', password='martie', first_name='Laura', last_name='Baciu', activity=cycling}, Referee{username='lovesportt', password='football', first_name='David', last_name='Popescu', activity=running}, Referee{username='paulaaa', password='rozRoz', first_name='Paula', last_name='Serban', activity=swimming}, Referee{username='Anghel', password='aaaaaaa', first_name='Anghel', last_name='Ioan', activity=running}, Referee{username='ralu08', password='mancare', first_name='Raluca', last_name='Moldovan', activity=swimming}])
+27 Mar 2023 21:36:06,885 INFO  repository.ParticipantDBRepository 21 <init> - Initializing ParticipantDBRepository with propertiesL {jdbc.url=jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db} 
+27 Mar 2023 21:36:06,892 TRACE repository.ParticipantDBRepository 90 save - Enter saving taskParticipant{first_name='ABC', last_name='Jackson', points=0} 
+27 Mar 2023 21:36:06,893 TRACE repository.JdbcUtils 44 getConnection - Enter
+27 Mar 2023 21:36:06,894 TRACE repository.JdbcUtils 22 getNewConnection - Enter
+27 Mar 2023 21:36:06,894 INFO  repository.JdbcUtils 27 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\FACULTATE\Anul 2\Semestrul 2\Medii de Proiectare si Programare\Laboratoare\mpp-proiect-java-PaulaBeatrice\triatlon.db
+27 Mar 2023 21:36:06,895 INFO  repository.JdbcUtils 28 getNewConnection - user: null
+27 Mar 2023 21:36:06,895 INFO  repository.JdbcUtils 29 getNewConnection - pass: null
+27 Mar 2023 21:36:06,897 TRACE repository.JdbcUtils 53 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7b205dbd)
+27 Mar 2023 21:36:06,904 TRACE repository.ParticipantDBRepository 97 save - Saved 1 instances
+27 Mar 2023 21:36:06,904 TRACE repository.ParticipantDBRepository 102 save - Exit
