@@ -1,9 +1,0 @@
-rootProject.name = 'Lab_4'
-include 'TriathlonModel'
-include 'TriathlonServices'
-include 'TriathlonPersistence'
-include 'TriathlonServer'
-include 'TriathlonServices'
-include 'TriathlonNetworking'
-include 'TriathlonClient'
-
