@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clinica.controller.MediciController">
+   <top>
+      <Label text="Consultatii" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <TableView fx:id="consultatiiTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="150.4000244140625" text="id" />
+          <TableColumn fx:id="nume_pacient" minWidth="0.0" prefWidth="93.5999755859375" text="pacient" />
+            <TableColumn fx:id="data" minWidth="0.0" prefWidth="164.80010986328125" text="data" />
+            <TableColumn fx:id="ora" prefWidth="75.0" text="ora" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen.controller.MainController">
+   <children>
+      <TableView fx:id="hotelView" layoutX="28.0" layoutY="46.0" onMouseClicked="#onSelectedHotel" prefHeight="207.0" prefWidth="454.0">
+        <columns>
+          <TableColumn fx:id="idHotel" prefWidth="75.0" text="hotelID" />
+          <TableColumn fx:id="idLocatie" prefWidth="75.0" text="locationID" />
+            <TableColumn fx:id="hotelName" prefWidth="75.0" text="hotelName" />
+            <TableColumn fx:id="noRooms" prefWidth="75.0" text="noRooms" />
+            <TableColumn fx:id="pricePerNight" prefWidth="75.0" text="pricePerNight" />
+            <TableColumn fx:id="type" prefWidth="75.0" text="type" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="locationsBox" layoutX="28.0" layoutY="277.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

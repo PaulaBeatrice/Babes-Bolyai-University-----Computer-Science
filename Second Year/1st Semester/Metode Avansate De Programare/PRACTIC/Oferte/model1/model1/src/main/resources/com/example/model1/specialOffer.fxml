@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.model1.SpecialOfferController">
+   <children>
+      <DatePicker fx:id="startDatePicker" layoutX="54.0" layoutY="25.0" prefHeight="38.0" prefWidth="198.0" promptText="Enter a start date" />
+      <TableView fx:id="tableView" layoutX="54.0" layoutY="123.0" prefHeight="242.0" prefWidth="452.0">
+        <columns>
+          <TableColumn fx:id="specialOfferId" prefWidth="96.79998779296875" text="SpecialOfferId" />
+          <TableColumn fx:id="hotelId" prefWidth="53.60003662109375" text="HotelId" />
+            <TableColumn fx:id="startDate" prefWidth="106.4000244140625" text="StartDate" />
+            <TableColumn fx:id="endDate" prefWidth="102.39996337890625" text="EndDate" />
+            <TableColumn fx:id="percents" prefWidth="88.79998779296875" text="Percents" />
+        </columns>
+      </TableView>
+      <DatePicker fx:id="endDatePicker" layoutX="288.0" layoutY="25.0" prefHeight="38.0" prefWidth="198.0" promptText="Enter a end date" />
+      <Button fx:id="showOffers" layoutX="235.0" layoutY="81.0" mnemonicParsing="false" onAction="#onShowPush" prefHeight="26.0" prefWidth="89.0" text="Show offers" />
+   </children>
+</AnchorPane>

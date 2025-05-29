@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="674.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.model1.MainPage">
+    <children>
+        <TableView fx:id="tableView" layoutX="10.0" layoutY="10.0" prefHeight="380.0" prefWidth="488.0">
+            <columns>
+                <TableColumn fx:id="hId" prefWidth="75.0" text="HotelId" />
+                <TableColumn fx:id="lId" prefWidth="75.0" text="LocationId" />
+                <TableColumn fx:id="hName" prefWidth="75.0" text="HotelName" />
+                <TableColumn fx:id="nOfRooms" prefWidth="75.0" text="NoOfRooms" />
+                <TableColumn fx:id="pPerNight" prefWidth="104.800048828125" text="PricePerNight" />
+                <TableColumn fx:id="hType" prefWidth="80.79998779296875" text="Type" />
+            </columns>
+        </TableView>
+        <ComboBox fx:id="comboBox" layoutX="524.0" layoutY="112.0" prefHeight="25.0" prefWidth="144.0" promptText="Locations" />
+        <Button fx:id="submitButton" layoutX="526.0" layoutY="153.0" mnemonicParsing="false" onAction="#onSubmitPush" prefHeight="25.0" prefWidth="144.0" text="Submit" />
+      <Button fx:id="specialOffersButton" layoutX="526.0" layoutY="200.0" mnemonicParsing="false" onAction="#onSpecialOffersPush" prefHeight="25.0" prefWidth="144.0" text="SpecialOffers" />
+    </children>
+</Pane>
